@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 935899b62f48ae5498594680ed17d133, type: 3}
-  m_Name: phone conversations
+  m_Name: phone conversations (Auto-Backup)
   m_EditorClassIdentifier: 
   version: 
   author: 
@@ -9175,7 +9175,7 @@ MonoBehaviour:
       - title: Title
         value: 
         type: 0
-        typeString: CustomFieldType_Text
+        typeString: 
       - title: Pictures
         value: '[]'
         type: 3
@@ -9183,7 +9183,7 @@ MonoBehaviour:
       - title: Description
         value: 
         type: 0
-        typeString: CustomFieldType_Text
+        typeString: 
       - title: Actor
         value: 1
         type: 5
@@ -9195,15 +9195,15 @@ MonoBehaviour:
       - title: Menu Text
         value: 
         type: 0
-        typeString: CustomFieldType_Text
+        typeString: 
       - title: Dialogue Text
         value: 'Thank you. '
         type: 0
-        typeString: CustomFieldType_Text
+        typeString: 
       - title: Parenthetical
         value: 
         type: 0
-        typeString: CustomFieldType_Text
+        typeString: 
       - title: Audio Files
         value: '[]'
         type: 3
@@ -9211,11 +9211,11 @@ MonoBehaviour:
       - title: Video File
         value: 
         type: 0
-        typeString: CustomFieldType_Text
+        typeString: 
       - title: Sequence
         value: 
         type: 0
-        typeString: CustomFieldType_Text
+        typeString: 
       conversationID: 3
       isRoot: 0
       isGroup: 0
@@ -9234,7 +9234,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 120
-        y: 818.85925
+        y: 820
         width: 160
         height: 30
     - id: 40
@@ -9676,8 +9676,8 @@ MonoBehaviour:
         y: 820
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0.68411285, y: 449.12128}
-    canvasZoom: 0.87656605
+    canvasScrollPosition: {x: 363.9909, y: 28.394554}
+    canvasZoom: 0.82234174
   syncInfo:
     syncActors: 0
     syncItems: 0
