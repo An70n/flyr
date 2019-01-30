@@ -355,7 +355,7 @@ public class TextlineDialogueUI : StandardDialogueUI
     /// <summary>
     /// When saving game data, save the current actor, conversant, and dialogue entry records.
     /// </summary>
-    void OnRecordPersistentData()
+    public void OnRecordPersistentData()
     {
         if (DontLoadInThisScene()) return;
         if (!DialogueManager.IsConversationActive) return;
@@ -378,7 +378,7 @@ public class TextlineDialogueUI : StandardDialogueUI
     /// <summary>
     /// When loading a game, load the dialogue entry records and resume the conversation.
     /// </summary>
-    void OnApplyPersistentData()
+    public void OnApplyPersistentData()
     {
         if (DontLoadInThisScene()) return;
         records.Clear();
