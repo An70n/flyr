@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6278688221965595031}
   - component: {fileID: 6278688221965595026}
   m_Layer: 0
-  m_Name: J
+  m_Name: J (NPC)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -615,7 +615,7 @@ GameObject:
   - component: {fileID: 6278688222683774714}
   - component: {fileID: 6278688222683774715}
   m_Layer: 0
-  m_Name: R
+  m_Name: R (NPC)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -785,6 +785,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6278688222721840324}
+  - component: {fileID: 1167919793}
+  - component: {fileID: 1167919794}
+  - component: {fileID: 1167919795}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -811,6 +814,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1167919793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6278688222721840325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccaa6ce3c286e4630918f8eef103c95b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1167919794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6278688222721840325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e02e254b9fb4d9abd5b87b1a3dee1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  j_History:
+  - {fileID: 0}
+  - {fileID: 0}
+  k_History:
+  - {fileID: 0}
+  - {fileID: 0}
+  r_History: []
+--- !u!114 &1167919795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6278688222721840325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2d1d62ac64ad4106990caa7c6a92daf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jConversationDone: 0
 --- !u!1 &6278688222973803859
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,7 +873,7 @@ GameObject:
   - component: {fileID: 6278688222973803857}
   - component: {fileID: 6278688222973803858}
   m_Layer: 0
-  m_Name: K
+  m_Name: K (NPC)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

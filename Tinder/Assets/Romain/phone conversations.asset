@@ -131,6 +131,20 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: 
+  - id: 2
+    fields:
+    - title: Name
+      value: ConversationsDone
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
   conversations:
   - id: 1
     fields:
@@ -3343,7 +3357,8 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: Variable["ConversationsDone"] = Variable["ConversationsDone"] +
+        1
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3351,12 +3366,12 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
-        x: 480
-        y: 1020
+        x: 479.15747
+        y: 1019.1575
         width: 160
         height: 30
-    canvasScrollPosition: {x: 34.868477, y: 10.326498}
-    canvasZoom: 0.6467747
+    canvasScrollPosition: {x: 167.86543, y: 735.67175}
+    canvasZoom: 1.1869017
   - id: 2
     fields:
     - title: Title
@@ -5902,7 +5917,8 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: Variable["ConversationsDone"] = Variable["ConversationsDone"] +
+        1
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5910,8 +5926,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
-        x: 300
-        y: 1120
+        x: 394.56546
+        y: 1164.5657
         width: 160
         height: 30
     - id: 37
@@ -6208,7 +6224,7 @@ MonoBehaviour:
         y: 970
         width: 160
         height: 30
-    canvasScrollPosition: {x: 90.09296, y: 33.849945}
+    canvasScrollPosition: {x: 18.478333, y: 570.80756}
     canvasZoom: 0.91999805
   - id: 3
     fields:
@@ -9225,7 +9241,8 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: Variable["ConversationsDone"] = Variable["ConversationsDone"] +
+        1
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -9676,8 +9693,8 @@ MonoBehaviour:
         y: 820
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0.68411285, y: 449.12128}
-    canvasZoom: 0.87656605
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.607691
   syncInfo:
     syncActors: 0
     syncItems: 0
