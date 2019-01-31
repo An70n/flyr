@@ -1,14 +1,54 @@
 fileFormatVersion: 2
-guid: 68a2c04d33825574eb7d094cf1b6a5a1
+guid: 2dc23ee2ceca0f947b649998cf5b0327
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Nuage 1
+    100004: Nuage1
+    100006: Nuage2
+    100008: Nuage3
+    100010: Nuage4
+    100012: Nuage5
+    100014: Nuage6
+    100016: Nuage7
     400000: //RootNode
+    400002: Nuage 1
+    400004: Nuage1
+    400006: Nuage2
+    400008: Nuage3
+    400010: Nuage4
+    400012: Nuage5
+    400014: Nuage6
+    400016: Nuage7
     2100000: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Smartphone
+    2300000: Nuage 1
+    2300002: Nuage1
+    2300004: Nuage2
+    2300006: Nuage3
+    2300008: Nuage4
+    2300010: Nuage5
+    2300012: Nuage6
+    2300014: Nuage7
+    2300016: //RootNode
+    3300000: Nuage 1
+    3300002: Nuage1
+    3300004: Nuage2
+    3300006: Nuage3
+    3300008: Nuage4
+    3300010: Nuage5
+    3300012: Nuage6
+    3300014: Nuage7
+    3300016: //RootNode
+    4300000: Nuage
+    4300002: Nuage1
+    4300004: Nuage2
+    4300006: Nuage3
+    4300008: Nuage4
+    4300010: Nuage5
+    4300012: Nuage6
+    4300014: Nuage7
+    4300016: Cloud
   externalObjects: {}
   materials:
     importMaterials: 1
