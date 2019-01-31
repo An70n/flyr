@@ -304,7 +304,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: None()
+        value: 
         type: 0
         typeString: 
       conversationID: 1
@@ -3345,7 +3345,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: WaitForMessage(Forever)
         type: 0
         typeString: 
       conversationID: 1
@@ -3361,7 +3361,19 @@ MonoBehaviour:
         1
       onExecute:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 5633343291428213042, guid: 02029820326954d55a33c8fac4b50e3a,
+              type: 3}
+            m_MethodName: Close
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
         m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
       canvasRect:
@@ -3370,8 +3382,8 @@ MonoBehaviour:
         y: 1019.1575
         width: 160
         height: 30
-    canvasScrollPosition: {x: 167.86543, y: 735.67175}
-    canvasZoom: 1.1869017
+    canvasScrollPosition: {x: 0, y: 13.764641}
+    canvasZoom: 0.33789968
   - id: 2
     fields:
     - title: Title
