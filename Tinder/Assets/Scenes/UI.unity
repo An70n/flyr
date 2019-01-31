@@ -622,7 +622,7 @@ PrefabInstance:
       objectReference: {fileID: 1167919794}
     - target: {fileID: 1063067883, guid: 33c23eacca4f84214a9b650ac5998de6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000030510928
+      value: -0.000008401914
       objectReference: {fileID: 0}
     - target: {fileID: 1063067883, guid: 33c23eacca4f84214a9b650ac5998de6, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1018,6 +1018,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1152528499, guid: 33c23eacca4f84214a9b650ac5998de6, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1579896663874830313, guid: 33c23eacca4f84214a9b650ac5998de6,
+        type: 3}
+      propertyPath: displaySettings.subtitleSettings.informSequenceStartAndEnd
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
