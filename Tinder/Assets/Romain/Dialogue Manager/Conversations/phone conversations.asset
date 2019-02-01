@@ -59,7 +59,7 @@ MonoBehaviour:
     - title: Name
       value: J
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Pictures
       value: '[]'
       type: 3
@@ -67,12 +67,12 @@ MonoBehaviour:
     - title: Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: IsPlayer
       value: False
       type: 2
       typeString: CustomFieldType_Boolean
-    portrait: {fileID: 0}
+    portrait: {fileID: 2800000, guid: 613b2d0bc9dcb416b9a0262b248c4039, type: 3}
     alternatePortraits: []
   - id: 3
     fields:
@@ -92,7 +92,7 @@ MonoBehaviour:
       value: False
       type: 2
       typeString: CustomFieldType_Boolean
-    portrait: {fileID: 0}
+    portrait: {fileID: 2800000, guid: b58588338ed414ca1874e469f05bbad0, type: 3}
     alternatePortraits: []
   - id: 4
     fields:
@@ -112,7 +112,7 @@ MonoBehaviour:
       value: False
       type: 2
       typeString: CustomFieldType_Boolean
-    portrait: {fileID: 0}
+    portrait: {fileID: 2800000, guid: 5f0733368f87848688f024b8c0c12353, type: 3}
     alternatePortraits: []
   - id: 5
     fields:
@@ -173,6 +173,20 @@ MonoBehaviour:
       typeString: 
     - title: Initial Value
       value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
+  - id: 4
+    fields:
+    - title: Name
+      value: New Variable 4
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: True
       type: 2
       typeString: CustomFieldType_Boolean
     - title: Description
@@ -6384,7 +6398,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 478.35443
-        y: 20
+        y: 21.645569
         width: 160
         height: 30
     - id: 3
@@ -6438,7 +6452,7 @@ MonoBehaviour:
       isGroup: 0
       nodeColor: 
       delaySimStatus: 0
-      falseConditionAction: Passthrough
+      falseConditionAction: Block
       conditionPriority: 2
       outgoingLinks:
       - originConversationID: 3

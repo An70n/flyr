@@ -196,7 +196,7 @@ MonoBehaviour:
   conversationConversant: {fileID: 6278688221965595027}
   conversationActor: {fileID: 6278688222540794728}
   exclusive: 0
-  skipIfNoValidEntries: 1
+  skipIfNoValidEntries: 0
   stopConversationOnTriggerExit: 0
   stopConversationIfTooFar: 0
   maxConversationDistance: 5
@@ -796,7 +796,7 @@ MonoBehaviour:
   conversationConversant: {fileID: 6278688222683774694}
   conversationActor: {fileID: 6278688222540794728}
   exclusive: 0
-  skipIfNoValidEntries: 1
+  skipIfNoValidEntries: 0
   stopConversationOnTriggerExit: 0
   stopConversationIfTooFar: 0
   maxConversationDistance: 5
@@ -1043,7 +1043,7 @@ MonoBehaviour:
   conversationConversant: {fileID: 6278688222973803869}
   conversationActor: {fileID: 6278688222540794728}
   exclusive: 0
-  skipIfNoValidEntries: 1
+  skipIfNoValidEntries: 0
   stopConversationOnTriggerExit: 0
   stopConversationIfTooFar: 0
   maxConversationDistance: 5
