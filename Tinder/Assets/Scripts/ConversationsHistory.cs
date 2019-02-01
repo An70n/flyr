@@ -24,7 +24,6 @@ public class ConversationsHistory : MonoBehaviour
                 jHistory_activated = true; 
             }
         }
-
     }
 
     public void ShowKHistory()

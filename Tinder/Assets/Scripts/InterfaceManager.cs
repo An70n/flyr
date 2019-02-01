@@ -18,7 +18,6 @@ public class InterfaceManager : MonoBehaviour
     [SerializeField] private Text[] k_History;
     [SerializeField] private Text[] r_History;
 
-
     public void J_Parameters()
     {
         nPCmessageText.color = j_Color;
@@ -28,7 +27,6 @@ public class InterfaceManager : MonoBehaviour
         {
             jH.color = j_Color; 
         }
-
     }
 
     public void K_Parameters()
