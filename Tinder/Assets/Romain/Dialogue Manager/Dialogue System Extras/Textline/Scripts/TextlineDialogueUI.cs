@@ -149,6 +149,7 @@ public class TextlineDialogueUI : StandardDialogueUI
     {
         StopAllCoroutines();
         base.Close();
+        if (!isLoadingGame) records.Clear();
     }
 
     public override void ShowSubtitle(Subtitle subtitle)
@@ -271,7 +272,6 @@ public class TextlineDialogueUI : StandardDialogueUI
         var contentHeight = contentPanel.rect.height;
         var scrollRectHeight = scrollRect.GetComponent<RectTransform>().rect.height;
         var needToScroll = contentHeight > scrollRectHeight;
-        //scrollbar.gameObject.SetActive(needToScroll);
         if (needToScroll)
         {
             var ratio = scrollRectHeight / contentHeight;
@@ -284,16 +284,8 @@ public class TextlineDialogueUI : StandardDialogueUI
             }
         }
         scrollRect.verticalNormalizedPosition = 0;
-        //scrollbar.value = 0;
         scrollCoroutine = null;
     }
-
-    //IEnumerator JumpToBottom()
-    //{
-    //    if (scrollRect == null) yield break;
-    //    yield return null;
-    //    scrollRect.verticalNormalizedPosition = 0;
-    //}
 
     /// <summary>
     /// Records the subtitle in the history so it can be included in saved games.
@@ -380,6 +372,7 @@ public class TextlineDialogueUI : StandardDialogueUI
     /// </summary>
     public void OnApplyPersistentData()
     {
+        if (DontLoadInThisScene()) Debug.Log("OnApplyPersistentData Dont Load in this scene: " + SceneManager.GetActiveScene().buildIndex);
         if (DontLoadInThisScene()) return;
         records.Clear();
         if (!DialogueLua.DoesVariableExist(currentDialogueEntryRecords)) return;
@@ -405,7 +398,8 @@ public class TextlineDialogueUI : StandardDialogueUI
             try
             {
                 // Resume conversation:
-                if (dontRepeatLastSequence) isLoadingGame = true;
+                //if (dontRepeatLastSequence) isLoadingGame = true;
+                isLoadingGame = true;
                 var conversation = DialogueManager.MasterDatabase.GetConversation(lastRecord.conversationID);
                 var actorName = DialogueLua.GetVariable(currentConversationActor).AsString;
                 var conversantName = DialogueLua.GetVariable(currentConversationConversant).AsString;
@@ -413,7 +407,7 @@ public class TextlineDialogueUI : StandardDialogueUI
                 var conversant = GameObject.Find(conversantName);
                 var actorTransform = (actor != null) ? actor.transform : null;
                 var conversantTransform = (conversant != null) ? conversant.transform : null;
-                Debug.Log("Resuming '" + conversation.Title + "' at entry " + lastRecord.entryID);
+                if (Debug.isDebugBuild) Debug.Log("Resuming '" + conversation.Title + "' at entry " + lastRecord.entryID);
                 DialogueManager.StopConversation();
                 var lastEntry = DialogueManager.MasterDatabase.GetDialogueEntry(lastRecord.conversationID, lastRecord.entryID);
                 var originalSequence = lastEntry.Sequence; // Handle last entry's sequence differently if end entry.
@@ -442,8 +436,6 @@ public class TextlineDialogueUI : StandardDialogueUI
                 pcPreDelaySettingsCopy.CopyTo(pcPreDelaySettings);
 
                 // Populate UI with previous records:
-                isLoadingGame = true;
-                //records.RemoveAt(records.Count - 1);
                 var lastInstance = (instantiatedMessages.Count > 0) ? instantiatedMessages[instantiatedMessages.Count - 1] : null;
                 instantiatedMessages.Remove(lastInstance);
                 DestroyInstantiatedMessages();
@@ -467,7 +459,7 @@ public class TextlineDialogueUI : StandardDialogueUI
                 isLoadingGame = false;
             }
         }
-        ScrollToBottom(); //---Now does smooth scroll: StartCoroutine(JumpToBottom());
+        ScrollToBottom();
     }
 
     public void ClearRecords()

@@ -22,14 +22,31 @@ namespace PixelCrushers.DialogueSystem.MenuSystem
 
         public void StartConversation(string title)
         {
-            var saveHelper = FindObjectOfType<SaveHelper>();
-            saveHelper.QuickSave();
-            DialogueManager.StopConversation();
-            var dialogueUI = FindObjectOfType<TextlineDialogueUI>();
-            if (dialogueUI != null) dialogueUI.ClearRecords();
-            DialogueLua.SetVariable("Conversation", title);
-            dialogueUI.SendMessage("OnApplyPersistentData");
-            if (!DialogueManager.IsConversationActive) DialogueManager.StartConversation(title);
+            StartCoroutine(StartConversationAfterSaveSystem(title));
+        }
+
+        private IEnumerator StartConversationAfterSaveSystem(string title)
+        {
+            for (int i = 0; i < (SaveSystem.framesToWaitBeforeApplyData + 1); i++)
+            {
+                yield return null;
+            }
+            if (!DialogueManager.isConversationActive)
+            {
+                DialogueLua.SetVariable("Conversation", title);
+                var textlineDialogueUI = FindObjectOfType<TextlineDialogueUI>();
+                if (DialogueLua.DoesVariableExist(textlineDialogueUI.currentDialogueEntryRecords))
+                {
+                    var originalDontLoadScenes = textlineDialogueUI.dontLoadConversationInScenes;
+                    textlineDialogueUI.dontLoadConversationInScenes = new int[0] { }; // Make sure we load regardless of scene.
+                    textlineDialogueUI.OnApplyPersistentData();
+                    textlineDialogueUI.dontLoadConversationInScenes = originalDontLoadScenes;
+                }
+                else
+                {
+                    DialogueManager.StartConversation(title);
+                }
+            }
         }
 
         public void SaveAndReturnToTitleMenu()
@@ -39,13 +56,15 @@ namespace PixelCrushers.DialogueSystem.MenuSystem
 
         private IEnumerator ReturnToTitleWhenDoneSaving()
         {
+            var textlineDialogueUI = FindObjectOfType<TextlineDialogueUI>();
+            var originalDontLoadScenes = textlineDialogueUI.dontLoadConversationInScenes;
+            textlineDialogueUI.dontLoadConversationInScenes = new int[0] { }; // Make sure we save regardless of scene.
             var saveHelper = FindObjectOfType<SaveHelper>();
             saveHelper.QuickSave();
             yield return null;
             yield return new WaitForEndOfFrame();
+            textlineDialogueUI.dontLoadConversationInScenes = originalDontLoadScenes;
             DialogueManager.StopConversation();
-            var dialogueUI = FindObjectOfType<TextlineDialogueUI>();
-            if (dialogueUI != null) dialogueUI.ClearRecords();
             saveHelper.ReturnToTitleMenu();
         }
 

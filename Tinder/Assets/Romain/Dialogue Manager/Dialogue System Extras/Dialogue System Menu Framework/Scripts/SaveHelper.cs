@@ -218,6 +218,7 @@ namespace PixelCrushers.DialogueSystem.MenuSystem
 
         public virtual void RestartGame()
         {
+            DialogueManager.ResetDatabase(DatabaseResetOptions.KeepAllLoaded);
             SaveSystem.RestartGame(firstGameplayScene);
         }
 
@@ -243,8 +244,7 @@ namespace PixelCrushers.DialogueSystem.MenuSystem
 
         public virtual void ReturnToTitleMenu()
         {
-            DialogueManager.ResetDatabase(DatabaseResetOptions.RevertToDefault);
-            PersistentDataManager.LevelWillBeUnloaded();
+            SaveSystem.BeforeSceneChange();
             SceneManager.LoadScene(FindObjectOfType<TitleMenu>().titleSceneIndex);
             FindObjectOfType<TitleMenu>().titleMenuPanel.Open();
         }

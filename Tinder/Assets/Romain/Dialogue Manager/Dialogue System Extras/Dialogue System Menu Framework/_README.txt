@@ -11,6 +11,9 @@ See Documentation.pdf for instructions.
 
 
 RELEASE HISTORY:
+2019-01-14
+- Added Never Sleep checkbox to TitleMenu.
+
 2018-07-30
 - Added ScrollToMe component to Options > Resolution dropdown for joystick/keyboard.
 

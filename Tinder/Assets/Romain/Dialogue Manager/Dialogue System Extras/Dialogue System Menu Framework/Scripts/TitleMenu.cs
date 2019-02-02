@@ -25,6 +25,8 @@ namespace PixelCrushers.DialogueSystem.MenuSystem
 
         public bool actAsSingleton = true;
 
+        public bool neverSleep;
+
         private SaveHelper m_saveHelper;
         private MusicManager m_musicManager;
 
@@ -54,6 +56,7 @@ namespace PixelCrushers.DialogueSystem.MenuSystem
         {
             UpdateAvailableButtons();
             if (m_musicManager != null) m_musicManager.PlayTitleMusic();
+            if (neverSleep) Screen.sleepTimeout = SleepTimeout.NeverSleep;
         }
 
         public void OnSceneLoaded(int index)

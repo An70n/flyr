@@ -1,5 +1,11 @@
 Textline Release Notes
 
+2019-01-30:
+- Clarified instructions on Multiple Conversations.
+
+2019-01-14:
+- Textline clears records when conversation closes to better support multiple conversations.
+
 2018-12-28:
 - Added MenuUtility.SaveAndStopConversation.
 
