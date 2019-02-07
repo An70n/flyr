@@ -31,9 +31,6 @@ public class ConversationsManager : MonoBehaviour
     [SerializeField] private Transform K;
     [SerializeField] private Transform R; 
 
-    //private Text nPCmessageText;
-    //private GameObject nPCMessage; 
-
     public void OpenDialogueR()
     {
         //nPCmessageText.color = r_Color; 
@@ -120,11 +117,6 @@ public class ConversationsManager : MonoBehaviour
 
     public void OpenDialogueK()
     {
-
-        //GameObject.Find("NPC Message Template").GetComponentInChildren<Text>(true).color = k_Color;
-        //Debug.Log("text is now green");
-        //GameObject.Find("Dialogue UI").transform.Find("NPC Message Template").GetComponent<Text>().color = k_Color; 
-        //nPCmessageText.color = k_Color; 
         headingText.text = "K";
 
         foreach (Text kH in k_History_lines)
