@@ -11,6 +11,8 @@ public class ConversationsManager : MonoBehaviour
     [SerializeField] private Color r_Color;
 
     [SerializeField] private GameObject appMenu;
+    [SerializeField] private GameObject iphoneMenu;
+    [SerializeField] private GameObject messageMenu;
 
     [SerializeField] private GameObject[] j_History;
     [SerializeField] private GameObject[] k_History;
@@ -24,7 +26,15 @@ public class ConversationsManager : MonoBehaviour
     [SerializeField] private bool kHistory_activated = false;
     [SerializeField] private bool rHistory_activated = false;
 
+    private bool iphoneScreen = true;
+    private bool messageScreen = false;
+    private bool motherScreen = false; 
+    private bool appScreen = false;
+    private bool appConversation = false; 
+
     [SerializeField] private Text headingText;
+
+    public Button returnButton; 
 
     [SerializeField] private Transform player;
     [SerializeField] private Transform J;
@@ -187,5 +197,29 @@ public class ConversationsManager : MonoBehaviour
             {rH.SetActive(false);
                 rHistory_activated = false;}}
     }
+
+    public void PreviousScreen()
+    {
+        if(iphoneScreen == true)
+        {
+            returnButton.enabled = false; 
+        }
+
+        if(messageScreen == true)
+        {
+            messageMenu.SetActive(false);
+            iphoneMenu.SetActive(true);
+            messageScreen = false;
+            iphoneScreen = true; 
+        }
+
+        if(appScreen == true)
+        {
+            iphoneMenu.SetActive(true);
+            appMenu.SetActive(false);
+        }
+    }
+
+   
 
 }
