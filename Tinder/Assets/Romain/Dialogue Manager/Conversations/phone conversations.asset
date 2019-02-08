@@ -3416,7 +3416,7 @@ MonoBehaviour:
         y: 1019.1575
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 508.32178}
+    canvasScrollPosition: {x: 58.13266, y: 815.59436}
     canvasZoom: 0.8429
   - id: 2
     fields:
@@ -6270,8 +6270,8 @@ MonoBehaviour:
         y: 970
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.46499556
+    canvasScrollPosition: {x: 166.92809, y: 991.0989}
+    canvasZoom: 1.1151544
   - id: 3
     fields:
     - title: Title
@@ -9593,8 +9593,8 @@ MonoBehaviour:
         y: 820
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.58469105
+    canvasScrollPosition: {x: 162.4173, y: 596.27594}
+    canvasZoom: 0.876174
   - id: 4
     fields:
     - title: Title
@@ -9776,7 +9776,7 @@ MonoBehaviour:
         destinationDialogueID: 13
         isConnector: 0
         priority: 2
-      conditionsString: 
+      conditionsString: Variable["ConversationsDone"] == 3
       userScript: 
       onExecute:
         m_PersistentCalls:
