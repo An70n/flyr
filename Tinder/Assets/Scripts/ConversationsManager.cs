@@ -26,25 +26,26 @@ public class ConversationsManager : MonoBehaviour
     [SerializeField] private bool kHistory_activated = false;
     [SerializeField] private bool rHistory_activated = false;
 
-    private bool iphoneScreen = true;
-    private bool messageScreen = false;
-    private bool motherScreen = false; 
-    private bool appScreen = false;
-    private bool appConversation = false; 
+    [SerializeField] private bool iphoneScreen = true;
+    [SerializeField] private bool messageScreen = false;
+    [SerializeField] private bool motherScreen = false;
+    [SerializeField] private bool appScreen = false;
+    [SerializeField] private bool appConversation = false; 
 
     [SerializeField] private Text headingText;
 
-    public Button returnButton; 
+    [SerializeField] private GameObject returnButton; 
 
     [SerializeField] private Transform player;
     [SerializeField] private Transform J;
     [SerializeField] private Transform K;
-    [SerializeField] private Transform R; 
+    [SerializeField] private Transform R;
+    [SerializeField] private Transform mom; 
 
     public void OpenDialogueR()
     {
-        //nPCmessageText.color = r_Color; 
-        //Debug.Log("text is now blue");
+        appConversation = true;
+        appScreen = false; 
         headingText.text = "R";
 
         foreach (Text rH in r_History_lines)
@@ -89,10 +90,8 @@ public class ConversationsManager : MonoBehaviour
 
     public void OpenDialogueJ()
     {
-        //nPCMessage = GameObject.Find("NPC Message Template");
-        //nPCMessage.GetComponentInChildren<Text>(true).color = j_Color; 
-        //Debug.Log("text is now red");
-        //nPCmessageText.color = j_Color;
+        appConversation = true;
+        appScreen = false;
         headingText.text = "J";
 
         foreach (Text jH in j_History_lines)
@@ -127,6 +126,8 @@ public class ConversationsManager : MonoBehaviour
 
     public void OpenDialogueK()
     {
+        appConversation = true;
+        appScreen = false;
         headingText.text = "K";
 
         foreach (Text kH in k_History_lines)
@@ -158,6 +159,24 @@ public class ConversationsManager : MonoBehaviour
         }
     }
 
+    public void OpenDialogueMom()
+    {
+        messageMenu.SetActive(false);
+        motherScreen = true;
+        messageScreen = false; 
+
+        if (PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry("Mom"))
+        {
+            PixelCrushers.DialogueSystem.DialogueManager.StartConversation("Mom", player, mom);
+            appMenu.SetActive(false);
+        }
+        else if (!PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry("Mom"))
+        {
+            PixelCrushers.DialogueSystem.DialogueManager.dialogueUI.Open();
+            appMenu.SetActive(false);
+        }
+    }
+
     public void ResumeConversationJ()
     {
         PixelCrushers.DialogueSystem.DialogueLua.SetVariable("Conversation", "J");
@@ -176,50 +195,82 @@ public class ConversationsManager : MonoBehaviour
         FindObjectOfType<TextlineDialogueUI>().OnApplyPersistentData();
     }
 
-    public void CloseDialogue()
+    private void CloseDialogue()
     {
         PixelCrushers.DialogueSystem.DialogueManager.StopConversation();
         PixelCrushers.DialogueSystem.DialogueManager.dialogueUI.Close();
-        appMenu.SetActive(true);
 
         if (jHistory_activated == true)
-        {foreach (GameObject jH in j_History)
-            {jH.SetActive(false);
-                jHistory_activated = false;}}
+            {foreach (GameObject jH in j_History)
+                {jH.SetActive(false);
+                    jHistory_activated = false;}}
 
-        if (kHistory_activated == true)
-        {foreach (GameObject kH in k_History)
-            {kH.SetActive(false);
-                kHistory_activated = false;}}
+            if (kHistory_activated == true)
+            {foreach (GameObject kH in k_History)
+                {kH.SetActive(false);
+                    kHistory_activated = false;}}
 
-        if (rHistory_activated == true)
-        {foreach (GameObject rH in r_History)
-            {rH.SetActive(false);
-                rHistory_activated = false;}}
+            if (rHistory_activated == true)
+            {foreach (GameObject rH in r_History)
+                {rH.SetActive(false);
+                    rHistory_activated = false;}}//}
+
     }
 
     public void PreviousScreen()
     {
-        if(iphoneScreen == true)
-        {
-            returnButton.enabled = false; 
-        }
-
         if(messageScreen == true)
         {
             messageMenu.SetActive(false);
             iphoneMenu.SetActive(true);
             messageScreen = false;
-            iphoneScreen = true; 
+            iphoneScreen = true;
+            returnButton.SetActive(false);
+            appMenu.SetActive(false); //make sure the app menu is inactive when returning, as it was sometimes for some reason
         }
 
         if(appScreen == true)
         {
-            iphoneMenu.SetActive(true);
             appMenu.SetActive(false);
+            iphoneMenu.SetActive(true);
+            appScreen = false;
+            iphoneScreen = true;
+            returnButton.SetActive(false);
         }
+
+        if(appConversation == true)
+        {
+            appConversation = false;
+            appScreen = true;
+            appMenu.SetActive(true);
+            CloseDialogue();
+        }
+
+        if(motherScreen == true)
+        {
+            motherScreen = false;
+            messageScreen = true;
+            messageMenu.SetActive(true);
+            CloseDialogue();
+        }
+
     }
 
-   
+    public void openMessages()
+    {
+        messageScreen = true;
+        iphoneScreen = false;
+        messageMenu.SetActive(true);
+        iphoneMenu.SetActive(false);
+        returnButton.SetActive(true);
+    }
 
+    public void openApp()
+    {
+        appScreen = true;
+        iphoneScreen = false; 
+        appMenu.SetActive(true);
+        iphoneMenu.SetActive(false);
+        returnButton.SetActive(true);
+    }
 }

@@ -42,7 +42,7 @@ public class CloudManager : MonoBehaviour
             instance = Instantiate(_clouds[cloudIndex], spawnPosition, Quaternion.identity, spawnerTransform) as GameObject;
             cloudInstances.Add(instance);
             yield return new WaitForSeconds(spawnTimeRate);
-            print("test temps");
+            //print("test temps");
         }
     }
 

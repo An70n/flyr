@@ -3430,8 +3430,8 @@ MonoBehaviour:
         y: 1019.1575
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 176.14206}
-    canvasZoom: 0.8449001
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.8439
   - id: 2
     fields:
     - title: Title
