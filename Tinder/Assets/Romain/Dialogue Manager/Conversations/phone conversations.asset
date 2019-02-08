@@ -1303,7 +1303,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'It''s always nice to tal to YOU. '
+        value: 'It''s always nice to talk to YOU. '
         type: 0
         typeString: 
       - title: Parenthetical
@@ -3430,7 +3430,7 @@ MonoBehaviour:
         y: 1019.1575
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 24.644775}
+    canvasScrollPosition: {x: 0, y: 176.14206}
     canvasZoom: 0.8449001
   - id: 2
     fields:
