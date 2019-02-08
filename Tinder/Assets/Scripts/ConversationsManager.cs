@@ -48,7 +48,7 @@ public class ConversationsManager : MonoBehaviour
         K = this.transform.Find("K");
         R = this.transform.Find("R");
         mom = this.transform.Find("mom");
-        headingText = GameObject.Find("Heading Panel (1)").GetComponentInChildren<Text>();
+        headingText = GameObject.Find("Heading Panel").GetComponentInChildren<Text>();
     }
 
     public void OpenDialogueR()
