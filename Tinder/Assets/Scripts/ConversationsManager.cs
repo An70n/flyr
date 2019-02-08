@@ -250,6 +250,7 @@ public class ConversationsManager : MonoBehaviour
             appScreen = true;
             appMenu.SetActive(true);
             CloseDialogue();
+            iphoneMenu.SetActive(false);
         }
 
         if(motherScreen == true)
@@ -258,6 +259,7 @@ public class ConversationsManager : MonoBehaviour
             messageScreen = true;
             messageMenu.SetActive(true);
             CloseDialogue();
+            iphoneMenu.SetActive(false);
         }
 
     }
