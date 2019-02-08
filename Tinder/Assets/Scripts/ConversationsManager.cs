@@ -22,32 +22,33 @@ public class ConversationsManager : MonoBehaviour
     [SerializeField] private Text[] k_History_lines;
     [SerializeField] private Text[] r_History_lines;
 
-    [SerializeField] private bool jHistory_activated = false;
-    [SerializeField] private bool kHistory_activated = false;
-    [SerializeField] private bool rHistory_activated = false;
+    private bool jHistory_activated = false;
+    private bool kHistory_activated = false;
+    private bool rHistory_activated = false;
 
-    [SerializeField] private bool iphoneScreen = true;
-    [SerializeField] private bool messageScreen = false;
-    [SerializeField] private bool motherScreen = false;
-    [SerializeField] private bool appScreen = false;
-    [SerializeField] private bool appConversation = false;
+    //private bool iphoneScreen = true;
+    private bool messageScreen = false;
+    private bool motherScreen = false;
+    private bool appScreen = false;
+    private bool appConversation = false;
 
-    [SerializeField] private bool r_Conv_started = false;
-    //private Animator notifAnim; 
+    private Text headingText;
+    public GameObject returnButton; 
 
-    [SerializeField] private Text headingText;
-
-    [SerializeField] private GameObject returnButton; 
-
-    [SerializeField] private Transform player;
-    [SerializeField] private Transform J;
-    [SerializeField] private Transform K;
-    [SerializeField] private Transform R;
-    [SerializeField] private Transform mom;
+    private Transform player;
+    private Transform J;
+    private Transform K;
+    private Transform R;
+    private Transform mom;
 
     void Start()
     {
-        //notifAnim = GameObject.Find("Smartphone").GetComponent<Animator>();
+        player = this.transform.Find("Player");
+        J = this.transform.Find("J");
+        K = this.transform.Find("K");
+        R = this.transform.Find("R");
+        mom = this.transform.Find("mom");
+        headingText = GameObject.Find("Heading Panel (1)").GetComponentInChildren<Text>();
     }
 
     public void OpenDialogueR()
@@ -230,7 +231,7 @@ public class ConversationsManager : MonoBehaviour
             messageMenu.SetActive(false);
             iphoneMenu.SetActive(true);
             messageScreen = false;
-            iphoneScreen = true;
+            //iphoneScreen = true;
             returnButton.SetActive(false);
             appMenu.SetActive(false); //make sure the app menu is inactive when returning, as it was sometimes for some reason
         }
@@ -240,7 +241,7 @@ public class ConversationsManager : MonoBehaviour
             appMenu.SetActive(false);
             iphoneMenu.SetActive(true);
             appScreen = false;
-            iphoneScreen = true;
+            //iphoneScreen = true;
             returnButton.SetActive(false);
         }
 
@@ -267,7 +268,7 @@ public class ConversationsManager : MonoBehaviour
     public void openMessages()
     {
         messageScreen = true;
-        iphoneScreen = false;
+        //iphoneScreen = false;
         messageMenu.SetActive(true);
         iphoneMenu.SetActive(false);
         returnButton.SetActive(true);
@@ -276,14 +277,9 @@ public class ConversationsManager : MonoBehaviour
     public void openApp()
     {
         appScreen = true;
-        iphoneScreen = false; 
+        //iphoneScreen = false; 
         appMenu.SetActive(true);
         iphoneMenu.SetActive(false);
         returnButton.SetActive(true);
     }
-
-    /*public void PlayNotification()
-    {
-        //notifAnim.SetTrigger("notifPlaying");
-    }*/
 }
