@@ -30,7 +30,10 @@ public class ConversationsManager : MonoBehaviour
     [SerializeField] private bool messageScreen = false;
     [SerializeField] private bool motherScreen = false;
     [SerializeField] private bool appScreen = false;
-    [SerializeField] private bool appConversation = false; 
+    [SerializeField] private bool appConversation = false;
+
+    [SerializeField] private bool r_Conv_started = false;
+    //private Animator notifAnim; 
 
     [SerializeField] private Text headingText;
 
@@ -40,7 +43,12 @@ public class ConversationsManager : MonoBehaviour
     [SerializeField] private Transform J;
     [SerializeField] private Transform K;
     [SerializeField] private Transform R;
-    [SerializeField] private Transform mom; 
+    [SerializeField] private Transform mom;
+
+    void Start()
+    {
+        //notifAnim = GameObject.Find("Smartphone").GetComponent<Animator>();
+    }
 
     public void OpenDialogueR()
     {
@@ -84,8 +92,6 @@ public class ConversationsManager : MonoBehaviour
                 rH.color = r_Color;
             }
         }
-
-       
     }
 
     public void OpenDialogueJ()
@@ -273,4 +279,9 @@ public class ConversationsManager : MonoBehaviour
         iphoneMenu.SetActive(false);
         returnButton.SetActive(true);
     }
+
+    /*public void PlayNotification()
+    {
+        //notifAnim.SetTrigger("notifPlaying");
+    }*/
 }

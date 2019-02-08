@@ -179,20 +179,6 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: 
-  - id: 4
-    fields:
-    - title: Name
-      value: New Variable 4
-      type: 0
-      typeString: 
-    - title: Initial Value
-      value: True
-      type: 2
-      typeString: CustomFieldType_Boolean
-    - title: Description
-      value: 
-      type: 0
-      typeString: 
   conversations:
   - id: 1
     fields:
@@ -3046,7 +3032,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["rConversationStart"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3127,8 +3113,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
-        x: 750
-        y: 871.5296
+        x: 748.81366
+        y: 872.71594
         width: 160
         height: 30
     - id: 42
@@ -3430,8 +3416,8 @@ MonoBehaviour:
         y: 1019.1575
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 0.8439
+    canvasScrollPosition: {x: 0, y: 508.32178}
+    canvasZoom: 0.8429
   - id: 2
     fields:
     - title: Title

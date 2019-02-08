@@ -150,6 +150,81 @@ MonoBehaviour:
   color: {r: 0.8627451, g: 0.48235294, b: 0.6862745, a: 1}
   applyTo: 0
   prependActorNameSeparator: ': '
+--- !u!1 &433813091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 433813092}
+  - component: {fileID: 433813094}
+  - component: {fileID: 433813093}
+  m_Layer: 0
+  m_Name: Mom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &433813092
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433813091}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6278688222721840324}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &433813094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433813091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a64578247383140469c45370654a984a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: Mom
+  persistentDataName: 
+  portrait: {fileID: 0}
+  barkUISettings:
+    barkUI: {fileID: 0}
+    barkUIOffset: {x: 0, y: 2, z: 0}
+  standardDialogueUISettings:
+    subtitlePanelNumber: 0
+    customSubtitlePanel: {fileID: 0}
+    menuPanelNumber: 0
+    customMenuPanel: {fileID: 0}
+    portraitAnimatorController: {fileID: 0}
+    setSubtitleColor: 1
+    applyColorToPrependedName: 0
+    prependActorNameSeparator: ': '
+    subtitleColor: {r: 0.6313726, g: 0.654902, b: 0.99607843, a: 1}
+--- !u!114 &433813093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433813091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 891cbbf640378df45ab970f7fc274b22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: {r: 0.6313726, g: 0.654902, b: 0.99607843, a: 1}
+  applyTo: 0
+  prependActorNameSeparator: ': '
 --- !u!1 &1041108036
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,6 +407,7 @@ Transform:
   - {fileID: 39011536}
   - {fileID: 227844282}
   - {fileID: 1930101741}
+  - {fileID: 433813092}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -351,6 +427,8 @@ MonoBehaviour:
   k_Color: {r: 0.8627451, g: 0.48235294, b: 0.6862745, a: 1}
   r_Color: {r: 0.6313726, g: 0.654902, b: 0.99607843, a: 1}
   appMenu: {fileID: 0}
+  iphoneMenu: {fileID: 0}
+  messageMenu: {fileID: 0}
   j_History:
   - {fileID: 0}
   - {fileID: 0}
@@ -369,8 +447,17 @@ MonoBehaviour:
   jHistory_activated: 0
   kHistory_activated: 0
   rHistory_activated: 0
+  iphoneScreen: 1
+  messageScreen: 0
+  motherScreen: 0
+  appScreen: 0
+  appConversation: 0
+  r_Conv_started: 0
+  notifAnim: {fileID: 0}
   headingText: {fileID: 0}
+  returnButton: {fileID: 0}
   player: {fileID: 1041108037}
   J: {fileID: 39011536}
   K: {fileID: 227844282}
   R: {fileID: 1930101741}
+  mom: {fileID: 433813092}
