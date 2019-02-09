@@ -498,6 +498,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1045568417, guid: 1603ce0acfe571147ba5d9248128e92d, type: 3}
+      propertyPath: m_Text
+      value: text
+      objectReference: {fileID: 0}
     - target: {fileID: 1587939395, guid: 1603ce0acfe571147ba5d9248128e92d, type: 3}
       propertyPath: m_Content
       value: 
@@ -552,7 +556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1637067859, guid: 1603ce0acfe571147ba5d9248128e92d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.0066021313
+      value: -0.0055183424
       objectReference: {fileID: 0}
     - target: {fileID: 1831089764, guid: 1603ce0acfe571147ba5d9248128e92d, type: 3}
       propertyPath: m_TargetGraphic
