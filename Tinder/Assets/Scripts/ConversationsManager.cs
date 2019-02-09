@@ -9,9 +9,9 @@ public class ConversationsManager : MonoBehaviour
     public Color messageMenuHeadingColor;
     public Color appMenuHeadingColor;
 
-    [SerializeField] private GameObject appMenu;
-    [SerializeField] private GameObject iphoneMenu;
-    [SerializeField] private GameObject messageMenu;
+    private GameObject appMenu;
+    private GameObject iphoneMenu;
+    private GameObject messageMenu;
 
     [SerializeField] private GameObject[] j_History;
     [SerializeField] private GameObject[] k_History;
@@ -20,7 +20,6 @@ public class ConversationsManager : MonoBehaviour
     private bool jHistory_activated = false;
     private bool kHistory_activated = false;
     private bool rHistory_activated = false;
-
     private bool messageScreen = false;
     private bool motherScreen = false;
     private bool appScreen = false;
@@ -29,13 +28,14 @@ public class ConversationsManager : MonoBehaviour
 
     private Text headingText;
     private Text timeValue; 
+
     private string appName;
     private SVGImage headingColor; 
 
-    private float timer = 600f; 
+    private float timer = 600f;
 
-    public GameObject returnButton;
-    private GameObject time; 
+    private GameObject returnButton;
+    private GameObject time;
 
     private Transform player;
     private Transform J;
@@ -48,8 +48,10 @@ public class ConversationsManager : MonoBehaviour
         appMenu = GameObject.Find("app Menu");
         appMenu.SetActive(false);
         iphoneMenu = GameObject.Find("iphone Menu");
-        messageMenu = GameObject.Find("messageMenu");
+        messageMenu = GameObject.Find("message Menu");
         messageMenu.SetActive(false);
+        returnButton = GameObject.Find("Menu Button");
+        returnButton.SetActive(false);
 
         player = this.transform.Find("Player");
         J = this.transform.Find("J");
@@ -274,7 +276,7 @@ public class ConversationsManager : MonoBehaviour
 
     }
 
-    public void openMessages()
+    public void OpenMessages()
     {
         messageScreen = true;
         messageMenu.SetActive(true);
@@ -286,7 +288,7 @@ public class ConversationsManager : MonoBehaviour
         headingColor.color = messageMenuHeadingColor;
     }
 
-    public void openApp()
+    public void OpenApp()
     {
         appScreen = true;
         appMenu.SetActive(true);
