@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a3defd62ee75f8d47ac162c7074bc733
+guid: 1122d56b04efebc409f5ae02dcd38fc0
 ScriptedImporter:
   fileIDToRecycleName:
-    100000: gameObject/Logo_Blank
-    400000: gameObject/Logo_Blank/Transform
-    21200000: gameObject/Logo_Blank/SpriteRenderer
+    100000: gameObject/Back
+    400000: gameObject/Back/Transform
+    21200000: gameObject/Back/SpriteRenderer
     21300000: sprite
     100100000: gameObject
   externalObjects: {}
@@ -51,5 +51,5 @@ ScriptedImporter:
         y: 0
         width: 0
         height: 0
-      spriteID: cb5d069efba5a7c4a98cd3430787e3de
+      spriteID: 452c7f11fbdb6f74bb42e56f53291be8
     PhysicsOutlines: []
