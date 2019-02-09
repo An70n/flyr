@@ -31,10 +31,12 @@ public class ConversationsManager : MonoBehaviour
     private bool motherScreen = false;
     private bool appScreen = false;
     private bool appConversation = false;
+    private bool iphoneScreen = false; 
 
     private Text headingText;
-    private string baseHeadingText;
-    private string appName; 
+    private string appName;
+
+    private float timer = 600f; 
 
     public GameObject returnButton;
     private GameObject time; 
@@ -53,10 +55,21 @@ public class ConversationsManager : MonoBehaviour
         R = this.transform.Find("R");
         mom = this.transform.Find("mom");
         headingText = GameObject.Find("Heading Panel").transform.Find("heading").GetComponent<Text>();
-        baseHeadingText = headingText.text;
         appName = "nom de l'app";
         time = GameObject.Find("time");
         time.SetActive(false);
+
+        iphoneScreen = true; 
+    }
+
+    private void Update()
+    {
+        timer += Time.deltaTime / 5; 
+
+        if(iphoneScreen == true)
+        {
+            headingText.text = time.GetComponent<Text>().text;
+        }
     }
 
     public void OpenDialogueR()
@@ -242,7 +255,7 @@ public class ConversationsManager : MonoBehaviour
             messageScreen = false;
             returnButton.SetActive(false);
             appMenu.SetActive(false);
-            headingText.text = baseHeadingText;
+            iphoneScreen = true; 
             time.SetActive(false);
         }
 
@@ -252,7 +265,7 @@ public class ConversationsManager : MonoBehaviour
             iphoneMenu.SetActive(true);
             appScreen = false;
             returnButton.SetActive(false);
-            headingText.text = baseHeadingText;
+            iphoneScreen = true; 
             time.SetActive(false);
         }
 
@@ -287,6 +300,7 @@ public class ConversationsManager : MonoBehaviour
         returnButton.SetActive(true);
         headingText.text = "Messages";
         time.SetActive(true);
+        iphoneScreen = false; 
     }
 
     public void openApp()
@@ -297,5 +311,17 @@ public class ConversationsManager : MonoBehaviour
         returnButton.SetActive(true);
         headingText.text = appName;
         time.SetActive(true);
+        iphoneScreen = false; 
+    }
+
+    void OnGUI()
+    {
+        int minutes = Mathf.FloorToInt(timer / 60F);
+        int seconds = Mathf.FloorToInt(timer - minutes * 60);
+        string niceTime = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+        //GUI.Label(new Rect(10, 10, 250, 100), niceTime);
+
+        time.GetComponent<Text>().text = niceTime;
     }
 }
