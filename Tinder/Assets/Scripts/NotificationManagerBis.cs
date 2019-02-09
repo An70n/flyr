@@ -27,7 +27,7 @@ public class NotificationManagerBis : MonoBehaviour
     private IEnumerator Notification()
     {
         PlayNotification();
-        yield return new WaitForSeconds(1f);
         this.enabled = false;
+        yield return null; 
     }
 }

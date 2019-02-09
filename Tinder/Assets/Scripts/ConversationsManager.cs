@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class ConversationsManager : MonoBehaviour
 {
-
-    [SerializeField] private Color j_Color;
-    [SerializeField] private Color k_Color;
-    [SerializeField] private Color r_Color;
+    private Color iphoneMenuHeadingColor = new Color(0, 0, 0, 0);
+    //private Color messageMenuHeadingColor = new Color(161, 167, 254, 255);
+    //private Color appMenuHeadingColor = new Color(240, 131, 145, 255);
+    public Color messageMenuHeadingColor;
+    public Color appMenuHeadingColor;
 
     [SerializeField] private GameObject appMenu;
     [SerializeField] private GameObject iphoneMenu;
@@ -35,6 +36,7 @@ public class ConversationsManager : MonoBehaviour
 
     private Text headingText;
     private string appName;
+    private SVGImage headingColor; 
 
     private float timer = 600f; 
 
@@ -58,7 +60,9 @@ public class ConversationsManager : MonoBehaviour
         appName = "nom de l'app";
         time = GameObject.Find("time");
         time.SetActive(false);
-        iphoneScreen = true; 
+        iphoneScreen = true;
+
+        headingColor = GameObject.Find("Heading Panel").GetComponent<SVGImage>();
     }
 
     private void Update()
@@ -68,6 +72,7 @@ public class ConversationsManager : MonoBehaviour
         if(iphoneScreen == true)
         {
             headingText.text = time.GetComponent<Text>().text;
+            headingColor.color = iphoneMenuHeadingColor; 
         }
     }
 
@@ -76,11 +81,6 @@ public class ConversationsManager : MonoBehaviour
         appConversation = true;
         appScreen = false; 
         headingText.text = "R";
-
-        foreach (Text rH in r_History_lines)
-        {
-            rH.color = r_Color;
-        }
 
         if (PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry("R"))
        
@@ -92,11 +92,6 @@ public class ConversationsManager : MonoBehaviour
             {foreach (GameObject rH in r_History)
                 {rH.SetActive(true);
                     rHistory_activated = true;}}
-
-            foreach (Text rH in r_History_lines)
-            {
-                rH.color = r_Color;
-            }
         }
         else if (!PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry("R"))
         {
@@ -107,11 +102,6 @@ public class ConversationsManager : MonoBehaviour
             {foreach (GameObject rH in r_History)
                 {rH.SetActive(true);
                     rHistory_activated = true;}}
-
-            foreach (Text rH in r_History_lines)
-            {
-                rH.color = r_Color;
-            }
         }
     }
 
@@ -120,11 +110,6 @@ public class ConversationsManager : MonoBehaviour
         appConversation = true;
         appScreen = false;
         headingText.text = "J";
-
-        foreach (Text jH in j_History_lines)
-        {
-            jH.color = j_Color;
-        }
 
         if (PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry("J"))
 
@@ -156,11 +141,6 @@ public class ConversationsManager : MonoBehaviour
         appConversation = true;
         appScreen = false;
         headingText.text = "K";
-
-        foreach (Text kH in k_History_lines)
-        {
-            kH.color = k_Color;
-        }
 
         if (PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry("K"))
 
@@ -299,7 +279,8 @@ public class ConversationsManager : MonoBehaviour
         returnButton.SetActive(true);
         headingText.text = "Messages";
         time.SetActive(true);
-        iphoneScreen = false; 
+        iphoneScreen = false;
+        headingColor.color = messageMenuHeadingColor;
     }
 
     public void openApp()
@@ -310,7 +291,8 @@ public class ConversationsManager : MonoBehaviour
         returnButton.SetActive(true);
         headingText.text = appName;
         time.SetActive(true);
-        iphoneScreen = false; 
+        iphoneScreen = false;
+        headingColor.color = appMenuHeadingColor; 
     }
 
     void OnGUI()
