@@ -33,6 +33,8 @@ public class ConversationsManager : MonoBehaviour
     private bool appConversation = false;
 
     private Text headingText;
+    private string baseHeadingText;
+    private string appName;  
     public GameObject returnButton; 
 
     private Transform player;
@@ -49,6 +51,8 @@ public class ConversationsManager : MonoBehaviour
         R = this.transform.Find("R");
         mom = this.transform.Find("mom");
         headingText = GameObject.Find("Heading Panel").GetComponentInChildren<Text>();
+        baseHeadingText = headingText.text;
+        appName = "nom de l'app";
     }
 
     public void OpenDialogueR()
@@ -170,7 +174,8 @@ public class ConversationsManager : MonoBehaviour
     {
         messageMenu.SetActive(false);
         motherScreen = true;
-        messageScreen = false; 
+        messageScreen = false;
+        headingText.text = "Mom";
 
         if (PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry("Mom"))
         {
@@ -220,7 +225,7 @@ public class ConversationsManager : MonoBehaviour
             if (rHistory_activated == true)
             {foreach (GameObject rH in r_History)
                 {rH.SetActive(false);
-                    rHistory_activated = false;}}//}
+                    rHistory_activated = false;}}
 
     }
 
@@ -231,9 +236,9 @@ public class ConversationsManager : MonoBehaviour
             messageMenu.SetActive(false);
             iphoneMenu.SetActive(true);
             messageScreen = false;
-            //iphoneScreen = true;
             returnButton.SetActive(false);
-            appMenu.SetActive(false); //make sure the app menu is inactive when returning, as it was sometimes for some reason
+            appMenu.SetActive(false);
+            headingText.text = baseHeadingText;
         }
 
         if(appScreen == true)
@@ -241,8 +246,8 @@ public class ConversationsManager : MonoBehaviour
             appMenu.SetActive(false);
             iphoneMenu.SetActive(true);
             appScreen = false;
-            //iphoneScreen = true;
             returnButton.SetActive(false);
+            headingText.text = baseHeadingText;
         }
 
         if(appConversation == true)
@@ -252,6 +257,7 @@ public class ConversationsManager : MonoBehaviour
             appMenu.SetActive(true);
             CloseDialogue();
             iphoneMenu.SetActive(false);
+            headingText.text = appName;
         }
 
         if(motherScreen == true)
@@ -261,6 +267,7 @@ public class ConversationsManager : MonoBehaviour
             messageMenu.SetActive(true);
             CloseDialogue();
             iphoneMenu.SetActive(false);
+            headingText.text = "Messages";
         }
 
     }
@@ -268,18 +275,18 @@ public class ConversationsManager : MonoBehaviour
     public void openMessages()
     {
         messageScreen = true;
-        //iphoneScreen = false;
         messageMenu.SetActive(true);
         iphoneMenu.SetActive(false);
         returnButton.SetActive(true);
+        headingText.text = "Messages";
     }
 
     public void openApp()
     {
-        appScreen = true;
-        //iphoneScreen = false; 
+        appScreen = true; 
         appMenu.SetActive(true);
         iphoneMenu.SetActive(false);
         returnButton.SetActive(true);
+        headingText.text = appName;
     }
 }
