@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class ConversationsManager : MonoBehaviour
 {
     private Color iphoneMenuHeadingColor = new Color(0, 0, 0, 0);
-    //private Color messageMenuHeadingColor = new Color(161, 167, 254, 255);
-    //private Color appMenuHeadingColor = new Color(240, 131, 145, 255);
     public Color messageMenuHeadingColor;
     public Color appMenuHeadingColor;
 
@@ -17,17 +15,12 @@ public class ConversationsManager : MonoBehaviour
 
     [SerializeField] private GameObject[] j_History;
     [SerializeField] private GameObject[] k_History;
-    [SerializeField] private GameObject[] r_History;
-
-    [SerializeField] private Text[] j_History_lines;
-    [SerializeField] private Text[] k_History_lines;
-    [SerializeField] private Text[] r_History_lines;
+    [SerializeField] private GameObject[] r_History; 
 
     private bool jHistory_activated = false;
     private bool kHistory_activated = false;
     private bool rHistory_activated = false;
 
-    //private bool iphoneScreen = true;
     private bool messageScreen = false;
     private bool motherScreen = false;
     private bool appScreen = false;
@@ -35,13 +28,14 @@ public class ConversationsManager : MonoBehaviour
     private bool iphoneScreen = false; 
 
     private Text headingText;
+    private Text timeValue; 
     private string appName;
     private SVGImage headingColor; 
 
     private float timer = 600f; 
 
     public GameObject returnButton;
-    private GameObject time; 
+    public GameObject time; 
 
     private Transform player;
     private Transform J;
@@ -56,13 +50,16 @@ public class ConversationsManager : MonoBehaviour
         K = this.transform.Find("K");
         R = this.transform.Find("R");
         mom = this.transform.Find("mom");
-        headingText = GameObject.Find("Heading Panel").transform.Find("heading").GetComponent<Text>();
-        appName = "nom de l'app";
+
         time = GameObject.Find("time");
-        time.SetActive(false);
+        timeValue = time.GetComponent<Text>();
+        timeValue.enabled = false; 
         iphoneScreen = true;
 
+        headingText = GameObject.Find("Heading Panel").transform.Find("heading").GetComponent<Text>();
         headingColor = GameObject.Find("Heading Panel").GetComponent<SVGImage>();
+        appName = "nom de l'app";
+
     }
 
     private void Update()
@@ -74,6 +71,8 @@ public class ConversationsManager : MonoBehaviour
             headingText.text = time.GetComponent<Text>().text;
             headingColor.color = iphoneMenuHeadingColor; 
         }
+
+        //LastEntry();
     }
 
     public void OpenDialogueR()
@@ -223,6 +222,8 @@ public class ConversationsManager : MonoBehaviour
                 {rH.SetActive(false);
                     rHistory_activated = false;}}//}
 
+        //LastEntry();
+
     }
 
     public void PreviousScreen()
@@ -234,8 +235,9 @@ public class ConversationsManager : MonoBehaviour
             messageScreen = false;
             returnButton.SetActive(false);
             appMenu.SetActive(false);
-            iphoneScreen = true; 
-            time.SetActive(false);
+            iphoneScreen = true;
+            //time.SetActive(false);
+            timeValue.enabled = false;
         }
 
         if(appScreen == true)
@@ -244,8 +246,9 @@ public class ConversationsManager : MonoBehaviour
             iphoneMenu.SetActive(true);
             appScreen = false;
             returnButton.SetActive(false);
-            iphoneScreen = true; 
-            time.SetActive(false);
+            iphoneScreen = true;
+            //time.SetActive(false);
+            timeValue.enabled = false;
         }
 
         if(appConversation == true)
@@ -278,7 +281,8 @@ public class ConversationsManager : MonoBehaviour
         iphoneMenu.SetActive(false);
         returnButton.SetActive(true);
         headingText.text = "Messages";
-        time.SetActive(true);
+        //time.SetActive(true);
+        timeValue.enabled = true;
         iphoneScreen = false;
         headingColor.color = messageMenuHeadingColor;
     }
@@ -290,7 +294,8 @@ public class ConversationsManager : MonoBehaviour
         iphoneMenu.SetActive(false);
         returnButton.SetActive(true);
         headingText.text = appName;
-        time.SetActive(true);
+        //time.SetActive(true);
+        timeValue.enabled = true;
         iphoneScreen = false;
         headingColor.color = appMenuHeadingColor; 
     }
@@ -301,6 +306,16 @@ public class ConversationsManager : MonoBehaviour
         int seconds = Mathf.FloorToInt(timer - minutes * 60);
         string niceTime = string.Format("{0:00}:{1:00}", minutes, seconds);
 
-        time.GetComponent<Text>().text = niceTime;
+        timeValue.text = niceTime;
+    }
+
+    public void LastEntry()
+    {
+        string history = PixelCrushers.DialogueSystem.DialogueLua.GetVariable("DialogueEntryRecords_K").asString;
+        string[] fields = history.Split(';');
+        int conversationID = PixelCrushers.DialogueSystem.Tools.StringToInt(fields[fields.Length - 2]);
+        int entryID = PixelCrushers.DialogueSystem.Tools.StringToInt(fields[fields.Length - 1]);
+        PixelCrushers.DialogueSystem.DialogueEntry entry = PixelCrushers.DialogueSystem.DialogueManager.masterDatabase.GetDialogueEntry(conversationID, entryID);
+        Debug.Log("Last entry is: " + entry.id);
     }
 }

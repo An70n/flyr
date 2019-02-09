@@ -3423,7 +3423,7 @@ MonoBehaviour:
     - title: Title
       value: K
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Pictures
       value: '[]'
       type: 3
@@ -3431,7 +3431,7 @@ MonoBehaviour:
     - title: Description
       value: 
       type: 0
-      typeString: 
+      typeString: CustomFieldType_Text
     - title: Actor
       value: 1
       type: 5
@@ -5904,7 +5904,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
-        x: 300
+        x: 299.10327
         y: 1070
         width: 160
         height: 30
@@ -6270,8 +6270,8 @@ MonoBehaviour:
         y: 970
         width: 160
         height: 30
-    canvasScrollPosition: {x: 166.92809, y: 991.0989}
-    canvasZoom: 1.1151544
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.71321416
   - id: 3
     fields:
     - title: Title
@@ -11043,7 +11043,7 @@ MonoBehaviour:
         width: 160
         height: 30
     canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1
+    canvasZoom: 0.74299854
   syncInfo:
     syncActors: 0
     syncItems: 0
