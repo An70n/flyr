@@ -2,14 +2,17 @@ fileFormatVersion: 2
 guid: f266a776af775db4188bb12884bf9f59
 ScriptedImporter:
   fileIDToRecycleName:
-    2800000: tex
+    100000: gameObject/Icons_Batterie
+    400000: gameObject/Icons_Batterie/Transform
+    21200000: gameObject/Icons_Batterie/SpriteRenderer
     21300000: sprite
+    100100000: gameObject
   externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: a57477913897c46af95d590f580878bd, type: 3}
-  svgType: 1
+  svgType: 0
   texturedSpriteMeshType: 0
   svgPixelsPerUnit: 100
   gradientResolution: 128
