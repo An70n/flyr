@@ -36,7 +36,8 @@ public class ConversationsManager : MonoBehaviour
     private string baseHeadingText;
     private string appName; 
 
-    public GameObject returnButton; 
+    public GameObject returnButton;
+    private GameObject time; 
 
     private Transform player;
     private Transform J;
@@ -51,9 +52,11 @@ public class ConversationsManager : MonoBehaviour
         K = this.transform.Find("K");
         R = this.transform.Find("R");
         mom = this.transform.Find("mom");
-        headingText = GameObject.Find("Heading Panel").GetComponentInChildren<Text>();
+        headingText = GameObject.Find("Heading Panel").transform.Find("heading").GetComponent<Text>();
         baseHeadingText = headingText.text;
-        appName = "nom de l'app"; 
+        appName = "nom de l'app";
+        time = GameObject.Find("time");
+        time.SetActive(false);
     }
 
     public void OpenDialogueR()
@@ -239,7 +242,8 @@ public class ConversationsManager : MonoBehaviour
             messageScreen = false;
             returnButton.SetActive(false);
             appMenu.SetActive(false);
-            headingText.text = baseHeadingText; 
+            headingText.text = baseHeadingText;
+            time.SetActive(false);
         }
 
         if(appScreen == true)
@@ -249,6 +253,7 @@ public class ConversationsManager : MonoBehaviour
             appScreen = false;
             returnButton.SetActive(false);
             headingText.text = baseHeadingText;
+            time.SetActive(false);
         }
 
         if(appConversation == true)
@@ -259,6 +264,7 @@ public class ConversationsManager : MonoBehaviour
             CloseDialogue();
             iphoneMenu.SetActive(false);
             headingText.text = appName; 
+
         }
 
         if(motherScreen == true)
@@ -280,6 +286,7 @@ public class ConversationsManager : MonoBehaviour
         iphoneMenu.SetActive(false);
         returnButton.SetActive(true);
         headingText.text = "Messages";
+        time.SetActive(true);
     }
 
     public void openApp()
@@ -289,5 +296,6 @@ public class ConversationsManager : MonoBehaviour
         iphoneMenu.SetActive(false);
         returnButton.SetActive(true);
         headingText.text = appName;
+        time.SetActive(true);
     }
 }
