@@ -35,7 +35,7 @@ public class ConversationsManager : MonoBehaviour
     private float timer = 600f; 
 
     public GameObject returnButton;
-    public GameObject time; 
+    private GameObject time; 
 
     private Transform player;
     private Transform J;
@@ -59,7 +59,6 @@ public class ConversationsManager : MonoBehaviour
         headingText = GameObject.Find("Heading Panel").transform.Find("heading").GetComponent<Text>();
         headingColor = GameObject.Find("Heading Panel").GetComponent<SVGImage>();
         appName = "nom de l'app";
-
     }
 
     private void Update()
@@ -69,10 +68,9 @@ public class ConversationsManager : MonoBehaviour
         if(iphoneScreen == true)
         {
             headingText.text = time.GetComponent<Text>().text;
-            headingColor.color = iphoneMenuHeadingColor; 
+            headingColor.color = iphoneMenuHeadingColor;
+            returnButton.SetActive(false);
         }
-
-        //LastEntry();
     }
 
     public void OpenDialogueR()
@@ -220,9 +218,7 @@ public class ConversationsManager : MonoBehaviour
             if (rHistory_activated == true)
             {foreach (GameObject rH in r_History)
                 {rH.SetActive(false);
-                    rHistory_activated = false;}}//}
-
-        //LastEntry();
+                    rHistory_activated = false;}}
 
     }
 
@@ -236,7 +232,6 @@ public class ConversationsManager : MonoBehaviour
             returnButton.SetActive(false);
             appMenu.SetActive(false);
             iphoneScreen = true;
-            //time.SetActive(false);
             timeValue.enabled = false;
         }
 
@@ -247,7 +242,6 @@ public class ConversationsManager : MonoBehaviour
             appScreen = false;
             returnButton.SetActive(false);
             iphoneScreen = true;
-            //time.SetActive(false);
             timeValue.enabled = false;
         }
 
@@ -281,7 +275,6 @@ public class ConversationsManager : MonoBehaviour
         iphoneMenu.SetActive(false);
         returnButton.SetActive(true);
         headingText.text = "Messages";
-        //time.SetActive(true);
         timeValue.enabled = true;
         iphoneScreen = false;
         headingColor.color = messageMenuHeadingColor;
@@ -294,7 +287,6 @@ public class ConversationsManager : MonoBehaviour
         iphoneMenu.SetActive(false);
         returnButton.SetActive(true);
         headingText.text = appName;
-        //time.SetActive(true);
         timeValue.enabled = true;
         iphoneScreen = false;
         headingColor.color = appMenuHeadingColor; 
