@@ -327,10 +327,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Heading Panel
       objectReference: {fileID: 0}
-    - target: {fileID: 62802320, guid: 1603ce0acfe571147ba5d9248128e92d, type: 3}
-      propertyPath: m_Name
-      value: mom
-      objectReference: {fileID: 0}
     - target: {fileID: 879697873, guid: 1603ce0acfe571147ba5d9248128e92d, type: 3}
       propertyPath: conversationUIElements.mainPanel
       value: 
@@ -469,7 +465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1637067859, guid: 1603ce0acfe571147ba5d9248128e92d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.010759246
+      value: -0.0024308902
       objectReference: {fileID: 0}
     - target: {fileID: 1831089764, guid: 1603ce0acfe571147ba5d9248128e92d, type: 3}
       propertyPath: m_TargetGraphic
@@ -491,14 +487,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 364545745, guid: 1603ce0acfe571147ba5d9248128e92d, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 364545745, guid: 1603ce0acfe571147ba5d9248128e92d, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 438127813, guid: 1603ce0acfe571147ba5d9248128e92d, type: 3}
       propertyPath: m_TargetGraphic
       value: 
@@ -511,10 +499,6 @@ PrefabInstance:
       propertyPath: label.m_uiText
       value: 
       objectReference: {fileID: 4411984371186701794}
-    - target: {fileID: 822453875, guid: 1603ce0acfe571147ba5d9248128e92d, type: 3}
-      propertyPath: m_Text
-      value: Mom
-      objectReference: {fileID: 0}
     - target: {fileID: 1597278740, guid: 1603ce0acfe571147ba5d9248128e92d, type: 3}
       propertyPath: m_TargetGraphic
       value: 
