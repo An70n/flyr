@@ -314,6 +314,7 @@ GameObject:
   - component: {fileID: 152230223}
   - component: {fileID: 152230225}
   - component: {fileID: 152230224}
+  - component: {fileID: 454039565}
   m_Layer: 5
   m_Name: Preview
   m_TagString: Untagged
@@ -382,6 +383,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Sure, see ya!
+--- !u!114 &454039565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152230222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eb0e47fea32a49419bb3219c4d2f5bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation: K
 --- !u!1 &180718040
 GameObject:
   m_ObjectHideFlags: 0
@@ -1773,7 +1787,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &602507304
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2721,6 +2735,7 @@ GameObject:
   - component: {fileID: 1011133147}
   - component: {fileID: 1011133149}
   - component: {fileID: 1011133148}
+  - component: {fileID: 2003987072}
   m_Layer: 5
   m_Name: Preview
   m_TagString: Untagged
@@ -2789,6 +2804,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: I am!
+--- !u!114 &2003987072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011133146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eb0e47fea32a49419bb3219c4d2f5bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation: R
 --- !u!1 &1045568415
 GameObject:
   m_ObjectHideFlags: 0
@@ -3553,6 +3581,7 @@ GameObject:
   - component: {fileID: 1276814919}
   - component: {fileID: 1276814921}
   - component: {fileID: 1276814920}
+  - component: {fileID: 1053532413}
   m_Layer: 5
   m_Name: Preview
   m_TagString: Untagged
@@ -3623,6 +3652,19 @@ MonoBehaviour:
   m_Text: 'Thanks, have a good night
 
 '
+--- !u!114 &1053532413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1276814918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eb0e47fea32a49419bb3219c4d2f5bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conversation: J
 --- !u!1 &1300467939
 GameObject:
   m_ObjectHideFlags: 0
@@ -5318,7 +5360,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00016440418}
+  m_AnchoredPosition: {x: 0, y: -0.0019746409}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1637067863
@@ -5526,7 +5568,7 @@ RectTransform:
   - {fileID: 3692798961457026424}
   - {fileID: 6300688308259834109}
   m_Father: {fileID: 1579896665201154739}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6165,7 +6207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1907583690
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6179,7 +6221,7 @@ RectTransform:
   m_Children:
   - {fileID: 62802321}
   m_Father: {fileID: 1579896665201154739}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7219,8 +7261,8 @@ RectTransform:
   m_Children:
   - {fileID: 879697872}
   - {fileID: 602507304}
-  - {fileID: 1718881001}
   - {fileID: 1907583690}
+  - {fileID: 1718881001}
   - {fileID: 1925851654}
   - {fileID: 421600747}
   m_Father: {fileID: 1579896665189635317}

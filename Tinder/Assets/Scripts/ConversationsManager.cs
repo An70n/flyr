@@ -25,7 +25,7 @@ public class ConversationsManager : MonoBehaviour
     private bool motherScreen = false;
     private bool appScreen = false;
     private bool appConversation = false;
-    private bool iphoneScreen = false; 
+    private bool iphoneScreen = false;
 
     private Text headingText;
     private Text timeValue; 
@@ -45,6 +45,12 @@ public class ConversationsManager : MonoBehaviour
 
     void Start()
     {
+        appMenu = GameObject.Find("app Menu");
+        appMenu.SetActive(false);
+        iphoneMenu = GameObject.Find("iphone Menu");
+        messageMenu = GameObject.Find("messageMenu");
+        messageMenu.SetActive(false);
+
         player = this.transform.Find("Player");
         J = this.transform.Find("J");
         K = this.transform.Find("K");
@@ -299,15 +305,5 @@ public class ConversationsManager : MonoBehaviour
         string niceTime = string.Format("{0:00}:{1:00}", minutes, seconds);
 
         timeValue.text = niceTime;
-    }
-
-    public void LastEntry()
-    {
-        string history = PixelCrushers.DialogueSystem.DialogueLua.GetVariable("DialogueEntryRecords_K").asString;
-        string[] fields = history.Split(';');
-        int conversationID = PixelCrushers.DialogueSystem.Tools.StringToInt(fields[fields.Length - 2]);
-        int entryID = PixelCrushers.DialogueSystem.Tools.StringToInt(fields[fields.Length - 1]);
-        PixelCrushers.DialogueSystem.DialogueEntry entry = PixelCrushers.DialogueSystem.DialogueManager.masterDatabase.GetDialogueEntry(conversationID, entryID);
-        Debug.Log("Last entry is: " + entry.id);
     }
 }
