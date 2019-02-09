@@ -58,7 +58,6 @@ public class ConversationsManager : MonoBehaviour
         appName = "nom de l'app";
         time = GameObject.Find("time");
         time.SetActive(false);
-
         iphoneScreen = true; 
     }
 
@@ -319,8 +318,6 @@ public class ConversationsManager : MonoBehaviour
         int minutes = Mathf.FloorToInt(timer / 60F);
         int seconds = Mathf.FloorToInt(timer - minutes * 60);
         string niceTime = string.Format("{0:00}:{1:00}", minutes, seconds);
-
-        //GUI.Label(new Rect(10, 10, 250, 100), niceTime);
 
         time.GetComponent<Text>().text = niceTime;
     }
