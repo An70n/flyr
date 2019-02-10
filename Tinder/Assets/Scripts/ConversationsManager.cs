@@ -9,17 +9,26 @@ public class ConversationsManager : MonoBehaviour
     public Color messageMenuHeadingColor;
     public Color appMenuHeadingColor;
 
+    private Vector3 transformeOne;
+    private Vector3 transformTwo;
+    private Vector3 transformThree;
+
+    public Button r_Button;
+    public Button j_Button;
+    public Button k_Button;
+
+    private int max; 
+
+    private int j_value = 1;
+    private int r_value = 1;
+    private int k_value = 1;
+
+    private List<int> convValues; 
+
     private GameObject appMenu;
     private GameObject iphoneMenu;
     private GameObject messageMenu;
 
-    [SerializeField] private GameObject[] j_History;
-    [SerializeField] private GameObject[] k_History;
-    [SerializeField] private GameObject[] r_History; 
-
-    private bool jHistory_activated = false;
-    private bool kHistory_activated = false;
-    private bool rHistory_activated = false;
     private bool messageScreen = false;
     private bool motherScreen = false;
     private bool appScreen = false;
@@ -61,12 +70,31 @@ public class ConversationsManager : MonoBehaviour
 
         time = GameObject.Find("time");
         timeValue = time.GetComponent<Text>();
-        timeValue.enabled = false; 
+        timeValue.enabled = false;
         iphoneScreen = true;
 
         headingText = GameObject.Find("Heading Panel").transform.Find("heading").GetComponent<Text>();
         headingColor = GameObject.Find("Heading Panel").GetComponent<SVGImage>();
         appName = "nom de l'app";
+
+        string k_History = "2;2;41;2;42";
+        PixelCrushers.DialogueSystem.DialogueLua.SetVariable("DialogueEntryRecords_K", k_History);
+
+        string j_History = "2;1;46;1;47";
+        PixelCrushers.DialogueSystem.DialogueLua.SetVariable("DialogueEntryRecords_J", j_History);
+
+        string r_History = "2;3;46;3;47";
+        PixelCrushers.DialogueSystem.DialogueLua.SetVariable("DialogueEntryRecords_R", r_History);
+
+        transformeOne = k_Button.GetComponent<RectTransform>().localPosition;
+        transformTwo = j_Button.GetComponent<RectTransform>().localPosition;
+        transformThree = r_Button.GetComponent<RectTransform>().localPosition;
+
+        //convValues.Add(j_value);
+        //convValues.Add(r_value);
+        //convValues.Add(k_value);
+
+        convValues = new List<int>() { j_value, r_value, k_value };
     }
 
     private void Update()
@@ -79,6 +107,22 @@ public class ConversationsManager : MonoBehaviour
             headingColor.color = iphoneMenuHeadingColor;
             returnButton.SetActive(false);
         }
+
+        GetMax();
+        //Debug.Log(max);
+        
+
+        /*if (r_value > j_value && r_value > k_value)
+        {
+            r_Button.GetComponent<RectTransform>().localPosition = transformeOne;
+        }*/
+    }
+
+    int GetMax()
+    {
+        convValues.Sort();
+        max = convValues[convValues.Count - 1];
+        return max; 
     }
 
     public void OpenDialogueR()
@@ -87,26 +131,18 @@ public class ConversationsManager : MonoBehaviour
         appScreen = false; 
         headingText.text = "R";
 
+        convValues[r_value] += 2;
+
         if (PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry("R"))
        
         {
             PixelCrushers.DialogueSystem.DialogueManager.StartConversation("R", player, R);
             appMenu.SetActive(false);
-
-            if (rHistory_activated == false)
-            {foreach (GameObject rH in r_History)
-                {rH.SetActive(true);
-                    rHistory_activated = true;}}
         }
         else if (!PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry("R"))
         {
             PixelCrushers.DialogueSystem.DialogueManager.dialogueUI.Open();
             appMenu.SetActive(false);
-
-            if (rHistory_activated == false)
-            {foreach (GameObject rH in r_History)
-                {rH.SetActive(true);
-                    rHistory_activated = true;}}
         }
     }
 
@@ -122,22 +158,11 @@ public class ConversationsManager : MonoBehaviour
             PixelCrushers.DialogueSystem.DialogueManager.StartConversation("J", player, J);
             appMenu.SetActive(false);
 
-            if (jHistory_activated == false)
-            {foreach (GameObject jH in j_History)
-                {jH.SetActive(true);
-                    jHistory_activated = true;}}
-
         }
         else if (!PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry("J"))
         {
             PixelCrushers.DialogueSystem.DialogueManager.dialogueUI.Open();
             appMenu.SetActive(false);
-
-            if (jHistory_activated == false)
-            {foreach (GameObject jH in j_History)
-                {jH.SetActive(true);
-                    jHistory_activated = true;}}
-
         }
     }
 
@@ -153,21 +178,11 @@ public class ConversationsManager : MonoBehaviour
             PixelCrushers.DialogueSystem.DialogueManager.StartConversation("K", player, K);
             appMenu.SetActive(false);
 
-            if (kHistory_activated == false)
-            {foreach (GameObject kH in k_History)
-                {kH.SetActive(true);
-                    kHistory_activated = true;}}
-
         }
         else if (!PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry("K"))
         {
             PixelCrushers.DialogueSystem.DialogueManager.dialogueUI.Open();
             appMenu.SetActive(false);
-
-            if (kHistory_activated == false)
-            {foreach (GameObject kH in k_History)
-                {kH.SetActive(true);
-                    kHistory_activated = true;}}
         }
     }
 
@@ -212,22 +227,6 @@ public class ConversationsManager : MonoBehaviour
     {
         PixelCrushers.DialogueSystem.DialogueManager.StopConversation();
         PixelCrushers.DialogueSystem.DialogueManager.dialogueUI.Close();
-
-        if (jHistory_activated == true)
-            {foreach (GameObject jH in j_History)
-                {jH.SetActive(false);
-                    jHistory_activated = false;}}
-
-            if (kHistory_activated == true)
-            {foreach (GameObject kH in k_History)
-                {kH.SetActive(false);
-                    kHistory_activated = false;}}
-
-            if (rHistory_activated == true)
-            {foreach (GameObject rH in r_History)
-                {rH.SetActive(false);
-                    rHistory_activated = false;}}
-
     }
 
     public void PreviousScreen()
