@@ -9,7 +9,7 @@ public class ConversationsManager : MonoBehaviour
     public Color messageMenuHeadingColor;
     public Color appMenuHeadingColor;
 
-    private Vector3 transformeOne;
+    private Vector3 transformOne;
     private Vector3 transformTwo;
     private Vector3 transformThree;
 
@@ -17,13 +17,16 @@ public class ConversationsManager : MonoBehaviour
     public Button j_Button;
     public Button k_Button;
 
-    private int max; 
+    public Text r_preview;
+    public Text j_preview;
+    public Text k_preview;
 
-    private int j_value = 1;
-    private int r_value = 1;
-    private int k_value = 1;
+    [SerializeField] private int j_value = 3;
+    [SerializeField] private int r_value = 1;
+    [SerializeField] private int k_value = 2;
+    [SerializeField] private int multiplier = 1; 
 
-    private List<int> convValues; 
+    private int[] convValues;
 
     private GameObject appMenu;
     private GameObject iphoneMenu;
@@ -54,11 +57,21 @@ public class ConversationsManager : MonoBehaviour
 
     void Start()
     {
+        transformOne = k_Button.GetComponent<RectTransform>().localPosition;
+        transformTwo = j_Button.GetComponent<RectTransform>().localPosition;
+        transformThree = r_Button.GetComponent<RectTransform>().localPosition;
+
+        SortConversations();
+
         appMenu = GameObject.Find("app Menu");
         appMenu.SetActive(false);
+
         iphoneMenu = GameObject.Find("iphone Menu");
+        iphoneScreen = true;
+
         messageMenu = GameObject.Find("message Menu");
         messageMenu.SetActive(false);
+
         returnButton = GameObject.Find("Menu Button");
         returnButton.SetActive(false);
 
@@ -71,7 +84,6 @@ public class ConversationsManager : MonoBehaviour
         time = GameObject.Find("time");
         timeValue = time.GetComponent<Text>();
         timeValue.enabled = false;
-        iphoneScreen = true;
 
         headingText = GameObject.Find("Heading Panel").transform.Find("heading").GetComponent<Text>();
         headingColor = GameObject.Find("Heading Panel").GetComponent<SVGImage>();
@@ -80,21 +92,11 @@ public class ConversationsManager : MonoBehaviour
         string k_History = "2;2;41;2;42";
         PixelCrushers.DialogueSystem.DialogueLua.SetVariable("DialogueEntryRecords_K", k_History);
 
-        string j_History = "2;1;46;1;47";
+        string j_History = "3;1;46;1;47;1;3";
         PixelCrushers.DialogueSystem.DialogueLua.SetVariable("DialogueEntryRecords_J", j_History);
 
         string r_History = "2;3;46;3;47";
         PixelCrushers.DialogueSystem.DialogueLua.SetVariable("DialogueEntryRecords_R", r_History);
-
-        transformeOne = k_Button.GetComponent<RectTransform>().localPosition;
-        transformTwo = j_Button.GetComponent<RectTransform>().localPosition;
-        transformThree = r_Button.GetComponent<RectTransform>().localPosition;
-
-        //convValues.Add(j_value);
-        //convValues.Add(r_value);
-        //convValues.Add(k_value);
-
-        convValues = new List<int>() { j_value, r_value, k_value };
     }
 
     private void Update()
@@ -108,30 +110,22 @@ public class ConversationsManager : MonoBehaviour
             returnButton.SetActive(false);
         }
 
-        GetMax();
-        //Debug.Log(max);
-        
-
-        /*if (r_value > j_value && r_value > k_value)
+        if(Input.GetKey(KeyCode.F1))
         {
-            r_Button.GetComponent<RectTransform>().localPosition = transformeOne;
-        }*/
-    }
-
-    int GetMax()
-    {
-        convValues.Sort();
-        max = convValues[convValues.Count - 1];
-        return max; 
+            SortConversations();
+        }
     }
 
     public void OpenDialogueR()
     {
+        multiplier = multiplier * 3;
+        r_value += multiplier;
+
         appConversation = true;
         appScreen = false; 
         headingText.text = "R";
 
-        convValues[r_value] += 2;
+        r_preview.fontStyle = FontStyle.Normal; 
 
         if (PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry("R"))
        
@@ -139,7 +133,7 @@ public class ConversationsManager : MonoBehaviour
             PixelCrushers.DialogueSystem.DialogueManager.StartConversation("R", player, R);
             appMenu.SetActive(false);
         }
-        else if (!PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry("R"))
+        else if(!PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry("R"))
         {
             PixelCrushers.DialogueSystem.DialogueManager.dialogueUI.Open();
             appMenu.SetActive(false);
@@ -148,9 +142,14 @@ public class ConversationsManager : MonoBehaviour
 
     public void OpenDialogueJ()
     {
+        multiplier = multiplier * 3;
+        j_value += multiplier;
+
         appConversation = true;
         appScreen = false;
         headingText.text = "J";
+
+        j_preview.fontStyle = FontStyle.Normal;
 
         if (PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry("J"))
 
@@ -168,9 +167,14 @@ public class ConversationsManager : MonoBehaviour
 
     public void OpenDialogueK()
     {
+        multiplier = multiplier * 3;
+        k_value += multiplier;
+
         appConversation = true;
         appScreen = false;
         headingText.text = "K";
+
+        k_preview.fontStyle = FontStyle.Normal;
 
         if (PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry("K"))
 
@@ -306,5 +310,71 @@ public class ConversationsManager : MonoBehaviour
         string niceTime = string.Format("{0:00}:{1:00}", minutes, seconds);
 
         timeValue.text = niceTime;
+    }
+
+    public void SortConversations()
+    {
+
+        if(r_value > j_value && r_value > k_value)
+        {
+            r_Button.GetComponent<RectTransform>().localPosition = transformOne; 
+        }
+
+        else if (r_value > j_value && r_value < k_value)
+        {
+            r_Button.GetComponent<RectTransform>().localPosition = transformTwo;
+        }
+
+        else if (r_value > k_value && r_value < j_value)
+        {
+            r_Button.GetComponent<RectTransform>().localPosition = transformTwo;
+        }
+
+        else if (r_value < j_value && r_value < k_value)
+        {
+            r_Button.GetComponent<RectTransform>().localPosition = transformThree;
+        }
+
+
+        if (j_value > r_value && j_value > k_value)
+        {
+            j_Button.GetComponent<RectTransform>().localPosition = transformOne;
+        }
+
+        if(j_value > r_value && j_value < k_value)
+        {
+            j_Button.GetComponent<RectTransform>().localPosition = transformTwo;
+        }
+
+        if (j_value > k_value && j_value < r_value)
+        {
+            j_Button.GetComponent<RectTransform>().localPosition = transformTwo;
+        }
+
+        else if (j_value < r_value && j_value < k_value)
+        {
+            j_Button.GetComponent<RectTransform>().localPosition = transformThree;
+        }
+
+
+        if (k_value > r_value && k_value > j_value)
+        {
+            k_Button.GetComponent<RectTransform>().localPosition = transformOne;
+        }
+
+        if (k_value > r_value && k_value < j_value)
+        {
+            k_Button.GetComponent<RectTransform>().localPosition = transformTwo;
+        }
+
+        if (k_value > j_value && k_value < r_value)
+        {
+            k_Button.GetComponent<RectTransform>().localPosition = transformTwo;
+        }
+
+        else if (k_value < r_value && k_value < j_value)
+        {
+            k_Button.GetComponent<RectTransform>().localPosition = transformThree;
+        }
     }
 }
