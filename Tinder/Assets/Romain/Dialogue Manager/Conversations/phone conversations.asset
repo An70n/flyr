@@ -179,6 +179,34 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: 
+  - id: 4
+    fields:
+    - title: Name
+      value: hasResponded
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
+  - id: 5
+    fields:
+    - title: Name
+      value: endOfGame
+      type: 0
+      typeString: 
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: 
   conversations:
   - id: 1
     fields:
@@ -429,7 +457,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -502,7 +530,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -511,7 +539,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 750
-        y: 320
+        y: 318.82324
         width: 160
         height: 30
     - id: 7
@@ -575,7 +603,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -584,7 +612,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 210
-        y: 320
+        y: 318.82324
         width: 160
         height: 30
     - id: 8
@@ -727,7 +755,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -800,7 +828,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -952,7 +980,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -961,7 +989,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 390
-        y: 520
+        y: 521.17676
         width: 160
         height: 30
     - id: 13
@@ -1025,7 +1053,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1171,7 +1199,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1317,7 +1345,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1326,7 +1354,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 480
-        y: 720
+        y: 721.94635
         width: 160
         height: 30
     - id: 18
@@ -1542,7 +1570,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1550,7 +1578,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
-        x: 750
+        x: 748.82324
         y: 520
         width: 160
         height: 30
@@ -1688,7 +1716,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1696,7 +1724,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
-        x: 930
+        x: 928.82324
         y: 520
         width: 160
         height: 30
@@ -1834,7 +1862,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -1980,7 +2008,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2132,7 +2160,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2141,7 +2169,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 75
-        y: 420
+        y: 421.94635
         width: 160
         height: 30
     - id: 29
@@ -2284,7 +2312,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2357,7 +2385,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2509,7 +2537,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2518,7 +2546,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 48
-        y: 620
+        y: 621.1768
         width: 160
         height: 30
     - id: 34
@@ -2582,7 +2610,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2591,7 +2619,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 264
-        y: 620
+        y: 618.82324
         width: 160
         height: 30
     - id: 35
@@ -2728,7 +2756,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -2874,7 +2902,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3026,7 +3054,9 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["rConversationStart"] = true
+      userScript: 'Variable["rConversationStart"] = true
+
+        Variable["hasResponded"] = true'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3099,7 +3129,9 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["rConversationStart"] = true
+      userScript: 'Variable["rConversationStart"] = true
+
+        Variable["hasResponded"] = true'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3318,7 +3350,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3326,7 +3358,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
-        x: 480
+        x: 478.05365
         y: 1020
         width: 160
         height: 30
@@ -3635,8 +3667,8 @@ MonoBehaviour:
         y: 270
         width: 160
         height: 30
-    canvasScrollPosition: {x: 173.72539, y: 0}
-    canvasZoom: 0.8497904
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.51378757
   - id: 2
     fields:
     - title: Title
@@ -3813,7 +3845,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -3821,8 +3853,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
-        x: 295.33704
-        y: 111.304214
+        x: 300
+        y: 170
         width: 160
         height: 30
     - id: 4
@@ -3971,7 +4003,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -4044,7 +4076,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -4117,7 +4149,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -4269,7 +4301,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -4342,7 +4374,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -4350,7 +4382,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
-        x: 210
+        x: 208.2669
         y: 370
         width: 160
         height: 30
@@ -4640,7 +4672,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -4713,7 +4745,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -4721,7 +4753,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
-        x: 570
+        x: 571.7331
         y: 370
         width: 160
         height: 30
@@ -4865,7 +4897,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -4938,7 +4970,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5157,7 +5189,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5166,7 +5198,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 60
-        y: 470
+        y: 468.2669
         width: 160
         height: 30
     - id: 22
@@ -5239,7 +5271,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 300
-        y: 470
+        y: 468.2669
         width: 160
         height: 30
     - id: 23
@@ -5376,7 +5408,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5601,7 +5633,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5675,7 +5707,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5822,7 +5854,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5831,7 +5863,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 300
-        y: 970
+        y: 971.73315
         width: 160
         height: 30
     - id: 31
@@ -5969,7 +6001,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6115,7 +6147,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6123,8 +6155,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
-        x: 299.10327
-        y: 1070
+        x: 300
+        y: 1071.7332
         width: 160
         height: 30
     - id: 36
@@ -6191,8 +6223,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
-        x: 393.4785
-        y: 1164.5657
+        x: 300
+        y: 1120
         width: 160
         height: 30
     - id: 37
@@ -6330,7 +6362,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6477,7 +6509,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6558,7 +6590,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
-        x: 607.06067
+        x: 300
         y: 70
         width: 160
         height: 30
@@ -6631,12 +6663,12 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
-        x: 598.648
-        y: 163.94092
+        x: 300
+        y: 120
         width: 160
         height: 30
-    canvasScrollPosition: {x: 216.34067, y: 282.25708}
-    canvasZoom: 0.34321216
+    canvasScrollPosition: {x: 0, y: 272.09692}
+    canvasZoom: 0.577
   - id: 3
     fields:
     - title: Title
@@ -6898,7 +6930,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6906,7 +6938,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
-        x: 120
+        x: 118.856064
         y: 220
         width: 160
         height: 30
@@ -6971,7 +7003,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6979,7 +7011,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
-        x: 480
+        x: 478.85602
         y: 220
         width: 160
         height: 30
@@ -7044,7 +7076,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -7196,7 +7228,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -7269,7 +7301,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -7415,7 +7447,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -7423,8 +7455,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
-        x: 30
-        y: 420
+        x: 28.856064
+        y: 421.14392
         width: 160
         height: 30
     - id: 12
@@ -7636,7 +7668,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -7644,8 +7676,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
-        x: 615
-        y: 320
+        x: 616.1439
+        y: 318.85608
         width: 160
         height: 30
     - id: 15
@@ -7861,7 +7893,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -8013,7 +8045,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -8086,7 +8118,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -8159,7 +8191,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -8305,7 +8337,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -8458,7 +8490,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -8616,7 +8648,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -8763,7 +8795,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -8771,7 +8803,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
-        x: 480
+        x: 478.85608
         y: 620
         width: 160
         height: 30
@@ -8915,7 +8947,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -8988,7 +9020,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -9220,7 +9252,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -9228,7 +9260,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
-        x: 840
+        x: 838.8561
         y: 520
         width: 160
         height: 30
@@ -9366,7 +9398,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -9506,8 +9538,10 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: Variable["ConversationsDone"] = Variable["ConversationsDone"] +
+      userScript: 'Variable["ConversationsDone"] = Variable["ConversationsDone"] +
         1
+
+        Variable["hasResponded"] = true'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -9516,7 +9550,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 120
-        y: 818.85925
+        y: 817.21765
         width: 160
         height: 30
     - id: 40
@@ -9580,7 +9614,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -9727,7 +9761,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -9873,7 +9907,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -9946,7 +9980,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: Variable["hasResponded"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -10101,11 +10135,11 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 718.58124
-        y: 143.71364
+        y: 142.5697
         width: 160
         height: 30
-    canvasScrollPosition: {x: 105.40863, y: 0}
-    canvasZoom: 0.8741739
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.6091712
   - id: 4
     fields:
     - title: Title
@@ -10957,7 +10991,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: Variable["endOfGame"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -11024,7 +11058,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: Variable["endOfGame"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -11091,7 +11125,7 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: 
+      userScript: Variable["endOfGame"] = true
       onExecute:
         m_PersistentCalls:
           m_Calls: []

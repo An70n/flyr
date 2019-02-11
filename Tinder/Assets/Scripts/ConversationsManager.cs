@@ -38,6 +38,10 @@ public class ConversationsManager : MonoBehaviour
     private bool appConversation = false;
     private bool iphoneScreen = false;
 
+    [SerializeField] private bool conv_J;
+    [SerializeField] private bool conv_R;
+    [SerializeField] private bool conv_K; 
+
     private Text headingText;
     private Text timeValue; 
 
@@ -109,21 +113,14 @@ public class ConversationsManager : MonoBehaviour
             headingColor.color = iphoneMenuHeadingColor;
             returnButton.SetActive(false);
         }
-
-        if(Input.GetKey(KeyCode.F1))
-        {
-            SortConversations();
-        }
     }
 
     public void OpenDialogueR()
     {
-        multiplier = multiplier * 3;
-        r_value += multiplier;
-
         appConversation = true;
         appScreen = false; 
         headingText.text = "R";
+        conv_R = true; 
 
         r_preview.fontStyle = FontStyle.Normal; 
 
@@ -142,12 +139,10 @@ public class ConversationsManager : MonoBehaviour
 
     public void OpenDialogueJ()
     {
-        multiplier = multiplier * 3;
-        j_value += multiplier;
-
         appConversation = true;
         appScreen = false;
         headingText.text = "J";
+        conv_J = true; 
 
         j_preview.fontStyle = FontStyle.Normal;
 
@@ -167,12 +162,10 @@ public class ConversationsManager : MonoBehaviour
 
     public void OpenDialogueK()
     {
-        multiplier = multiplier * 3;
-        k_value += multiplier;
-
         appConversation = true;
         appScreen = false;
         headingText.text = "K";
+        conv_K = true; 
 
         k_preview.fontStyle = FontStyle.Normal;
 
@@ -231,6 +224,37 @@ public class ConversationsManager : MonoBehaviour
     {
         PixelCrushers.DialogueSystem.DialogueManager.StopConversation();
         PixelCrushers.DialogueSystem.DialogueManager.dialogueUI.Close();
+
+        //checks if conversation has been opened and if player has responded 
+        //if that's the case, the value of the conversation is increased 
+        //conversations has sorted by decreasing value
+        //resets all bools to false
+        if (conv_J == true && PixelCrushers.DialogueSystem.DialogueLua.GetVariable("hasResponded").asBool == true)
+        {
+            multiplier = multiplier * 3;
+            j_value += multiplier;
+            PixelCrushers.DialogueSystem.DialogueLua.SetVariable("hasResponded", false);
+        }
+
+        if (conv_R == true && PixelCrushers.DialogueSystem.DialogueLua.GetVariable("hasResponded").asBool == true)
+        {
+            multiplier = multiplier * 3;
+            r_value += multiplier;
+            PixelCrushers.DialogueSystem.DialogueLua.SetVariable("hasResponded", false);
+        }
+
+        if (conv_K == true && PixelCrushers.DialogueSystem.DialogueLua.GetVariable("hasResponded").asBool == true)
+        {
+            multiplier = multiplier * 3;
+            k_value += multiplier;
+            PixelCrushers.DialogueSystem.DialogueLua.SetVariable("hasResponded", false);
+        }
+
+        conv_J = false;
+        conv_K = false;
+        conv_R = false; 
+
+        SortConversations();
     }
 
     public void PreviousScreen()
