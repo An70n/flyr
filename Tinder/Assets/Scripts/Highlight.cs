@@ -7,15 +7,17 @@ using UnityEngine.EventSystems;
 public class Highlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
 {
 
-    Text txt;
+    //Text txt;
     Color baseColor;
     Button btn;
+    SVGImage buttonSprite; 
     bool interactableDelay;
 
     void Start()
     {
-        txt = GetComponentInChildren<Text>();
-        baseColor = txt.color;
+        //txt = GetComponentInChildren<Text>();
+        buttonSprite = gameObject.GetComponent<SVGImage>();
+        baseColor = buttonSprite.color;
         btn = gameObject.GetComponent<Button>();
         interactableDelay = btn.interactable;
     }
@@ -26,11 +28,11 @@ public class Highlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         {
             if (btn.interactable)
             {
-                txt.color = baseColor * btn.colors.normalColor * btn.colors.colorMultiplier;
+                buttonSprite.color = baseColor * btn.colors.normalColor * btn.colors.colorMultiplier;
             }
             else
             {
-                txt.color = baseColor * btn.colors.disabledColor * btn.colors.colorMultiplier;
+               buttonSprite.color = baseColor * btn.colors.disabledColor * btn.colors.colorMultiplier;
             }
         }
         interactableDelay = btn.interactable;
@@ -40,11 +42,11 @@ public class Highlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {
         if (btn.interactable)
         {
-            txt.color = baseColor * btn.colors.highlightedColor * btn.colors.colorMultiplier;
+            buttonSprite.color = baseColor * btn.colors.highlightedColor * btn.colors.colorMultiplier;
         }
         else
         {
-            txt.color = baseColor * btn.colors.disabledColor * btn.colors.colorMultiplier;
+            buttonSprite.color = baseColor * btn.colors.disabledColor * btn.colors.colorMultiplier;
         }
     }
 
@@ -52,11 +54,11 @@ public class Highlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {
         if (btn.interactable)
         {
-            txt.color = baseColor * btn.colors.pressedColor * btn.colors.colorMultiplier;
+            buttonSprite.color = baseColor * btn.colors.pressedColor * btn.colors.colorMultiplier;
         }
         else
         {
-            txt.color = baseColor * btn.colors.disabledColor * btn.colors.colorMultiplier;
+            buttonSprite.color = baseColor * btn.colors.disabledColor * btn.colors.colorMultiplier;
         }
     }
 
@@ -64,11 +66,11 @@ public class Highlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {
         if (btn.interactable)
         {
-            txt.color = baseColor * btn.colors.highlightedColor * btn.colors.colorMultiplier;
+            buttonSprite.color = baseColor * btn.colors.highlightedColor * btn.colors.colorMultiplier;
         }
         else
         {
-            txt.color = baseColor * btn.colors.disabledColor * btn.colors.colorMultiplier;
+            buttonSprite.color = baseColor * btn.colors.disabledColor * btn.colors.colorMultiplier;
         }
     }
 
@@ -76,11 +78,11 @@ public class Highlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {
         if (btn.interactable)
         {
-            txt.color = baseColor * btn.colors.normalColor * btn.colors.colorMultiplier;
+            buttonSprite.color = baseColor * btn.colors.normalColor * btn.colors.colorMultiplier;
         }
         else
         {
-            txt.color = baseColor * btn.colors.disabledColor * btn.colors.colorMultiplier;
+            buttonSprite.color = baseColor * btn.colors.disabledColor * btn.colors.colorMultiplier;
         }
     }
 

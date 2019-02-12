@@ -7,8 +7,8 @@ public class NotificationManager : MonoBehaviour
 {
     public Text nPC;
     public Text message;
-    public Text preview; 
-
+    public Text preview;
+   
     private void Update()
     {
         if(PixelCrushers.DialogueSystem.DialogueLua.GetVariable("rConversationStart").asBool == true)

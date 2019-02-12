@@ -21,9 +21,9 @@ public class ConversationsManager : MonoBehaviour
     public Text j_preview;
     public Text k_preview;
 
-    [SerializeField] private int j_value = 3;
-    [SerializeField] private int r_value = 1;
-    [SerializeField] private int k_value = 2;
+    [SerializeField] private int j_value = 9;
+    [SerializeField] private int r_value = 6;
+    [SerializeField] private int k_value = 3;
     [SerializeField] private int multiplier = 1; 
 
     private int[] convValues;
@@ -58,6 +58,8 @@ public class ConversationsManager : MonoBehaviour
     private Transform K;
     private Transform R;
     private Transform mom;
+
+    //private NotificationManager notificationManager;
 
     void Start()
     {
@@ -234,6 +236,11 @@ public class ConversationsManager : MonoBehaviour
             multiplier = multiplier * 3;
             j_value += multiplier;
             PixelCrushers.DialogueSystem.DialogueLua.SetVariable("hasResponded", false);
+            if(PixelCrushers.DialogueSystem.DialogueLua.GetVariable("rConversationStart").asBool == true)
+            {
+                multiplier = multiplier * 3;
+                r_value += multiplier;
+            }
         }
 
         if (conv_R == true && PixelCrushers.DialogueSystem.DialogueLua.GetVariable("hasResponded").asBool == true)
@@ -250,11 +257,20 @@ public class ConversationsManager : MonoBehaviour
             PixelCrushers.DialogueSystem.DialogueLua.SetVariable("hasResponded", false);
         }
 
+
         conv_J = false;
         conv_K = false;
-        conv_R = false; 
+        conv_R = false;
 
         SortConversations();
+
+        //divides the values to make sure they don't get too big
+        if(r_value > 3000 || j_value > 3000 || k_value > 3000)
+        {
+            r_value /= 100;
+            j_value /= 100;
+            k_value /= 100; 
+        }
     }
 
     public void PreviousScreen()
