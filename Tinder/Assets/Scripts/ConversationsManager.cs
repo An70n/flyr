@@ -21,10 +21,10 @@ public class ConversationsManager : MonoBehaviour
     public Text j_preview;
     public Text k_preview;
 
-    [SerializeField] private int j_value = 9;
-    [SerializeField] private int r_value = 6;
-    [SerializeField] private int k_value = 3;
-    [SerializeField] private int multiplier = 1; 
+    private int j_value = 9;
+    private int r_value = 6;
+    private int k_value = 3;
+    private int multiplier = 1; 
 
     private int[] convValues;
 
@@ -38,9 +38,9 @@ public class ConversationsManager : MonoBehaviour
     private bool appConversation = false;
     private bool iphoneScreen = false;
 
-    [SerializeField] private bool conv_J;
-    [SerializeField] private bool conv_R;
-    [SerializeField] private bool conv_K; 
+    private bool conv_J;
+    private bool conv_R;
+    private bool conv_K; 
 
     private Text headingText;
     private Text timeValue; 
@@ -58,8 +58,6 @@ public class ConversationsManager : MonoBehaviour
     private Transform K;
     private Transform R;
     private Transform mom;
-
-    //private NotificationManager notificationManager;
 
     void Start()
     {
