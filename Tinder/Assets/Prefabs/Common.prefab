@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 4411984369795813654}
   - component: {fileID: 4411984369795813655}
   - component: {fileID: 4411984369795813736}
+  - component: {fileID: 701803855}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -90,7 +91,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4411984369795813737}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -1.0076675, y: -16.004528, z: 3.2199974}
+  m_LocalPosition: {x: -1.007668, y: -16.004528, z: 3.219997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7144928222758580340}
@@ -146,6 +147,25 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4411984369795813737}
   m_Enabled: 1
+--- !u!95 &701803855
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4411984369795813737}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5372c79c23f24f33bbeb1700418c4f2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!95 &2080692691
 Animator:
   serializedVersion: 3
@@ -479,7 +499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1637067859, guid: 1603ce0acfe571147ba5d9248128e92d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.002378073
+      value: -0.0015462897
       objectReference: {fileID: 0}
     - target: {fileID: 1637067859, guid: 1603ce0acfe571147ba5d9248128e92d, type: 3}
       propertyPath: m_SizeDelta.y
@@ -714,10 +734,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7144928222758580340}
     m_Modifications:
-    - target: {fileID: 100000, guid: 68a2c04d33825574eb7d094cf1b6a5a1, type: 3}
-      propertyPath: m_Name
-      value: Smartphone
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 68a2c04d33825574eb7d094cf1b6a5a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.23
@@ -774,6 +790,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3.6
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 68a2c04d33825574eb7d094cf1b6a5a1, type: 3}
+      propertyPath: m_Name
+      value: Smartphone
+      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 68a2c04d33825574eb7d094cf1b6a5a1, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -803,9 +823,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Perso
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: af620ddcafc5be5459151a29e677c047, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: af620ddcafc5be5459151a29e677c047, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.057667732
+      value: -0.05766773
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: af620ddcafc5be5459151a29e677c047, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1929,9 +1953,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4411984371344583551}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &4411984371344978389 stripped
+--- !u!4 &4411984371344978429 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400042, guid: af620ddcafc5be5459151a29e677c047,
+  m_CorrespondingSourceObject: {fileID: 400002, guid: af620ddcafc5be5459151a29e677c047,
     type: 3}
   m_PrefabInstance: {fileID: 4411984371344583551}
   m_PrefabAsset: {fileID: 0}
@@ -1941,9 +1965,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4411984371344583551}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &4411984371344978429 stripped
+--- !u!4 &4411984371344978389 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400002, guid: af620ddcafc5be5459151a29e677c047,
+  m_CorrespondingSourceObject: {fileID: 400042, guid: af620ddcafc5be5459151a29e677c047,
     type: 3}
   m_PrefabInstance: {fileID: 4411984371344583551}
   m_PrefabAsset: {fileID: 0}
@@ -1954,10 +1978,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4411984371344978415}
     m_Modifications:
-    - target: {fileID: 100000, guid: 68a2c04d33825574eb7d094cf1b6a5a1, type: 3}
-      propertyPath: m_Name
-      value: Smartphone
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 68a2c04d33825574eb7d094cf1b6a5a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.010799858
@@ -2001,6 +2021,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 68a2c04d33825574eb7d094cf1b6a5a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -58.146004
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 68a2c04d33825574eb7d094cf1b6a5a1, type: 3}
+      propertyPath: m_Name
+      value: Smartphone_hand
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 68a2c04d33825574eb7d094cf1b6a5a1, type: 3}
       propertyPath: m_Materials.Array.data[0]
