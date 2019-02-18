@@ -54,11 +54,13 @@ public class Highlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {
         if (btn.interactable)
         {
-            buttonSprite.color = baseColor * btn.colors.pressedColor * btn.colors.colorMultiplier;
+            //buttonSprite.color = baseColor * btn.colors.pressedColor * btn.colors.colorMultiplier;
+            buttonSprite.color = baseColor;
         }
         else
         {
-            buttonSprite.color = baseColor * btn.colors.disabledColor * btn.colors.colorMultiplier;
+            //buttonSprite.color = baseColor * btn.colors.disabledColor * btn.colors.colorMultiplier;
+            buttonSprite.color = baseColor;
         }
     }
 
@@ -66,11 +68,13 @@ public class Highlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {
         if (btn.interactable)
         {
-            buttonSprite.color = baseColor * btn.colors.highlightedColor * btn.colors.colorMultiplier;
+            //buttonSprite.color = baseColor * btn.colors.highlightedColor * btn.colors.colorMultiplier;
+            buttonSprite.color = baseColor;
         }
         else
         {
-            buttonSprite.color = baseColor * btn.colors.disabledColor * btn.colors.colorMultiplier;
+            //buttonSprite.color = baseColor * btn.colors.disabledColor * btn.colors.colorMultiplier;
+            buttonSprite.color = baseColor;
         }
     }
 
@@ -78,11 +82,13 @@ public class Highlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {
         if (btn.interactable)
         {
-            buttonSprite.color = baseColor * btn.colors.normalColor * btn.colors.colorMultiplier;
+            //buttonSprite.color = baseColor * btn.colors.normalColor * btn.colors.colorMultiplier;
+            buttonSprite.color = baseColor; 
         }
         else
         {
-            buttonSprite.color = baseColor * btn.colors.disabledColor * btn.colors.colorMultiplier;
+            //buttonSprite.color = baseColor * btn.colors.disabledColor * btn.colors.colorMultiplier;
+            buttonSprite.color = baseColor; 
         }
     }
 
