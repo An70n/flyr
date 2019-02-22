@@ -59,7 +59,7 @@ MonoBehaviour:
     setSubtitleColor: 1
     applyColorToPrependedName: 0
     prependActorNameSeparator: ': '
-    subtitleColor: {r: 0.99607843, g: 0.7254902, b: 0.5803922, a: 1}
+    subtitleColor: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 1}
 --- !u!114 &39011538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891cbbf640378df45ab970f7fc274b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0.99607843, g: 0.7254902, b: 0.5803922, a: 1}
+  color: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 1}
   applyTo: 0
   prependActorNameSeparator: ': '
 --- !u!1 &227844281
@@ -134,7 +134,7 @@ MonoBehaviour:
     setSubtitleColor: 1
     applyColorToPrependedName: 0
     prependActorNameSeparator: ': '
-    subtitleColor: {r: 0.8627451, g: 0.48235294, b: 0.6862745, a: 1}
+    subtitleColor: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 1}
 --- !u!114 &227844284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891cbbf640378df45ab970f7fc274b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0.8627451, g: 0.48235294, b: 0.6862745, a: 1}
+  color: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 1}
   applyTo: 0
   prependActorNameSeparator: ': '
 --- !u!1 &433813091
@@ -209,7 +209,7 @@ MonoBehaviour:
     setSubtitleColor: 1
     applyColorToPrependedName: 0
     prependActorNameSeparator: ': '
-    subtitleColor: {r: 0.6313726, g: 0.654902, b: 0.99607843, a: 1}
+    subtitleColor: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 1}
 --- !u!114 &433813093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891cbbf640378df45ab970f7fc274b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0.6313726, g: 0.654902, b: 0.99607843, a: 1}
+  color: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 1}
   applyTo: 0
   prependActorNameSeparator: ': '
 --- !u!1 &1041108036
@@ -284,7 +284,7 @@ MonoBehaviour:
     setSubtitleColor: 1
     applyColorToPrependedName: 0
     prependActorNameSeparator: ': '
-    subtitleColor: {r: 0.9333334, g: 0.8196079, b: 0.38823533, a: 1}
+    subtitleColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1041108039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891cbbf640378df45ab970f7fc274b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0.9333334, g: 0.8196079, b: 0.38823533, a: 1}
+  color: {r: 1, g: 1, b: 1, a: 1}
   applyTo: 0
   prependActorNameSeparator: ': '
 --- !u!1 &1930101740
@@ -359,7 +359,7 @@ MonoBehaviour:
     setSubtitleColor: 1
     applyColorToPrependedName: 0
     prependActorNameSeparator: ': '
-    subtitleColor: {r: 0.6313726, g: 0.654902, b: 0.99607843, a: 1}
+    subtitleColor: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 1}
 --- !u!114 &1930101743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891cbbf640378df45ab970f7fc274b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0.6313726, g: 0.654902, b: 0.99607843, a: 1}
+  color: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 1}
   applyTo: 0
   prependActorNameSeparator: ': '
 --- !u!1 &6278688222721840325
@@ -385,6 +385,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6278688222721840324}
   - component: {fileID: 1167919793}
+  - component: {fileID: 1334983447}
+  - component: {fileID: 1334983448}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -423,41 +425,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccaa6ce3c286e4630918f8eef103c95b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  j_Color: {r: 0.99607843, g: 0.7254902, b: 0.5803922, a: 1}
-  k_Color: {r: 0.8627451, g: 0.48235294, b: 0.6862745, a: 1}
-  r_Color: {r: 0.6313726, g: 0.654902, b: 0.99607843, a: 1}
-  appMenu: {fileID: 0}
-  iphoneMenu: {fileID: 0}
-  messageMenu: {fileID: 0}
-  j_History:
-  - {fileID: 0}
-  - {fileID: 0}
-  k_History:
-  - {fileID: 0}
-  - {fileID: 0}
-  r_History:
-  - {fileID: 0}
-  - {fileID: 0}
-  j_History_lines:
-  - {fileID: 0}
-  k_History_lines:
-  - {fileID: 0}
-  r_History_lines:
-  - {fileID: 0}
-  jHistory_activated: 0
-  kHistory_activated: 0
-  rHistory_activated: 0
-  iphoneScreen: 1
-  messageScreen: 0
-  motherScreen: 0
-  appScreen: 0
-  appConversation: 0
-  r_Conv_started: 0
-  notifAnim: {fileID: 0}
-  headingText: {fileID: 0}
-  returnButton: {fileID: 0}
-  player: {fileID: 1041108037}
-  J: {fileID: 39011536}
-  K: {fileID: 227844282}
-  R: {fileID: 1930101741}
-  mom: {fileID: 433813092}
+  messageMenuHeadingColor: {r: 0.6313726, g: 0.654902, b: 0.99607843, a: 1}
+  appMenuHeadingColor: {r: 0.94117653, g: 0.5137255, b: 0.5686275, a: 1}
+  r_Button: {fileID: 0}
+  j_Button: {fileID: 0}
+  k_Button: {fileID: 0}
+  r_preview: {fileID: 0}
+  j_preview: {fileID: 0}
+  k_preview: {fileID: 0}
+--- !u!114 &1334983447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6278688222721840325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2892c4af5899479cb83b4175f67e640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skipToEnd: 0
+  skipMom: 0
+--- !u!114 &1334983448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6278688222721840325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 538953260ac7e42ee829cae48ed2d6a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

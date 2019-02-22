@@ -93,14 +93,7 @@ public class ConversationsManager : MonoBehaviour
         headingColor = GameObject.Find("Heading Panel").GetComponent<SVGImage>();
         appName = "nom de l'app";
 
-        string k_History = "2;2;41;2;42";
-        PixelCrushers.DialogueSystem.DialogueLua.SetVariable("DialogueEntryRecords_K", k_History);
 
-        string j_History = "3;1;46;1;47;1;3";
-        PixelCrushers.DialogueSystem.DialogueLua.SetVariable("DialogueEntryRecords_J", j_History);
-
-        string r_History = "2;3;46;3;47";
-        PixelCrushers.DialogueSystem.DialogueLua.SetVariable("DialogueEntryRecords_R", r_History);
     }
 
     private void Update()
@@ -217,6 +210,12 @@ public class ConversationsManager : MonoBehaviour
     public void ResumeConversationR()
     {
         PixelCrushers.DialogueSystem.DialogueLua.SetVariable("Conversation", "R");
+        FindObjectOfType<TextlineDialogueUI>().OnApplyPersistentData();
+    }
+
+    public void ResumeConversationMom()
+    {
+        PixelCrushers.DialogueSystem.DialogueLua.SetVariable("Conversation", "Mom");
         FindObjectOfType<TextlineDialogueUI>().OnApplyPersistentData();
     }
 
