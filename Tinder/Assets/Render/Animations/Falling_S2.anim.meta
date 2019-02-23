@@ -1,9 +1,8 @@
 fileFormatVersion: 2
-guid: 00d3be9741969ee4abb41a0d36893d12
-labels:
-- Makinom
-DefaultImporter:
+guid: ab76ca2cfc614694f9ad11a29889e838
+NativeFormatImporter:
   externalObjects: {}
+  mainObjectFileID: 7400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
