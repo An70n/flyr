@@ -91,7 +91,7 @@ public class ConversationsManager : MonoBehaviour
 
         headingText = GameObject.Find("Heading Panel").transform.Find("heading").GetComponent<Text>();
         headingColor = GameObject.Find("Heading Panel").GetComponent<SVGImage>();
-        appName = "nom de l'app";
+        appName = "Flyr";
 
 
     }

@@ -24,6 +24,7 @@ public class Highlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     void Update()
     {
+        baseColor = buttonSprite.color;
         if (btn.interactable != interactableDelay)
         {
             if (btn.interactable)
