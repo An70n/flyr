@@ -16,6 +16,7 @@ public class EndManager : MonoBehaviour
 
     //private Animator playerAnim;
     private Animator camAnim;
+    private Animator endCharAnim; 
 
 
 
@@ -29,7 +30,8 @@ public class EndManager : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         //playerAnim = player.GetComponent<Animator>();
 
-        smartphone = GameObject.Find("Smartphone"); 
+        smartphone = GameObject.Find("Smartphone");
+        endCharAnim = GameObject.Find("EndPerso").GetComponent<Animator>();
  
     }
 
@@ -63,8 +65,8 @@ public class EndManager : MonoBehaviour
 
         cam1.enabled = false; 
         cam2.enabled = true;
-        yield return new WaitForSeconds(5f); 
+        yield return new WaitForSeconds(5f);
 
-        //animation de fin 
+        endCharAnim.SetTrigger("endChar"); 
     }
 }
