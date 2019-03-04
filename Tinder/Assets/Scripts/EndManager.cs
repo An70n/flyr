@@ -65,7 +65,7 @@ public class EndManager : MonoBehaviour
 
         cam1.enabled = false; 
         cam2.enabled = true;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
 
         endCharAnim.SetTrigger("endChar"); 
     }
