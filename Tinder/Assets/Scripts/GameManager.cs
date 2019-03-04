@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject startMenu;
-    public GameObject creditsMenu; 
+    public GameObject creditsMenu;
 
     private bool credits = false; 
     // Start is called before the first frame update

@@ -5,7 +5,9 @@ using UnityEngine;
 public class EndManager : MonoBehaviour
 {
     public bool skipToEnd;
-    public bool skipMom; 
+    public bool skipMom;
+
+    public GameObject endCanvas; 
 
     private Camera cam1;
     private Camera cam2;
@@ -32,6 +34,8 @@ public class EndManager : MonoBehaviour
 
         smartphone = GameObject.Find("Smartphone");
         endCharAnim = GameObject.Find("EndPerso").GetComponent<Animator>();
+
+        endCanvas.SetActive(false);
  
     }
 
@@ -67,6 +71,8 @@ public class EndManager : MonoBehaviour
         cam2.enabled = true;
         yield return new WaitForSeconds(3f);
 
-        endCharAnim.SetTrigger("endChar"); 
+        endCharAnim.SetTrigger("endChar");
+        yield return new WaitForSeconds(endCharAnim.GetCurrentAnimatorStateInfo(0).length);
+        endCanvas.SetActive(true);
     }
 }
