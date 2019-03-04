@@ -40,7 +40,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 260}
-  m_SizeDelta: {x: 100, y: 30}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &62802324
 CanvasRenderer:
@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 152230223}
   - component: {fileID: 152230225}
   - component: {fileID: 152230224}
-  - component: {fileID: 8925027701347605016}
+  - component: {fileID: 4411984369751877922}
   m_Layer: 5
   m_Name: K_Preview
   m_TagString: Untagged
@@ -302,7 +302,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Sure, see ya!
---- !u!114 &8925027701347605016
+--- !u!114 &4411984369751877922
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 152230222}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96b28082c9a44384cbd8c020e2f6fe84, type: 3}
+  m_Script: {fileID: 11500000, guid: 78d598c6dc6d04a4c8b981df91124cc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   conversation: K
@@ -1632,7 +1632,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100.8, y: -30.9}
+  m_AnchoredPosition: {x: -100.8, y: -24.6}
   m_SizeDelta: {x: 400, y: 2}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &620002770
@@ -1995,7 +1995,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -63.199997, y: 1.6016417}
+  m_AnchoredPosition: {x: -71.1, y: 7}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &822453876
@@ -2381,7 +2381,7 @@ GameObject:
   - component: {fileID: 1011133147}
   - component: {fileID: 1011133149}
   - component: {fileID: 1011133148}
-  - component: {fileID: 8302515709035577962}
+  - component: {fileID: 4411984370075998902}
   m_Layer: 5
   m_Name: R_Preview
   m_TagString: Untagged
@@ -2450,7 +2450,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: I am!
---- !u!114 &8302515709035577962
+--- !u!114 &4411984370075998902
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2459,7 +2459,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1011133146}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96b28082c9a44384cbd8c020e2f6fe84, type: 3}
+  m_Script: {fileID: 11500000, guid: 78d598c6dc6d04a4c8b981df91124cc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   conversation: R
@@ -2953,7 +2953,7 @@ GameObject:
   - component: {fileID: 1276814919}
   - component: {fileID: 1276814921}
   - component: {fileID: 1276814920}
-  - component: {fileID: 7325142516865633218}
+  - component: {fileID: 4411984370876454442}
   m_Layer: 5
   m_Name: J_Preview
   m_TagString: Untagged
@@ -3024,7 +3024,7 @@ MonoBehaviour:
   m_Text: 'Hi :)
 
 '
---- !u!114 &7325142516865633218
+--- !u!114 &4411984370876454442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3033,7 +3033,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1276814918}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96b28082c9a44384cbd8c020e2f6fe84, type: 3}
+  m_Script: {fileID: 11500000, guid: 78d598c6dc6d04a4c8b981df91124cc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   conversation: J
@@ -3536,7 +3536,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100.8, y: 17.9}
+  m_AnchoredPosition: {x: -100.8, y: 24.5}
   m_SizeDelta: {x: 400, y: 2}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &1451208368
@@ -4040,7 +4040,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0018875496}
+  m_AnchoredPosition: {x: 0, y: -0.0025272244}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1637067863
@@ -4871,7 +4871,7 @@ GameObject:
   - component: {fileID: 1947492789}
   - component: {fileID: 1947492791}
   - component: {fileID: 1947492790}
-  - component: {fileID: 1029201160908147508}
+  - component: {fileID: 4411984371010261468}
   m_Layer: 5
   m_Name: Mom_preview
   m_TagString: Untagged
@@ -4895,8 +4895,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -61, y: -15}
-  m_SizeDelta: {x: 0, y: -0.0000009536743}
+  m_AnchoredPosition: {x: -54.3, y: -8}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1947492791
 CanvasRenderer:
@@ -4932,7 +4932,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 300
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -4940,7 +4940,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: xx
---- !u!114 &1029201160908147508
+--- !u!114 &4411984371010261468
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4949,7 +4949,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1947492788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96b28082c9a44384cbd8c020e2f6fe84, type: 3}
+  m_Script: {fileID: 11500000, guid: 78d598c6dc6d04a4c8b981df91124cc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   conversation: Mom
