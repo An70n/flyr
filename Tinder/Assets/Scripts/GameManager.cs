@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject startMenu;
     public GameObject creditsMenu;
+    public GameObject returnButton;
+    //public GameObject iphoneMenu; 
 
     private bool credits = false; 
     // Start is called before the first frame update
@@ -20,6 +23,10 @@ public class GameManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             startMenu.SetActive(true);
+        }
+        if(credits == false)
+        {
+            returnButton.SetActive(false);
         }
     }
 
@@ -38,12 +45,18 @@ public class GameManager : MonoBehaviour
         startMenu.SetActive(false);
     }
 
+    /*public void ResumedGame()
+    {
+        startMenu.SetActive(false);
+    }*/
+
     public void CreditsMenu()
     {
         if(credits == false)
         {
             startMenu.SetActive(false);
             creditsMenu.SetActive(true);
+            returnButton.SetActive(true);
             credits = true;
         }else if(credits == true)
         {

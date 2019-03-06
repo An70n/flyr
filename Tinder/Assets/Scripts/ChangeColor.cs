@@ -12,6 +12,8 @@ public class ChangeColor : MonoBehaviour
     public GameObject appMenu;
     public GameObject messagesMenu;
 
+    public Highlight firstResponseHighlight, secondResponseHighlight, thirdResponseHighlight; 
+
     public Image pcMessageBgd;
     public SVGImage firstChoice, secondChoice, thirdChoice; 
     
@@ -38,7 +40,10 @@ public class ChangeColor : MonoBehaviour
         pcMessageBgd.color = flyrColor;
         firstChoice.color = flyrColor;
         secondChoice.color = flyrColor;
-        thirdChoice.color = flyrColor; 
+        thirdChoice.color = flyrColor;
+        firstResponseHighlight.baseColor = flyrColor;
+        secondResponseHighlight.baseColor = flyrColor;
+        thirdResponseHighlight.baseColor = flyrColor;
     }
 
     public void ChangeToMessagesColor()
@@ -47,5 +52,8 @@ public class ChangeColor : MonoBehaviour
         firstChoice.color = messagesColor;
         secondChoice.color = messagesColor;
         thirdChoice.color = messagesColor;
+        firstResponseHighlight.baseColor = messagesColor;
+        secondResponseHighlight.baseColor = messagesColor;
+        thirdResponseHighlight.baseColor = messagesColor;
     }
 }

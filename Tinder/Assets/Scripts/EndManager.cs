@@ -34,9 +34,6 @@ public class EndManager : MonoBehaviour
 
         smartphone = GameObject.Find("Smartphone");
         endCharAnim = GameObject.Find("EndPerso").GetComponent<Animator>();
-
-        endCanvas.SetActive(false);
- 
     }
 
 
@@ -56,6 +53,15 @@ public class EndManager : MonoBehaviour
         {
             PixelCrushers.DialogueSystem.DialogueLua.SetVariable("endOfGame", true);
         }
+
+        if(Input.GetKeyDown(KeyCode.F1))
+        {
+            skipToEnd = true; 
+        }
+        if(Input.GetKeyDown(KeyCode.F2))
+        {
+            skipMom = true; 
+        }
     }
 
     private IEnumerator EndingScene ()
@@ -69,10 +75,8 @@ public class EndManager : MonoBehaviour
 
         cam1.enabled = false; 
         cam2.enabled = true;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(.5f);
 
         endCharAnim.SetTrigger("endChar");
-        yield return new WaitForSeconds(endCharAnim.GetCurrentAnimatorStateInfo(0).length);
-        endCanvas.SetActive(true);
     }
 }

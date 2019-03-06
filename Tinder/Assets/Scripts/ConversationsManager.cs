@@ -43,7 +43,8 @@ public class ConversationsManager : MonoBehaviour
     private bool conv_K; 
 
     private Text headingText;
-    private Text timeValue; 
+    private Text timeValue;
+    private Text timeValue_2; 
 
     private string appName;
     private SVGImage headingColor; 
@@ -52,6 +53,7 @@ public class ConversationsManager : MonoBehaviour
 
     private GameObject returnButton;
     private GameObject time;
+    private GameObject time_2; 
 
     private Transform player;
     private Transform J;
@@ -71,7 +73,6 @@ public class ConversationsManager : MonoBehaviour
         appMenu.SetActive(false);
 
         iphoneMenu = GameObject.Find("iphone Menu");
-        iphoneScreen = true;
 
         messageMenu = GameObject.Find("message Menu");
         messageMenu.SetActive(false);
@@ -86,14 +87,14 @@ public class ConversationsManager : MonoBehaviour
         mom = this.transform.Find("mom");
 
         time = GameObject.Find("time");
+        time_2 = GameObject.Find("time (1)");
         timeValue = time.GetComponent<Text>();
+        timeValue_2 = time_2.GetComponent<Text>();
         timeValue.enabled = false;
 
         headingText = GameObject.Find("Heading Panel").transform.Find("heading").GetComponent<Text>();
         headingColor = GameObject.Find("Heading Panel").GetComponent<SVGImage>();
         appName = "Flyr";
-
-
     }
 
     private void Update()
@@ -105,6 +106,14 @@ public class ConversationsManager : MonoBehaviour
             headingText.text = time.GetComponent<Text>().text;
             headingColor.color = iphoneMenuHeadingColor;
             returnButton.SetActive(false);
+        }
+
+        if(iphoneMenu.activeInHierarchy)
+        {
+            iphoneScreen = true; 
+        }else if(!iphoneMenu.activeInHierarchy)
+        {
+            iphoneScreen = false;
         }
     }
 
@@ -314,6 +323,12 @@ public class ConversationsManager : MonoBehaviour
             headingText.text = "Messages";
         }
 
+       /*if(creditsMenu.activeInHierarchy)
+        {
+            creditsMenu.SetActive(false);
+            returnButton.SetActive(false);
+        }*/
+
     }
 
     public void OpenMessages()
@@ -347,6 +362,7 @@ public class ConversationsManager : MonoBehaviour
         string niceTime = string.Format("{0:00}:{1:00}", minutes, seconds);
 
         timeValue.text = niceTime;
+        timeValue_2.text = niceTime; 
     }
 
     public void SortConversations()

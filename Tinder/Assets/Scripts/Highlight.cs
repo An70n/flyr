@@ -8,7 +8,7 @@ public class Highlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 {
 
     //Text txt;
-    Color baseColor;
+    public Color baseColor;
     Button btn;
     SVGImage buttonSprite; 
     bool interactableDelay;
@@ -24,7 +24,7 @@ public class Highlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     void Update()
     {
-        baseColor = buttonSprite.color;
+        //baseColor = buttonSprite.color;
         if (btn.interactable != interactableDelay)
         {
             if (btn.interactable)
