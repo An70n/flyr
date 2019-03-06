@@ -8,7 +8,14 @@ public class NotificationManager : MonoBehaviour
     public Text nPC;
     public Text message;
     public Text preview;
-   
+
+    private AudioSource notifSound;
+
+    private void Start()
+    {
+        notifSound = GetComponent<AudioSource>();
+    }
+
     private void Update()
     {
         if(PixelCrushers.DialogueSystem.DialogueLua.GetVariable("rConversationStart").asBool == true)
@@ -26,7 +33,7 @@ public class NotificationManager : MonoBehaviour
     private void PlayNotification()
     {
         this.gameObject.GetComponentInChildren<Animator>().SetTrigger("notifPlaying");
- 
+        notifSound.Play();
     }
 
     private IEnumerator Notification()

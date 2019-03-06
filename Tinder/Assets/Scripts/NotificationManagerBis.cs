@@ -7,7 +7,14 @@ public class NotificationManagerBis : MonoBehaviour
 {
     public Text nPC;
     public Text message;
-    public Text preview; 
+    public Text preview;
+
+    private AudioSource notifSound;
+
+    private void Start()
+    {
+        notifSound = GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
@@ -26,7 +33,7 @@ public class NotificationManagerBis : MonoBehaviour
     private void PlayNotification()
     {
         this.gameObject.GetComponentInChildren<Animator>().SetTrigger("notifPlaying");
-
+        notifSound.Play();
     }
 
     private IEnumerator Notification()

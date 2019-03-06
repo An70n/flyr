@@ -215,6 +215,7 @@ public class TextlineDialogueUI : StandardDialogueUI
         if (preDelayIcon != null) preDelayIcon.transform.SetAsLastSibling();
         ScrollToBottom();
         yield return new WaitForSeconds(preDelay);
+        Sequencer.Message(subtitle.speakerInfo.isNPC ? "Received" : "Sent");
         Tools.SetGameObjectActive(preDelayIcon, false);
         AddMessage(subtitle);
         isInPreDelay = false;
