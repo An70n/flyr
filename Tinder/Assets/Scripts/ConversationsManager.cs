@@ -207,24 +207,29 @@ public class ConversationsManager : MonoBehaviour
     public void ResumeConversationJ()
     {
         PixelCrushers.DialogueSystem.DialogueLua.SetVariable("Conversation", "J");
+
+        FindObjectOfType<TextlineDialogueUI>().dontRepeatLastSequence = true;
         FindObjectOfType<TextlineDialogueUI>().OnApplyPersistentData();
     }
 
     public void ResumeConversationK()
     {
         PixelCrushers.DialogueSystem.DialogueLua.SetVariable("Conversation", "K");
+        FindObjectOfType<TextlineDialogueUI>().dontRepeatLastSequence = true;
         FindObjectOfType<TextlineDialogueUI>().OnApplyPersistentData();
     }
 
     public void ResumeConversationR()
     {
         PixelCrushers.DialogueSystem.DialogueLua.SetVariable("Conversation", "R");
+        FindObjectOfType<TextlineDialogueUI>().dontRepeatLastSequence = true;
         FindObjectOfType<TextlineDialogueUI>().OnApplyPersistentData();
     }
 
     public void ResumeConversationMom()
     {
         PixelCrushers.DialogueSystem.DialogueLua.SetVariable("Conversation", "Mom");
+        FindObjectOfType<TextlineDialogueUI>().dontRepeatLastSequence = true;
         FindObjectOfType<TextlineDialogueUI>().OnApplyPersistentData();
     }
 

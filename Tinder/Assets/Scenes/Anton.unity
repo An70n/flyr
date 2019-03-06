@@ -931,7 +931,7 @@ PrefabInstance:
     - target: {fileID: 4411984371219930172, guid: 81632f84106ffe743ab4541dd093e656,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.006195745
+      value: -0.0011611916
       objectReference: {fileID: 0}
     - target: {fileID: 4411984371219930172, guid: 81632f84106ffe743ab4541dd093e656,
         type: 3}
@@ -1925,12 +1925,17 @@ PrefabInstance:
     - target: {fileID: 2942662336657998654, guid: 81632f84106ffe743ab4541dd093e656,
         type: 3}
       propertyPath: displaySettings.cameraSettings.defaultSequence
-      value: Audio(ReceiveText) @2
+      value: Audio(ReceiveText) @Message(Received)
       objectReference: {fileID: 0}
     - target: {fileID: 2942662336657998654, guid: 81632f84106ffe743ab4541dd093e656,
         type: 3}
       propertyPath: displaySettings.cameraSettings.disableInternalSequencerCommands
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2942662336657998654, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: debugLevel
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4411984369940377534, guid: 81632f84106ffe743ab4541dd093e656,
         type: 3}

@@ -3007,8 +3007,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
-        x: 480
-        y: 870
+        x: 459.91943
+        y: 651.6231
         width: 160
         height: 30
     - id: 40
@@ -3423,7 +3423,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: WaitForMessage(Forever)
+        value: '{{default}}; WaitForMessage(Forever)'
         type: 0
         typeString: 
       conversationID: 1
@@ -3456,8 +3456,8 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
       canvasRect:
         serializedVersion: 2
-        x: 480
-        y: 1070
+        x: 478.74493
+        y: 1071.2551
         width: 160
         height: 30
     - id: 46
@@ -3831,7 +3831,7 @@ MonoBehaviour:
         y: 712.34485
         width: 160
         height: 30
-    canvasScrollPosition: {x: 52.928436, y: 273.4559}
+    canvasScrollPosition: {x: 111.91531, y: 308.73972}
     canvasZoom: 0.7967876
   - id: 2
     fields:
@@ -6366,7 +6366,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: WaitForMessage(Forever)
+        value: '{{default}}; WaitForMessage(Forever)'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 2
@@ -9690,7 +9690,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: WaitForMessage(Forever)
+        value: '{{default}}; WaitForMessage(Forever)'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 3
@@ -11143,7 +11143,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: '{{default}}; WaitForMessage(Forever)'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 4
@@ -11210,7 +11210,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: '{{default}}; WaitForMessage(Forever)'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 4
@@ -11277,7 +11277,7 @@ MonoBehaviour:
         type: 0
         typeString: CustomFieldType_Text
       - title: Sequence
-        value: 
+        value: '{{default}}; WaitForMessage(Forever)'
         type: 0
         typeString: CustomFieldType_Text
       conversationID: 4
