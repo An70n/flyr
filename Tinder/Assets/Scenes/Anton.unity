@@ -805,6 +805,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1334983451}
+    - target: {fileID: 1031373581, guid: 2c0ab13f04b3ae24fbb5c13594276ea6, type: 3}
+      propertyPath: m_Text
+      value: "Romain Dannin - Game design // Narrative design // Programming\nAnthony
+        de Rueda - 3D artist // UX Design \n\n\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326134759022310494, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
+        type: 3}
+      propertyPath: m_Text
+      value: "Special thanks to PixelCrushers for the Dialogue System \nfor Unity
+        plug-in and to Tony Li for all his help with it "
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c0ab13f04b3ae24fbb5c13594276ea6, type: 3}
 --- !u!114 &4411984369751877951 stripped
@@ -931,7 +942,7 @@ PrefabInstance:
     - target: {fileID: 4411984371219930172, guid: 81632f84106ffe743ab4541dd093e656,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.0058994577
+      value: -0.00068413035
       objectReference: {fileID: 0}
     - target: {fileID: 4411984371219930172, guid: 81632f84106ffe743ab4541dd093e656,
         type: 3}
@@ -1951,6 +1962,14 @@ PrefabInstance:
         type: 3}
       propertyPath: npcPreDelaySettings.additionalSeconds
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984370972685752, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_Text
+      value: "Anthony de Rueda - \n3D artist\nUX Design \n\nRomain Dannin - \nGame
+        design\nNarrative design\nProgramming\n\nSpecial thanks to PixelCrushers for
+        the Dialogue System for Unity plug-in and to Tony Li for all his help with
+        it "
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
