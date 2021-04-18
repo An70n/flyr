@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using PixelCrushers.DialogueSystem.Extras;
+using TMPro;
 
 public class ConversationsManager : MonoBehaviour
 {
@@ -43,9 +44,9 @@ public class ConversationsManager : MonoBehaviour
     private bool conv_R;
     private bool conv_K; 
 
-    private Text headingText;
-    private Text timeValue;
-    private Text timeValue_2; 
+    private TextMeshProUGUI headingText;
+    private TextMeshProUGUI timeValue;
+    private TextMeshProUGUI timeValue_2; 
 
     private string appName;
     private Unity.VectorGraphics.SVGImage headingColor; 
@@ -89,11 +90,11 @@ public class ConversationsManager : MonoBehaviour
 
         time = GameObject.Find("time");
         time_2 = GameObject.Find("time (1)");
-        timeValue = time.GetComponent<Text>();
-        timeValue_2 = time_2.GetComponent<Text>();
+        timeValue = time.GetComponent<TextMeshProUGUI>();
+        timeValue_2 = time_2.GetComponent<TextMeshProUGUI>();
         timeValue.enabled = false;
 
-        headingText = GameObject.Find("Heading Panel").transform.Find("heading").GetComponent<Text>();
+        headingText = GameObject.Find("Heading Panel").transform.Find("heading").GetComponent<TextMeshProUGUI>();
         headingColor = GameObject.Find("Heading Panel").GetComponent<Unity.VectorGraphics.SVGImage>();
         appName = "Flyr";
 
@@ -106,7 +107,7 @@ public class ConversationsManager : MonoBehaviour
         
         if(iphoneScreen == true)
         {
-            headingText.text = time.GetComponent<Text>().text;
+            headingText.text = time.GetComponent<TextMeshProUGUI>().text;
             headingColor.color = iphoneMenuHeadingColor;
             returnButton.SetActive(false);
         }
@@ -170,123 +171,6 @@ public class ConversationsManager : MonoBehaviour
         }
 
     }
-
-    public void OpenDialogueR()
-    {
-        appConversation = true;
-        appScreen = false; 
-        headingText.text = "R";
-
-        conv_R = true; 
-
-        r_preview.fontStyle = FontStyle.Normal; 
-
-        if (PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry("R"))
-       
-        {
-            PixelCrushers.DialogueSystem.DialogueManager.StartConversation("R", player, R);
-            appMenu.SetActive(false);
-        }
-        else if(!PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry("R"))
-        {
-            PixelCrushers.DialogueSystem.DialogueManager.dialogueUI.Open();
-            appMenu.SetActive(false);
-        }
-    }
-
-    public void OpenDialogueJ()
-    {
-        appConversation = true;
-        appScreen = false;
-        headingText.text = "J";
-        conv_J = true; 
-
-        j_preview.fontStyle = FontStyle.Normal;
-
-        if (PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry("J"))
-
-        {
-            PixelCrushers.DialogueSystem.DialogueManager.StartConversation("J", player, J);
-            appMenu.SetActive(false);
-
-        }
-        else if (!PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry("J"))
-        {
-            PixelCrushers.DialogueSystem.DialogueManager.dialogueUI.Open();
-            appMenu.SetActive(false);
-        }
-    }
-
-    public void OpenDialogueK()
-    {
-        appConversation = true;
-        appScreen = false;
-        headingText.text = "K";
-        conv_K = true; 
-
-        k_preview.fontStyle = FontStyle.Normal;
-
-        if (PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry("K"))
-
-        {
-            PixelCrushers.DialogueSystem.DialogueManager.StartConversation("K", player, K);
-            appMenu.SetActive(false);
-
-        }
-        else if (!PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry("K"))
-        {
-            PixelCrushers.DialogueSystem.DialogueManager.dialogueUI.Open();
-            appMenu.SetActive(false);
-        }
-    }
-
-    public void OpenDialogueMom()
-    {
-        messageMenu.SetActive(false);
-        motherScreen = true;
-        messageScreen = false;
-        headingText.text = "Mom"; 
-
-        if (PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry("Mom"))
-        {
-            PixelCrushers.DialogueSystem.DialogueManager.StartConversation("Mom", player, mom);
-            appMenu.SetActive(false);
-        }
-        else if (!PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry("Mom"))
-        {
-            PixelCrushers.DialogueSystem.DialogueManager.dialogueUI.Open();
-            appMenu.SetActive(false);
-        }
-    }
-
-    public void ResumeConversationJ()
-    {
-        PixelCrushers.DialogueSystem.DialogueLua.SetVariable("Conversation", "J");
-        //FindObjectOfType<TextlineDialogueUI>().dontRepeatLastSequence = true;
-        FindObjectOfType<TextlineDialogueUI>().OnApplyPersistentData();
-    }
-
-    public void ResumeConversationK()
-    {
-        PixelCrushers.DialogueSystem.DialogueLua.SetVariable("Conversation", "K");
-        //FindObjectOfType<TextlineDialogueUI>().dontRepeatLastSequence = true;
-        FindObjectOfType<TextlineDialogueUI>().OnApplyPersistentData();
-    }
-
-    public void ResumeConversationR()
-    {
-        PixelCrushers.DialogueSystem.DialogueLua.SetVariable("Conversation", "R");
-        //FindObjectOfType<TextlineDialogueUI>().dontRepeatLastSequence = true;
-        FindObjectOfType<TextlineDialogueUI>().OnApplyPersistentData();
-    }
-
-    public void ResumeConversationMom()
-    {
-        PixelCrushers.DialogueSystem.DialogueLua.SetVariable("Conversation", "Mom");
-        //FindObjectOfType<TextlineDialogueUI>().dontRepeatLastSequence = true;
-        FindObjectOfType<TextlineDialogueUI>().OnApplyPersistentData();
-    }
-
 
     public void ResumeConversation(string conversation)
     {
