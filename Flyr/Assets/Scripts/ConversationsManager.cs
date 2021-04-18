@@ -35,7 +35,7 @@ public class ConversationsManager : MonoBehaviour
     private GameObject messageMenu;
 
     private Dictionary<string, bool> whichScreenIsActive = new Dictionary<string, bool>();
-    private Dictionary<string, Transform> actorTransforms = new Dictionary<string, Transform>();
+    private Dictionary<string, int> charactersList = new Dictionary<string, int>();
 
     private bool conv_J;
     private bool conv_R;
@@ -54,13 +54,6 @@ public class ConversationsManager : MonoBehaviour
     private GameObject time;
     private GameObject time_2; 
 
-    private Transform player;
-    private Transform J;
-    private Transform K;
-    private Transform R;
-    private Transform mom;
-    private Transform flyr;
-
     void Start()
     {
         transformOne = k_Button.GetComponent<RectTransform>().localPosition;
@@ -75,12 +68,12 @@ public class ConversationsManager : MonoBehaviour
         whichScreenIsActive.Add("appConversation", false);
         whichScreenIsActive.Add("iphoneScreen", false);
 
-        actorTransforms.Add("player", player);
-        actorTransforms.Add("J", J);
-        actorTransforms.Add("K", K);
-        actorTransforms.Add("R", R);
-        actorTransforms.Add("Mom", mom);
-        actorTransforms.Add("Flyr", flyr);
+        charactersList.Add("player", 0);
+        charactersList.Add("J", 1);
+        charactersList.Add("K", 2);
+        charactersList.Add("R", 3);
+        charactersList.Add("Mom", 4);
+        charactersList.Add("Flyr", 5);
 
         appMenu = GameObject.Find("app Menu");
         appMenu.SetActive(false);
@@ -93,13 +86,6 @@ public class ConversationsManager : MonoBehaviour
 
         returnButton = GameObject.Find("Menu Button");
         returnButton.SetActive(false);
-
-        player = transform.Find("Player");
-        J = transform.Find("J");
-        K = transform.Find("K");
-        R = transform.Find("R");
-        mom = transform.Find("mom");
-        flyr = transform.Find("flyr");
 
         time = GameObject.Find("time");
         time_2 = GameObject.Find("time (1)");
@@ -174,16 +160,14 @@ public class ConversationsManager : MonoBehaviour
             r_preview.fontStyle = TMPro.FontStyles.Normal;
         }
         
-
         if (PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry(conversation))
 
         {
-            PixelCrushers.DialogueSystem.DialogueManager.StartConversation(conversation, player, actorTransforms[conversation]);
+            PixelCrushers.DialogueSystem.DialogueManager.StartConversation(conversation, Characters.charactersTransforms[0], Characters.charactersTransforms[charactersList[conversation]]);
         }
         else if (!PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry(conversation))
         {
             PixelCrushers.DialogueSystem.DialogueManager.dialogueUI.Open();
-
         }
     }
 
