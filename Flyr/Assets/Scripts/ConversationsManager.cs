@@ -19,9 +19,9 @@ public class ConversationsManager : MonoBehaviour
     public Button j_Button;
     public Button k_Button;
 
-    public Text r_preview;
-    public Text j_preview;
-    public Text k_preview;
+    public TextMeshProUGUI r_preview;
+    public TextMeshProUGUI j_preview;
+    public TextMeshProUGUI k_preview;
 
     private int j_value = 9;
     private int r_value = 6;
@@ -34,11 +34,8 @@ public class ConversationsManager : MonoBehaviour
     private GameObject iphoneMenu;
     private GameObject messageMenu;
 
-    private bool messageScreen = false;
-    private bool motherScreen = false;
-    private bool appScreen = false;
-    private bool appConversation = false;
-    private bool iphoneScreen = false;
+    private Dictionary<string, bool> whichScreenIsActive = new Dictionary<string, bool>();
+    private Dictionary<string, Transform> actorTransforms = new Dictionary<string, Transform>();
 
     private bool conv_J;
     private bool conv_R;
@@ -62,6 +59,7 @@ public class ConversationsManager : MonoBehaviour
     private Transform K;
     private Transform R;
     private Transform mom;
+    private Transform flyr;
 
     void Start()
     {
@@ -71,10 +69,24 @@ public class ConversationsManager : MonoBehaviour
 
         SortConversations();
 
+        whichScreenIsActive.Add("messageScreen", false);
+        whichScreenIsActive.Add("messageConversation", false);
+        whichScreenIsActive.Add("appScreen", false);
+        whichScreenIsActive.Add("appConversation", false);
+        whichScreenIsActive.Add("iphoneScreen", false);
+
+        actorTransforms.Add("player", player);
+        actorTransforms.Add("J", J);
+        actorTransforms.Add("K", K);
+        actorTransforms.Add("R", R);
+        actorTransforms.Add("Mom", mom);
+        actorTransforms.Add("Flyr", flyr);
+
         appMenu = GameObject.Find("app Menu");
         appMenu.SetActive(false);
 
         iphoneMenu = GameObject.Find("iphone Menu");
+        whichScreenIsActive["iphoneScreen"] = true;
 
         messageMenu = GameObject.Find("message Menu");
         messageMenu.SetActive(false);
@@ -82,11 +94,12 @@ public class ConversationsManager : MonoBehaviour
         returnButton = GameObject.Find("Menu Button");
         returnButton.SetActive(false);
 
-        player = this.transform.Find("Player");
-        J = this.transform.Find("J");
-        K = this.transform.Find("K");
-        R = this.transform.Find("R");
-        mom = this.transform.Find("mom");
+        player = transform.Find("Player");
+        J = transform.Find("J");
+        K = transform.Find("K");
+        R = transform.Find("R");
+        mom = transform.Find("mom");
+        flyr = transform.Find("flyr");
 
         time = GameObject.Find("time");
         time_2 = GameObject.Find("time (1)");
@@ -97,15 +110,13 @@ public class ConversationsManager : MonoBehaviour
         headingText = GameObject.Find("Heading Panel").transform.Find("heading").GetComponent<TextMeshProUGUI>();
         headingColor = GameObject.Find("Heading Panel").GetComponent<Unity.VectorGraphics.SVGImage>();
         appName = "Flyr";
-
-        //Debug.Log(PixelCrushers.DialogueSystem.DialogueLua.GetVariable("DialogueEntryRecords_Mom").asString);
     }
 
     private void Update()
     {
         timer += Time.deltaTime / 5; 
         
-        if(iphoneScreen == true)
+        if(whichScreenIsActive["iphoneScreen"] == true)
         {
             headingText.text = time.GetComponent<TextMeshProUGUI>().text;
             headingColor.color = iphoneMenuHeadingColor;
@@ -114,62 +125,66 @@ public class ConversationsManager : MonoBehaviour
 
         if(iphoneMenu.activeInHierarchy)
         {
-            iphoneScreen = true; 
+            whichScreenIsActive["iphoneScreen"] = true; 
         }else if(!iphoneMenu.activeInHierarchy)
         {
-            iphoneScreen = false;
+            whichScreenIsActive["iphoneScreen"] = false;
         }
+    }
+
+    public void CloseScreen(GameObject gameObject)
+    {
+        gameObject.SetActive(false);
+    }
+
+    private void SetAllScreensFalse()
+    {
+        whichScreenIsActive["messageScreen"] = false;
+        whichScreenIsActive["messageConversation"] = false;
+        whichScreenIsActive["appScreen"] = false;
+        whichScreenIsActive["appConversation"] = false;
+        whichScreenIsActive["iphoneScreen"] = false;
+    }
+
+    public void WhichScreenIsActive(string screen)
+    {
+        SetAllScreensFalse();
+        whichScreenIsActive[screen] = true;
     }
 
     public void OpenDialogue(string conversation)
     {
         headingText.text = conversation;
 
-        if (conversation == "Mom")
+        if (conversation == "J")
         {
-            messageMenu.SetActive(false);
-            motherScreen = true;
-            messageScreen = false;
+            conv_J = true;
+            j_preview.fontStyle = TMPro.FontStyles.Normal;
         }
 
-        if(conversation != "Mom")
+        if (conversation == "K")
         {
-            appConversation = true;
-            appScreen = false;
-            headingText.text = conversation;
-
-            if (conversation == "J")
-            {
-                conv_J = true;
-                j_preview.fontStyle = FontStyle.Normal;
-            }
-
-            if (conversation == "K")
-            {
-                conv_K = true;
-                k_preview.fontStyle = FontStyle.Normal;
-            }
-
-            if (conversation == "R")
-            {
-                conv_R = true;
-                r_preview.fontStyle = FontStyle.Normal;
-            }
-
+            conv_K = true;
+            k_preview.fontStyle = TMPro.FontStyles.Normal;
         }
+
+        if (conversation == "R")
+        {
+            conv_R = true;
+            r_preview.fontStyle = TMPro.FontStyles.Normal;
+        }
+        
 
         if (PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry(conversation))
 
         {
-            PixelCrushers.DialogueSystem.DialogueManager.StartConversation(conversation, player, R);
-            appMenu.SetActive(false);
+            PixelCrushers.DialogueSystem.DialogueManager.StartConversation(conversation, player, actorTransforms[conversation]);
         }
         else if (!PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry(conversation))
         {
             PixelCrushers.DialogueSystem.DialogueManager.dialogueUI.Open();
-            appMenu.SetActive(false);
-        }
 
+        }
     }
 
     public void ResumeConversation(string conversation)
@@ -233,77 +248,69 @@ public class ConversationsManager : MonoBehaviour
 
     public void PreviousScreen()
     {
-        if(messageScreen == true)
+        if (whichScreenIsActive["messageScreen"] == true)
         {
             messageMenu.SetActive(false);
             iphoneMenu.SetActive(true);
-            messageScreen = false;
+            whichScreenIsActive["messageScreen"] = false;
             returnButton.SetActive(false);
             appMenu.SetActive(false);
-            iphoneScreen = true;
+            whichScreenIsActive["iphoneScreen"] = true;
             timeValue.enabled = false;
         }
 
-        if(appScreen == true)
+        if (whichScreenIsActive["messageConversation"] == true)
         {
-            appMenu.SetActive(false);
-            iphoneMenu.SetActive(true);
-            appScreen = false;
-            returnButton.SetActive(false);
-            iphoneScreen = true;
-            timeValue.enabled = false;
-        }
-
-        if(appConversation == true)
-        {
-            appConversation = false;
-            appScreen = true;
-            appMenu.SetActive(true);
-            CloseDialogue();
-            iphoneMenu.SetActive(false);
-            headingText.text = appName; 
-
-        }
-
-        if(motherScreen == true)
-        {
-            motherScreen = false;
-            messageScreen = true;
+            whichScreenIsActive["messageConversation"] = false;
+            whichScreenIsActive["messageScreen"] = true;
             messageMenu.SetActive(true);
             CloseDialogue();
             iphoneMenu.SetActive(false);
             headingText.text = "Messages";
         }
 
-       /*if(creditsMenu.activeInHierarchy)
+        if (whichScreenIsActive["appScreen"] == true)
         {
-            creditsMenu.SetActive(false);
+            appMenu.SetActive(false);
+            iphoneMenu.SetActive(true);
+            whichScreenIsActive["appScreen"] = false;
             returnButton.SetActive(false);
-        }*/
+            whichScreenIsActive["iphoneScreen"] = true;
+            timeValue.enabled = false;
+        }
 
+        if (whichScreenIsActive["appConversation"] == true)
+        {
+            whichScreenIsActive["appConversation"] = false;
+            whichScreenIsActive["appScreen"] = true;
+            appMenu.SetActive(true);
+            CloseDialogue();
+            iphoneMenu.SetActive(false);
+            headingText.text = appName;
+        }
     }
 
     public void OpenMessages()
     {
-        messageScreen = true;
+        whichScreenIsActive["messageScreen"] = true;
         messageMenu.SetActive(true);
         iphoneMenu.SetActive(false);
         returnButton.SetActive(true);
         headingText.text = "Messages";
         timeValue.enabled = true;
-        iphoneScreen = false;
+        whichScreenIsActive["iphoneScreen"] = false;
         headingColor.color = messageMenuHeadingColor;
     }
 
     public void OpenApp()
     {
-        appScreen = true;
+        whichScreenIsActive["appScreen"] = true;
         appMenu.SetActive(true);
         iphoneMenu.SetActive(false);
         returnButton.SetActive(true);
         headingText.text = appName;
         timeValue.enabled = true;
-        iphoneScreen = false;
+        whichScreenIsActive["iphoneScreen"] = false;
         headingColor.color = appMenuHeadingColor; 
     }
 

@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nPC: {fileID: 4411984370828694101}
   message: {fileID: 4411984371324594508}
-  preview: {fileID: 4411984370075998899}
+  preview: {fileID: 0}
 --- !u!114 &1269878932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nPC: {fileID: 4411984370828694101}
   message: {fileID: 4411984371324594508}
-  preview: {fileID: 4411984371010261465}
+  preview: {fileID: 0}
 --- !u!82 &1839224035
 AudioSource:
   m_ObjectHideFlags: 0
@@ -454,30 +454,6 @@ PrefabInstance:
       objectReference: {fileID: 4411984369795813655}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1603ce0acfe571147ba5d9248128e92d, type: 3}
---- !u!114 &4411984370075998899 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1011133148, guid: 1603ce0acfe571147ba5d9248128e92d,
-    type: 3}
-  m_PrefabInstance: {fileID: 4411984369601753199}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4411984371010261465 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1947492790, guid: 1603ce0acfe571147ba5d9248128e92d,
-    type: 3}
-  m_PrefabInstance: {fileID: 4411984369601753199}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4411984370828694101 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1231151674, guid: 1603ce0acfe571147ba5d9248128e92d,
