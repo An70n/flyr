@@ -1061,6 +1061,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4411984369641486845, guid: 81632f84106ffe743ab4541dd093e656,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984369641486845, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984369641486845, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1526990163}
@@ -1069,6 +1079,36 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1526990163}
+    - target: {fileID: 4411984369641486845, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984369641486845, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ResumeConversation
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984369641486845, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ConversationsManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984369641486845, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ConversationsManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984369641486845, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Mom
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984369641486845, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: Mom
+      objectReference: {fileID: 0}
     - target: {fileID: 4411984369650810477, guid: 81632f84106ffe743ab4541dd093e656,
         type: 3}
       propertyPath: m_Material
@@ -1257,6 +1297,16 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 4411984369998901127, guid: 81632f84106ffe743ab4541dd093e656,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984369998901127, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984369998901127, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1526990163}
@@ -1265,6 +1315,36 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1526990163}
+    - target: {fileID: 4411984369998901127, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984369998901127, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ResumeConversation
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984369998901127, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ConversationsManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984369998901127, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ConversationsManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984369998901127, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: K
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984369998901127, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: K
+      objectReference: {fileID: 0}
     - target: {fileID: 4411984370120893365, guid: 81632f84106ffe743ab4541dd093e656,
         type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
@@ -1428,6 +1508,16 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 4411984370764552186, guid: 81632f84106ffe743ab4541dd093e656,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984370764552186, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984370764552186, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1526990163}
@@ -1436,6 +1526,36 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1526990163}
+    - target: {fileID: 4411984370764552186, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984370764552186, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ResumeConversation
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984370764552186, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ConversationsManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984370764552186, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ConversationsManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984370764552186, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: J
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984370764552186, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: J
+      objectReference: {fileID: 0}
     - target: {fileID: 4411984370822158722, guid: 81632f84106ffe743ab4541dd093e656,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1622,7 +1742,7 @@ PrefabInstance:
     - target: {fileID: 4411984371219930172, guid: 81632f84106ffe743ab4541dd093e656,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.005126953
+      value: 0.0015869141
       objectReference: {fileID: 0}
     - target: {fileID: 4411984371314342535, guid: 81632f84106ffe743ab4541dd093e656,
         type: 3}
@@ -1982,6 +2102,16 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 4411984371428623883, guid: 81632f84106ffe743ab4541dd093e656,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984371428623883, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984371428623883, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1526990163}
@@ -1990,6 +2120,36 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1526990163}
+    - target: {fileID: 4411984371428623883, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OpenDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984371428623883, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ResumeConversation
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984371428623883, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ConversationsManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984371428623883, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ConversationsManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984371428623883, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: R
+      objectReference: {fileID: 0}
+    - target: {fileID: 4411984371428623883, guid: 81632f84106ffe743ab4541dd093e656,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: R
+      objectReference: {fileID: 0}
     - target: {fileID: 4411984371434718697, guid: 81632f84106ffe743ab4541dd093e656,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

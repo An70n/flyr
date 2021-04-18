@@ -120,11 +120,63 @@ public class ConversationsManager : MonoBehaviour
         }
     }
 
+    public void OpenDialogue(string conversation)
+    {
+        headingText.text = conversation;
+
+        if (conversation == "Mom")
+        {
+            messageMenu.SetActive(false);
+            motherScreen = true;
+            messageScreen = false;
+        }
+
+        if(conversation != "Mom")
+        {
+            appConversation = true;
+            appScreen = false;
+            headingText.text = conversation;
+
+            if (conversation == "J")
+            {
+                conv_J = true;
+                j_preview.fontStyle = FontStyle.Normal;
+            }
+
+            if (conversation == "K")
+            {
+                conv_K = true;
+                k_preview.fontStyle = FontStyle.Normal;
+            }
+
+            if (conversation == "R")
+            {
+                conv_R = true;
+                r_preview.fontStyle = FontStyle.Normal;
+            }
+
+        }
+
+        if (PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry(conversation))
+
+        {
+            PixelCrushers.DialogueSystem.DialogueManager.StartConversation(conversation, player, R);
+            appMenu.SetActive(false);
+        }
+        else if (!PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry(conversation))
+        {
+            PixelCrushers.DialogueSystem.DialogueManager.dialogueUI.Open();
+            appMenu.SetActive(false);
+        }
+
+    }
+
     public void OpenDialogueR()
     {
         appConversation = true;
         appScreen = false; 
         headingText.text = "R";
+
         conv_R = true; 
 
         r_preview.fontStyle = FontStyle.Normal; 
@@ -234,6 +286,14 @@ public class ConversationsManager : MonoBehaviour
         //FindObjectOfType<TextlineDialogueUI>().dontRepeatLastSequence = true;
         FindObjectOfType<TextlineDialogueUI>().OnApplyPersistentData();
     }
+
+
+    public void ResumeConversation(string conversation)
+    {
+        PixelCrushers.DialogueSystem.DialogueLua.SetVariable("Conversation", conversation);
+        FindObjectOfType<TextlineDialogueUI>().OnApplyPersistentData();
+    }
+
 
     private void CloseDialogue()
     {
