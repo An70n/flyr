@@ -1,45 +1,41 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; 
 
 public class NotificationManager : MonoBehaviour
 {
-    public Text nPC;
-    public Text message;
-    public Text preview;
-
-    private AudioSource notifSound;
-
-    private void Start()
-    {
-        notifSound = GetComponent<AudioSource>();
-    }
-
     private void Update()
     {
         if(PixelCrushers.DialogueSystem.DialogueLua.GetVariable("rConversationStart").asBool == true)
         {
             string r_History = "3;3;46;3;47;3;3";
             PixelCrushers.DialogueSystem.DialogueLua.SetVariable("DialogueEntryRecords_R", r_History);
-            preview.text = "Are you ok?";
-            preview.fontStyle = FontStyle.Bold;
-            nPC.text = "R";
-            message.text = "Are you ok?";
-            StartCoroutine(Notification());
+
+            GameObjectsList.gameObjectsList.notificationNpcName.text = "R";
+            GameObjectsList.gameObjectsList.notificationText.text = "Are you ok?";
+            GameObjectsList.gameObjectsList.r_preview.text = "Are you ok?";
+            GameObjectsList.gameObjectsList.r_preview.fontStyle = TMPro.FontStyles.Bold;
+
+            PlayNotification();
+        }
+
+        if (PixelCrushers.DialogueSystem.DialogueLua.GetVariable("ConversationsDone").asInt == 3)
+        {
+            string mom_History = "7;4;19;4;20;4;21;4;22;4;23;4;24;4;1";
+            PixelCrushers.DialogueSystem.DialogueLua.SetVariable("DialogueEntryRecords_Mom", mom_History);
+
+            GameObjectsList.gameObjectsList.notificationNpcName.text = "Mom";
+            GameObjectsList.gameObjectsList.notificationText.text = "How are you?";
+            GameObjectsList.gameObjectsList.mom_preview.text = "How are you?";
+            GameObjectsList.gameObjectsList.mom_preview.fontStyle = TMPro.FontStyles.Bold;
+
+            PlayNotification();
         }
     }
 
     private void PlayNotification()
     {
-        this.gameObject.GetComponentInChildren<Animator>().SetTrigger("notifPlaying");
-        notifSound.Play();
-    }
-
-    private IEnumerator Notification()
-    {
-        PlayNotification();
-        this.enabled = false;
-        yield return null; 
+        gameObject.GetComponentInChildren<Animator>().SetTrigger("play_notification");
+        //play sound
     }
 }

@@ -11,26 +11,30 @@ public class GameObjectsList : MonoBehaviour
     public Button j_Button;
     public Button k_Button;
     public Button r_Button;
+    public Button mom_Button;
+    public Button flyr_Button; 
 
     public TextMeshProUGUI j_preview;
     public TextMeshProUGUI k_preview;
     public TextMeshProUGUI r_preview;
-
+    public TextMeshProUGUI mom_preview;
+    public TextMeshProUGUI flyr_preview; 
     public TextMeshProUGUI headingText;
+    public TextMeshProUGUI notificationNpcName;
+    public TextMeshProUGUI notificationText;
 
     public GameObject returnButton;
     public GameObject returnButtonCredits;
-
+    public GameObject startScreen;
+    public GameObject creditsScreen;
     public GameObject flyrScreen;
     public GameObject homeScreen;
     public GameObject messagesScreen;
-
     public GameObject heading_Bg_HomeScreen;
     public GameObject heading_Bg_Messages;
     public GameObject heading_Bg_Flyr;
 
-    public GameObject startScreen;
-    public GameObject creditsScreen;
+    public AudioSource audioSource;
 
     void Awake()
     {
@@ -45,30 +49,39 @@ public class GameObjectsList : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         j_Button = GameObject.Find("J_Button").GetComponent<Button>();
         k_Button = GameObject.Find("K_Button").GetComponent<Button>();
         r_Button = GameObject.Find("R_Button").GetComponent<Button>();
+        mom_Button = GameObject.Find("MomButton").GetComponent<Button>();
+        flyr_Button = GameObject.Find("FlyrButton").GetComponent<Button>();
 
         j_preview = j_Button.transform.Find("PreviewText").transform.Find("J_Preview").GetComponent<TextMeshProUGUI>();
         k_preview = k_Button.transform.Find("PreviewText").transform.Find("K_Preview").GetComponent<TextMeshProUGUI>();
         r_preview = r_Button.transform.Find("PreviewText").transform.Find("R_Preview").GetComponent<TextMeshProUGUI>();
-
-        returnButton = GameObject.Find("ReturnButton");
-        returnButtonCredits = GameObject.Find("ReturnButtonCredits");
+        mom_preview = mom_Button.transform.Find("Mom_Preview").GetComponent<TextMeshProUGUI>();
+        flyr_preview = flyr_Button.transform.Find("Flyr_Preview").GetComponent<TextMeshProUGUI>();
 
         headingText = GameObject.Find("Heading").GetComponent<TextMeshProUGUI>();
 
-        heading_Bg_Flyr = GameObject.Find("Heading_Bg_Flyr");
-        heading_Bg_HomeScreen = GameObject.Find("Heading_Bg_HomeScreen");
-        heading_Bg_Messages = GameObject.Find("Heading_Bg_Messages");
+        notificationNpcName = GameObject.Find("NpcName").GetComponent<TextMeshProUGUI>();
+        notificationText = GameObject.Find("NotificationText").GetComponent<TextMeshProUGUI>();
+
+        returnButton = GameObject.Find("ReturnButton");
+        returnButtonCredits = GameObject.Find("ReturnButtonCredits");
 
         startScreen = GameObject.Find("StartScreen");
         creditsScreen = GameObject.Find("CreditsScreen");
         homeScreen = GameObject.Find("HomeScreen");
         messagesScreen = GameObject.Find("MessagesScreen");
         flyrScreen = GameObject.Find("FlyrScreen");
+        creditsScreen = GameObject.Find("CreditsScreen");
+
+        heading_Bg_Flyr = GameObject.Find("Heading_Bg_Flyr");
+        heading_Bg_HomeScreen = GameObject.Find("Heading_Bg_HomeScreen");
+        heading_Bg_Messages = GameObject.Find("Heading_Bg_Messages");
+
+        audioSource = GameObject.Find("AudioManager").GetComponent<AudioSource>();
     }
 }

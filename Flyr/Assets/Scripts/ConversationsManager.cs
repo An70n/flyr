@@ -1,9 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using PixelCrushers.DialogueSystem.Extras;
-using TMPro;
 
 public class ConversationsManager : MonoBehaviour
 {
