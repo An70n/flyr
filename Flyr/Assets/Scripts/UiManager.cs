@@ -6,6 +6,7 @@ using TMPro;
 
 public class UiManager : MonoBehaviour
 {
+    private ConversationsManager conversationsManager;
     private TimeManager timeManager;
 
     private TextMeshProUGUI headingText;
@@ -25,6 +26,7 @@ public class UiManager : MonoBehaviour
 
     void Start()
     {
+        conversationsManager = transform.parent.transform.Find("ConversationsManager").GetComponent<ConversationsManager>();
         timeManager = gameObject.GetComponent<TimeManager>();
 
         creditsScreen = GameObjectsList.gameObjectsList.creditsScreen;
@@ -54,17 +56,35 @@ public class UiManager : MonoBehaviour
 
     public void PreviousScreen()
     {
-        if (messagesScreen.activeInHierarchy)
+        if(conversationsManager.activeDialogue == false)
         {
-            OpenHomeScreen();
+            if (messagesScreen.activeInHierarchy)
+            {
+                OpenHomeScreen();
+            }
+
+            if (flyrScreen.activeInHierarchy)
+            {
+                OpenHomeScreen();
+            }
         }
 
-        if (flyrScreen.activeInHierarchy)
+        else if(conversationsManager.activeDialogue == true)
         {
-            OpenHomeScreen();
-        }
+            conversationsManager.CloseDialogue();
 
-        
+            if(conversationsManager.messagesDialogue == true)
+            {
+                OpenMessages();
+                conversationsManager.messagesDialogue = false;
+            }
+
+            else if(conversationsManager.flyrDialogue == true)
+            {
+                OpenFlyr();
+                conversationsManager.flyrDialogue = false; 
+            }
+        }
     }
 
     public void OpenHomeScreen()
@@ -97,5 +117,11 @@ public class UiManager : MonoBehaviour
         headingText.text = "Flyr";
         timeManager.timeValue.enabled = true;
         heading_Bg_Flyr.SetActive(true);
+    }
+
+    public void OpenConversation()
+    {
+        messagesScreen.SetActive(false);
+        flyrScreen.SetActive(false);
     }
 }

@@ -14,7 +14,11 @@ public class ConversationsManager : MonoBehaviour
 
     private bool conv_J;
     private bool conv_R;
-    private bool conv_K; 
+    private bool conv_K;
+
+    public bool activeDialogue;
+    public bool flyrDialogue;
+    public bool messagesDialogue; 
 
     void Start()
     {
@@ -24,23 +28,34 @@ public class ConversationsManager : MonoBehaviour
     public void OpenDialogue(string conversation)
     {
         GameObjectsList.gameObjectsList.headingText.text = conversation;
+        activeDialogue = true;
 
-        if (conversation == "J")
+        if(conversation == "J" || conversation == "K" || conversation == "R")
         {
-            conv_J = true;
-            GameObjectsList.gameObjectsList.j_preview.fontStyle = TMPro.FontStyles.Normal;
+            flyrDialogue = true;
+
+            if (conversation == "J")
+            {
+                conv_J = true;
+                GameObjectsList.gameObjectsList.j_preview.fontStyle = TMPro.FontStyles.Normal;
+            }
+
+            if (conversation == "K")
+            {
+                conv_K = true;
+                GameObjectsList.gameObjectsList.k_preview.fontStyle = TMPro.FontStyles.Normal;
+            }
+
+            if (conversation == "R")
+            {
+                conv_R = true;
+                GameObjectsList.gameObjectsList.r_preview.fontStyle = TMPro.FontStyles.Normal;
+            }
         }
 
-        if (conversation == "K")
+        if(conversation == "Mom" || conversation == "Flyr")
         {
-            conv_K = true;
-            GameObjectsList.gameObjectsList.k_preview.fontStyle = TMPro.FontStyles.Normal;
-        }
-
-        if (conversation == "R")
-        {
-            conv_R = true;
-            GameObjectsList.gameObjectsList.r_preview.fontStyle = TMPro.FontStyles.Normal;
+            messagesDialogue = true; 
         }
         
         if (PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry(conversation))
@@ -51,6 +66,9 @@ public class ConversationsManager : MonoBehaviour
         {
             PixelCrushers.DialogueSystem.DialogueManager.dialogueUI.Open();
         }
+
+        activeDialogue = true;
+        ResumeConversation(conversation);
     }
 
     public void ResumeConversation(string conversation)
@@ -98,6 +116,8 @@ public class ConversationsManager : MonoBehaviour
         conv_J = false;
         conv_K = false;
         conv_R = false;
+
+        activeDialogue = false; 
 
         //SortConversations();
 
