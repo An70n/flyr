@@ -7,163 +7,45 @@ using TMPro;
 
 public class ConversationsManager : MonoBehaviour
 {
-    private Color iphoneMenuHeadingColor = new Color(0, 0, 0, 0);
-    public Color messageMenuHeadingColor;
-    public Color appMenuHeadingColor;
-
-    private Vector3 transformOne;
-    private Vector3 transformTwo;
-    private Vector3 transformThree;
-
-    public Button r_Button;
-    public Button j_Button;
-    public Button k_Button;
-
-    public TextMeshProUGUI r_preview;
-    public TextMeshProUGUI j_preview;
-    public TextMeshProUGUI k_preview;
-
     private int j_value = 9;
     private int r_value = 6;
     private int k_value = 3;
     private int multiplier = 1; 
 
-    private int[] convValues;
-
-    private GameObject appMenu;
-    private GameObject iphoneMenu;
-    private GameObject messageMenu;
-
-    private Dictionary<string, bool> whichScreenIsActive = new Dictionary<string, bool>();
-    private Dictionary<string, int> charactersList = new Dictionary<string, int>();
-
     private bool conv_J;
     private bool conv_R;
     private bool conv_K; 
 
-    private TextMeshProUGUI headingText;
-    private TextMeshProUGUI timeValue;
-    private TextMeshProUGUI timeValue_2; 
-
-    private string appName;
-    private Unity.VectorGraphics.SVGImage headingColor; 
-
-    private float timer = 600f;
-
-    private GameObject returnButton;
-    private GameObject time;
-    private GameObject time_2; 
-
     void Start()
     {
-        transformOne = k_Button.GetComponent<RectTransform>().localPosition;
-        transformTwo = j_Button.GetComponent<RectTransform>().localPosition;
-        transformThree = r_Button.GetComponent<RectTransform>().localPosition;
-
-        SortConversations();
-
-        whichScreenIsActive.Add("messageScreen", false);
-        whichScreenIsActive.Add("messageConversation", false);
-        whichScreenIsActive.Add("appScreen", false);
-        whichScreenIsActive.Add("appConversation", false);
-        whichScreenIsActive.Add("iphoneScreen", false);
-
-        charactersList.Add("player", 0);
-        charactersList.Add("J", 1);
-        charactersList.Add("K", 2);
-        charactersList.Add("R", 3);
-        charactersList.Add("Mom", 4);
-        charactersList.Add("Flyr", 5);
-
-        appMenu = GameObject.Find("app Menu");
-        appMenu.SetActive(false);
-
-        iphoneMenu = GameObject.Find("iphone Menu");
-        whichScreenIsActive["iphoneScreen"] = true;
-
-        messageMenu = GameObject.Find("message Menu");
-        messageMenu.SetActive(false);
-
-        returnButton = GameObject.Find("Menu Button");
-        returnButton.SetActive(false);
-
-        time = GameObject.Find("time");
-        time_2 = GameObject.Find("time (1)");
-        timeValue = time.GetComponent<TextMeshProUGUI>();
-        timeValue_2 = time_2.GetComponent<TextMeshProUGUI>();
-        timeValue.enabled = false;
-
-        headingText = GameObject.Find("Heading Panel").transform.Find("heading").GetComponent<TextMeshProUGUI>();
-        headingColor = GameObject.Find("Heading Panel").GetComponent<Unity.VectorGraphics.SVGImage>();
-        appName = "Flyr";
-    }
-
-    private void Update()
-    {
-        timer += Time.deltaTime / 5; 
-        
-        if(whichScreenIsActive["iphoneScreen"] == true)
-        {
-            headingText.text = time.GetComponent<TextMeshProUGUI>().text;
-            headingColor.color = iphoneMenuHeadingColor;
-            returnButton.SetActive(false);
-        }
-
-        if(iphoneMenu.activeInHierarchy)
-        {
-            whichScreenIsActive["iphoneScreen"] = true; 
-        }else if(!iphoneMenu.activeInHierarchy)
-        {
-            whichScreenIsActive["iphoneScreen"] = false;
-        }
-    }
-
-    public void CloseScreen(GameObject gameObject)
-    {
-        gameObject.SetActive(false);
-    }
-
-    private void SetAllScreensFalse()
-    {
-        whichScreenIsActive["messageScreen"] = false;
-        whichScreenIsActive["messageConversation"] = false;
-        whichScreenIsActive["appScreen"] = false;
-        whichScreenIsActive["appConversation"] = false;
-        whichScreenIsActive["iphoneScreen"] = false;
-    }
-
-    public void WhichScreenIsActive(string screen)
-    {
-        SetAllScreensFalse();
-        whichScreenIsActive[screen] = true;
+        //SortConversations();
     }
 
     public void OpenDialogue(string conversation)
     {
-        headingText.text = conversation;
+        GameObjectsList.gameObjectsList.headingText.text = conversation;
 
         if (conversation == "J")
         {
             conv_J = true;
-            j_preview.fontStyle = TMPro.FontStyles.Normal;
+            GameObjectsList.gameObjectsList.j_preview.fontStyle = TMPro.FontStyles.Normal;
         }
 
         if (conversation == "K")
         {
             conv_K = true;
-            k_preview.fontStyle = TMPro.FontStyles.Normal;
+            GameObjectsList.gameObjectsList.k_preview.fontStyle = TMPro.FontStyles.Normal;
         }
 
         if (conversation == "R")
         {
             conv_R = true;
-            r_preview.fontStyle = TMPro.FontStyles.Normal;
+            GameObjectsList.gameObjectsList.r_preview.fontStyle = TMPro.FontStyles.Normal;
         }
         
         if (PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry(conversation))
-
         {
-            PixelCrushers.DialogueSystem.DialogueManager.StartConversation(conversation, Characters.charactersTransforms[0], Characters.charactersTransforms[charactersList[conversation]]);
+            PixelCrushers.DialogueSystem.DialogueManager.StartConversation(conversation, Characters.charactersTransforms[0], Characters.charactersTransforms[DictionariesList.dictionariesList.charactersList[conversation]]);
         }
         else if (!PixelCrushers.DialogueSystem.DialogueManager.ConversationHasValidEntry(conversation))
         {
@@ -177,8 +59,7 @@ public class ConversationsManager : MonoBehaviour
         FindObjectOfType<TextlineDialogueUI>().OnApplyPersistentData();
     }
 
-
-    private void CloseDialogue()
+    public void CloseDialogue()
     {
         FindObjectOfType<TextlineDialogueUI>().OnRecordPersistentData();
         PixelCrushers.DialogueSystem.DialogueManager.StopConversation();
@@ -214,14 +95,12 @@ public class ConversationsManager : MonoBehaviour
             PixelCrushers.DialogueSystem.DialogueLua.SetVariable("hasResponded", false);
         }
 
-
         conv_J = false;
         conv_K = false;
         conv_R = false;
 
-        SortConversations();
+        //SortConversations();
 
-        //divides the values to make sure they don't get too big
         if(r_value > 3000 || j_value > 3000 || k_value > 3000)
         {
             r_value /= 100;
@@ -230,147 +109,67 @@ public class ConversationsManager : MonoBehaviour
         }
     }
 
-    public void PreviousScreen()
-    {
-        if (whichScreenIsActive["messageScreen"] == true)
-        {
-            messageMenu.SetActive(false);
-            iphoneMenu.SetActive(true);
-            whichScreenIsActive["messageScreen"] = false;
-            returnButton.SetActive(false);
-            appMenu.SetActive(false);
-            whichScreenIsActive["iphoneScreen"] = true;
-            timeValue.enabled = false;
-        }
-
-        if (whichScreenIsActive["messageConversation"] == true)
-        {
-            whichScreenIsActive["messageConversation"] = false;
-            whichScreenIsActive["messageScreen"] = true;
-            messageMenu.SetActive(true);
-            CloseDialogue();
-            iphoneMenu.SetActive(false);
-            headingText.text = "Messages";
-        }
-
-        if (whichScreenIsActive["appScreen"] == true)
-        {
-            appMenu.SetActive(false);
-            iphoneMenu.SetActive(true);
-            whichScreenIsActive["appScreen"] = false;
-            returnButton.SetActive(false);
-            whichScreenIsActive["iphoneScreen"] = true;
-            timeValue.enabled = false;
-        }
-
-        if (whichScreenIsActive["appConversation"] == true)
-        {
-            whichScreenIsActive["appConversation"] = false;
-            whichScreenIsActive["appScreen"] = true;
-            appMenu.SetActive(true);
-            CloseDialogue();
-            iphoneMenu.SetActive(false);
-            headingText.text = appName;
-        }
-    }
-
-    public void OpenMessages()
-    {
-        whichScreenIsActive["messageScreen"] = true;
-        messageMenu.SetActive(true);
-        iphoneMenu.SetActive(false);
-        returnButton.SetActive(true);
-        headingText.text = "Messages";
-        timeValue.enabled = true;
-        whichScreenIsActive["iphoneScreen"] = false;
-        headingColor.color = messageMenuHeadingColor;
-    }
-
-    public void OpenApp()
-    {
-        whichScreenIsActive["appScreen"] = true;
-        appMenu.SetActive(true);
-        iphoneMenu.SetActive(false);
-        returnButton.SetActive(true);
-        headingText.text = appName;
-        timeValue.enabled = true;
-        whichScreenIsActive["iphoneScreen"] = false;
-        headingColor.color = appMenuHeadingColor; 
-    }
-
-    void OnGUI()
-    {
-        int minutes = Mathf.FloorToInt(timer / 60F);
-        int seconds = Mathf.FloorToInt(timer - minutes * 60);
-        string niceTime = string.Format("{0:00}:{1:00}", minutes, seconds);
-
-        timeValue.text = niceTime;
-        timeValue_2.text = niceTime; 
-    }
-
     public void SortConversations()
     {
 
         if(r_value > j_value && r_value > k_value)
         {
-            r_Button.GetComponent<RectTransform>().localPosition = transformOne; 
+            GameObjectsList.gameObjectsList.r_Button.transform.SetSiblingIndex(0);
         }
 
         else if (r_value > j_value && r_value < k_value)
         {
-            r_Button.GetComponent<RectTransform>().localPosition = transformTwo;
+            GameObjectsList.gameObjectsList.r_Button.transform.SetSiblingIndex(1);
         }
 
         else if (r_value > k_value && r_value < j_value)
         {
-            r_Button.GetComponent<RectTransform>().localPosition = transformTwo;
+            GameObjectsList.gameObjectsList.r_Button.transform.SetSiblingIndex(1);
         }
 
         else if (r_value < j_value && r_value < k_value)
         {
-            r_Button.GetComponent<RectTransform>().localPosition = transformThree;
+            GameObjectsList.gameObjectsList.r_Button.transform.SetSiblingIndex(2);
         }
-
 
         if (j_value > r_value && j_value > k_value)
         {
-            j_Button.GetComponent<RectTransform>().localPosition = transformOne;
+            GameObjectsList.gameObjectsList.j_Button.transform.SetSiblingIndex(0);
         }
 
         if(j_value > r_value && j_value < k_value)
         {
-            j_Button.GetComponent<RectTransform>().localPosition = transformTwo;
+            GameObjectsList.gameObjectsList.j_Button.transform.SetSiblingIndex(1);
         }
 
         if (j_value > k_value && j_value < r_value)
         {
-            j_Button.GetComponent<RectTransform>().localPosition = transformTwo;
+            GameObjectsList.gameObjectsList.j_Button.transform.SetSiblingIndex(1);
         }
 
         else if (j_value < r_value && j_value < k_value)
         {
-            j_Button.GetComponent<RectTransform>().localPosition = transformThree;
+            GameObjectsList.gameObjectsList.j_Button.transform.SetSiblingIndex(2);
         }
-
 
         if (k_value > r_value && k_value > j_value)
         {
-            k_Button.GetComponent<RectTransform>().localPosition = transformOne;
+            GameObjectsList.gameObjectsList.k_Button.transform.SetSiblingIndex(0);
         }
 
         if (k_value > r_value && k_value < j_value)
         {
-            k_Button.GetComponent<RectTransform>().localPosition = transformTwo;
+            GameObjectsList.gameObjectsList.k_Button.transform.SetSiblingIndex(1);
         }
 
         if (k_value > j_value && k_value < r_value)
         {
-            k_Button.GetComponent<RectTransform>().localPosition = transformTwo;
+            GameObjectsList.gameObjectsList.k_Button.transform.SetSiblingIndex(1);
         }
 
         else if (k_value < r_value && k_value < j_value)
         {
-            k_Button.GetComponent<RectTransform>().localPosition = transformThree;
+            GameObjectsList.gameObjectsList.k_Button.transform.SetSiblingIndex(1);
         }
     }
 }

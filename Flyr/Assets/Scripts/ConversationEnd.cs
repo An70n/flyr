@@ -9,6 +9,5 @@ public class ConversationEnd : TextlineDialogueUI
     {
         OnRecordPersistentData();
         base.Close();
-        Debug.Log("conversation end");
     }
 }
