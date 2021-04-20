@@ -33,8 +33,10 @@ public class GameObjectsList : MonoBehaviour
     public GameObject heading_Bg_HomeScreen;
     public GameObject heading_Bg_Messages;
     public GameObject heading_Bg_Flyr;
-
-    public AudioSource audioSource;
+    public GameObject creditsPage_1;
+    public GameObject creditsPage_2;
+    public GameObject nextCreditsPageButton;
+    public GameObject previousCreditsPageButton;
 
     void Awake()
     {
@@ -82,6 +84,9 @@ public class GameObjectsList : MonoBehaviour
         heading_Bg_HomeScreen = GameObject.Find("Heading_Bg_HomeScreen");
         heading_Bg_Messages = GameObject.Find("Heading_Bg_Messages");
 
-        audioSource = GameObject.Find("AudioManager").GetComponent<AudioSource>();
+        creditsPage_1 = creditsScreen.transform.Find("Wallpaper_1").gameObject;
+        creditsPage_2 = creditsScreen.transform.Find("Wallpaper_2").gameObject;
+        nextCreditsPageButton = creditsScreen.transform.Find("NextCreditsPage").gameObject;
+        previousCreditsPageButton = creditsScreen.transform.Find("PreviousCreditsPage").gameObject;
     }
 }
