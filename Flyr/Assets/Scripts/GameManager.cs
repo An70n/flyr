@@ -6,16 +6,13 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
+    public bool rConversation = false; 
+
     void Update()
     {
         if (PixelCrushers.DialogueSystem.DialogueLua.GetVariable("rConversationStart").asBool == true)
         {
             AudioManager.audioManager.ReducePitch("PianoMusic", -1f, 20f);
-
-            //AudioManager.audioManager.audioSources[2].pitch = -1f;
-
-            //Debug.Log("pitch");
-
         }
     }
 

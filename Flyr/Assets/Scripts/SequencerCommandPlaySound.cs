@@ -9,7 +9,6 @@ namespace PixelCrushers.DialogueSystem.SequencerCommands
         public void Awake()
         {
             AudioManager.audioManager.Play(GetParameter(0));
-            Debug.Log("sound");
             Stop();
         }
     }

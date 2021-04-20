@@ -4277,14 +4277,17 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: Variable["hasResponded"] = true
+      userScript: 'Variable["hasResponded"] = true
+
+        ReducePitchLuaSpecific("PianoMusic",
+        -3, 20)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 300
-        y: 670
+        x: 514.47156
+        y: 624.78
         width: 160
         height: 30
     - id: 8
@@ -4431,7 +4434,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 30
+        x: 28.708008
         y: 370
         width: 160
         height: 30
@@ -4793,7 +4796,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 390
-        y: 370
+        y: 371.292
         width: 160
         height: 30
     - id: 15
@@ -6291,7 +6294,9 @@ MonoBehaviour:
         + 1
 
         Variable["notificationAlertMom"] = Variable["notificationAlertMom"]
-        + 1'
+        + 1
+
+        AugmentPitchLuaSpecific("PianoMusic", 1, 20)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6730,8 +6735,8 @@ MonoBehaviour:
         y: 120
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 1009.26013}
-    canvasZoom: 0.9155223
+    canvasScrollPosition: {x: 0, y: 611.79834}
+    canvasZoom: 0.77399516
   - id: 3
     fields:
     - title: Title
@@ -7403,7 +7408,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: ReducePitchLuaSpecific("PianoMusic", -2, 20)
         type: 0
         typeString: 
       conversationID: 3
@@ -7784,7 +7789,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: ReducePitchLuaSpecific("PianoMusic", -2, 20)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -8003,7 +8008,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: ReducePitchLuaSpecific("PianoMusic", -2, 20)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -8714,7 +8719,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Sequence
-        value: 
+        value: ReducePitchLuaSpecific("PianoMusic", -2, 20)
         type: 0
         typeString: 
       conversationID: 3
@@ -10112,8 +10117,8 @@ MonoBehaviour:
         y: 120
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 438.6916}
-    canvasZoom: 0.54252243
+    canvasScrollPosition: {x: 20.634275, y: 283.9168}
+    canvasZoom: 0.72192764
   - id: 4
     fields:
     - title: Title

@@ -26,7 +26,8 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        Lua.RegisterFunction("Play", this, SymbolExtensions.GetMethodInfo(() => Play(string.Empty)));
+        Lua.RegisterFunction("ReducePitchLuaSpecific", this, SymbolExtensions.GetMethodInfo(() => ReducePitchLuaSpecific(string.Empty, double.NaN, double.NaN)));
+        Lua.RegisterFunction("AugmentPitchLuaSpecific", this, SymbolExtensions.GetMethodInfo(() => AugmentPitchLuaSpecific(string.Empty, double.NaN, double.NaN)));
     }
 
     public void Play(string name) 
@@ -36,7 +37,6 @@ public class AudioManager : MonoBehaviour
             if(s.name == name)
             {
                 s.Play();
-                Debug.Log(name);
                 break;
             }
         }
@@ -81,9 +81,46 @@ public class AudioManager : MonoBehaviour
         while(source.pitch > minPitch)
         {
             source.pitch -= 1 * Time.deltaTime / fadeTime;
-            Debug.Log("reducing pitch");
 
             yield return null;
         }
+    }
+
+    private void ReducePitchLuaSpecific(string name, double minPitch, double fadeTime)
+    {
+        float pitch = (float)minPitch;
+        float time = (float)fadeTime;
+
+        ReducePitch(name, pitch, time);
+    }
+
+    public void AugmentPitch(string name, float maxPitch, float fadeTime)
+    {
+        foreach (AudioSource s in audioSources)
+        {
+            if (s.name == name)
+            {
+                StartCoroutine(StartAugmentingPitch(s, maxPitch, fadeTime));
+                break;
+            }
+        }
+    }
+
+    private IEnumerator StartAugmentingPitch(AudioSource source, float maxPitch, float fadeTime)
+    {
+        while (source.pitch < maxPitch)
+        {
+            source.pitch += 1 * Time.deltaTime / fadeTime;
+
+            yield return null;
+        }
+    }
+
+    private void AugmentPitchLuaSpecific(string name, double maxPitch, double fadeTime)
+    {
+        float pitch = (float)maxPitch;
+        float time = (float)fadeTime;
+
+        AugmentPitch(name, pitch, time);
     }
 }
