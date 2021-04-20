@@ -316,6 +316,133 @@ MonoBehaviour:
   color: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 1}
   applyTo: 0
   prependActorNameSeparator: ': '
+--- !u!1 &680552900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 680552901}
+  - component: {fileID: 680552902}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &680552901
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680552900}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6278688222721840324}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &680552902
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680552900}
+  m_Enabled: 0
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1041108036
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,20 +570,27 @@ MonoBehaviour:
   j_Button: {fileID: 0}
   k_Button: {fileID: 0}
   r_Button: {fileID: 0}
+  mom_Button: {fileID: 0}
+  flyr_Button: {fileID: 0}
   j_preview: {fileID: 0}
   k_preview: {fileID: 0}
   r_preview: {fileID: 0}
+  mom_preview: {fileID: 0}
+  flyr_preview: {fileID: 0}
   headingText: {fileID: 0}
+  notificationNpcName: {fileID: 0}
+  notificationText: {fileID: 0}
   returnButton: {fileID: 0}
   returnButtonCredits: {fileID: 0}
+  startScreen: {fileID: 0}
+  creditsScreen: {fileID: 0}
   flyrScreen: {fileID: 0}
   homeScreen: {fileID: 0}
   messagesScreen: {fileID: 0}
   heading_Bg_HomeScreen: {fileID: 0}
   heading_Bg_Messages: {fileID: 0}
   heading_Bg_Flyr: {fileID: 0}
-  startScreen: {fileID: 0}
-  creditsScreen: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!114 &1074406442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -688,6 +822,7 @@ Transform:
   - {fileID: 1377441169}
   - {fileID: 2875349126094257190}
   - {fileID: 1308164424}
+  - {fileID: 680552901}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -732,8 +867,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flyrColor: {r: 0.94117653, g: 0.5137255, b: 0.5686275, a: 1}
   messagesColor: {r: 0.6313726, g: 0.654902, b: 0.99607843, a: 1}
-  appMenu: {fileID: 0}
-  messagesMenu: {fileID: 0}
   firstResponseHighlight: {fileID: 0}
   secondResponseHighlight: {fileID: 0}
   thirdResponseHighlight: {fileID: 0}
