@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class TextHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler
 {
@@ -11,12 +12,12 @@ public class TextHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     Color baseColor;
     Button btn;
     //SVGImage txt; 
-    Text txt; 
+    TextMeshProUGUI txt; 
     bool interactableDelay;
 
     void Start()
     {
-        txt = GetComponentInChildren<Text>();
+        txt = GetComponentInChildren<TextMeshProUGUI>();
         //txt = gameObject.GetComponent<SVGImage>();
         baseColor = txt.color;
         btn = gameObject.GetComponent<Button>();

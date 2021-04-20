@@ -3136,15 +3136,17 @@ MonoBehaviour:
       conditionsString: 
       userScript: 'Variable["rConversationStart"] = true
 
-        Variable["hasResponded"]
-        = true'
+        Variable["notificationAlertR"]
+        = true
+
+        Variable["hasResponded"] = true'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
         x: 750
-        y: 920
+        y: 918.6322
         width: 160
         height: 30
     - id: 42
@@ -3803,8 +3805,8 @@ MonoBehaviour:
         y: 712.34485
         width: 160
         height: 30
-    canvasScrollPosition: {x: 130.42912, y: 727.752}
-    canvasZoom: 0.7311203
+    canvasScrollPosition: {x: 142.4531, y: 0}
+    canvasZoom: 0.80312043
   - id: 2
     fields:
     - title: Title

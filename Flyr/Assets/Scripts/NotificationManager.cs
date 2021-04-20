@@ -38,6 +38,7 @@ public class NotificationManager : MonoBehaviour
     private void PlayNotification()
     {
         gameObject.GetComponentInChildren<Animator>().SetTrigger("play_notification");
-        //play sound
+        AudioManager.audioManager.Play("BuzzSound");
+        AudioManager.audioManager.Play("NotificationSound");
     }
 }
