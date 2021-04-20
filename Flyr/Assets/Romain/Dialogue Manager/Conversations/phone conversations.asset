@@ -239,6 +239,34 @@ MonoBehaviour:
       value: 
       type: 0
       typeString: 
+  - id: 6
+    fields:
+    - title: Name
+      value: notificationAlertR
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: False
+      type: 2
+      typeString: CustomFieldType_Boolean
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
+  - id: 7
+    fields:
+    - title: Name
+      value: notificationAlertMom
+      type: 0
+      typeString: CustomFieldType_Text
+    - title: Initial Value
+      value: 0
+      type: 1
+      typeString: CustomFieldType_Number
+    - title: Description
+      value: 
+      type: 0
+      typeString: CustomFieldType_Text
   conversations:
   - id: 1
     fields:
@@ -3032,14 +3060,16 @@ MonoBehaviour:
       conditionsString: 
       userScript: 'Variable["rConversationStart"] = true
 
-        Variable["hasResponded"]
-        = true'
+        Variable["notificationAlertR"]
+        = true
+
+        Variable["hasResponded"] = true'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 210
+        x: 208.63223
         y: 920
         width: 160
         height: 30
@@ -3385,8 +3415,11 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: Variable["ConversationsDone"] = Variable["ConversationsDone"] +
-        1
+      userScript: 'Variable["ConversationsDone"] = Variable["ConversationsDone"]
+        + 1
+
+        Variable["notificationAlertMom"] = Variable["notificationAlertMom"]
+        + 1'
       onExecute:
         m_PersistentCalls:
           m_Calls:
@@ -3770,8 +3803,8 @@ MonoBehaviour:
         y: 712.34485
         width: 160
         height: 30
-    canvasScrollPosition: {x: 242.74063, y: 0}
-    canvasZoom: 1.1141177
+    canvasScrollPosition: {x: 130.42912, y: 727.752}
+    canvasZoom: 0.7311203
   - id: 2
     fields:
     - title: Title
@@ -6252,8 +6285,11 @@ MonoBehaviour:
       conditionPriority: 2
       outgoingLinks: []
       conditionsString: 
-      userScript: Variable["ConversationsDone"] = Variable["ConversationsDone"] +
-        1
+      userScript: 'Variable["ConversationsDone"] = Variable["ConversationsDone"]
+        + 1
+
+        Variable["notificationAlertMom"] = Variable["notificationAlertMom"]
+        + 1'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6692,7 +6728,7 @@ MonoBehaviour:
         y: 120
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
+    canvasScrollPosition: {x: 0, y: 1009.26013}
     canvasZoom: 0.9155223
   - id: 3
     fields:
@@ -6886,8 +6922,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 480
-        y: 170
+        x: 479.25317
+        y: 170.74681
         width: 160
         height: 30
     - id: 4
@@ -9492,7 +9528,10 @@ MonoBehaviour:
       userScript: 'Variable["ConversationsDone"] = Variable["ConversationsDone"]
         + 1
 
-        Variable["hasResponded"] = true'
+        Variable["hasResponded"] = true
+
+        Variable["notificationAlertMom"]
+        = Variable["notificationAlertMom"] + 1'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -10071,8 +10110,8 @@ MonoBehaviour:
         y: 120
         width: 160
         height: 30
-    canvasScrollPosition: {x: 249.43158, y: 0}
-    canvasZoom: 1.3390193
+    canvasScrollPosition: {x: 0, y: 438.6916}
+    canvasZoom: 0.54252243
   - id: 4
     fields:
     - title: Title
