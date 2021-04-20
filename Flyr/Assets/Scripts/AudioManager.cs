@@ -28,6 +28,8 @@ public class AudioManager : MonoBehaviour
     {
         Lua.RegisterFunction("ReducePitchLuaSpecific", this, SymbolExtensions.GetMethodInfo(() => ReducePitchLuaSpecific(string.Empty, double.NaN, double.NaN)));
         Lua.RegisterFunction("AugmentPitchLuaSpecific", this, SymbolExtensions.GetMethodInfo(() => AugmentPitchLuaSpecific(string.Empty, double.NaN, double.NaN)));
+        Lua.RegisterFunction("FadeInLuaSpecific", this, SymbolExtensions.GetMethodInfo(() => FadeInLuaSpecific(string.Empty, double.NaN, double.NaN)));
+        Lua.RegisterFunction("FadeOutLuaSpecific", this, SymbolExtensions.GetMethodInfo(() => FadeOutLuaSpecific(string.Empty, double.NaN, double.NaN)));
     }
 
     public void Play(string name) 
@@ -62,6 +64,44 @@ public class AudioManager : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    private void FadeInLuaSpecific(string name, double maxVolume, double fadeTime)
+    {
+        float volume = (float)maxVolume;
+        float time = (float)fadeTime;
+
+        FadeIn(name, volume, time);
+    }
+
+    public void FadeOut(string name, float minVolume, float fadeTime)
+    {
+        foreach (AudioSource s in audioSources)
+        {
+            if (s.name == name)
+            {
+                StartCoroutine(StartFadeOut(s, minVolume, fadeTime));
+                break;
+            }
+        }
+    }
+
+    private IEnumerator StartFadeOut(AudioSource source, float minVolume, float fadeTime)
+    {
+        while (source.volume > minVolume)
+        {
+            source.volume -= 1 * Time.deltaTime / fadeTime;
+
+            yield return null;
+        }
+    }
+
+    private void FadeOutLuaSpecific(string name, double minVolume, double fadeTime)
+    {
+        float volume = (float)minVolume;
+        float time = (float)fadeTime;
+
+        FadeOut(name, volume, time);
     }
 
     public void ReducePitch(string name, float minPitch, float fadeTime)

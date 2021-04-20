@@ -2071,7 +2071,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: 'Do you want a joke? '
+        value: 'Do you want a bad joke? '
         type: 0
         typeString: 
       - title: Parenthetical
@@ -2117,7 +2117,7 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 210
+        x: 208.75485
         y: 370
         width: 160
         height: 30
@@ -2438,7 +2438,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Because he drank it because it was cool!
+        value: Because he drank it before it was cool!
         type: 0
         typeString: 
       - title: Parenthetical
@@ -3805,7 +3805,7 @@ MonoBehaviour:
         y: 712.34485
         width: 160
         height: 30
-    canvasScrollPosition: {x: 142.4531, y: 0}
+    canvasScrollPosition: {x: 0, y: 105.8371}
     canvasZoom: 0.80312043
   - id: 2
     fields:
@@ -4280,7 +4280,7 @@ MonoBehaviour:
       userScript: 'Variable["hasResponded"] = true
 
         ReducePitchLuaSpecific("PianoMusic",
-        -3, 20)'
+        -3, 2)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -5654,13 +5654,13 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AugmentPitchLuaSpecific("PianoMusic", -2, 2)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 120
+        x: 118.79614
         y: 820
         width: 160
         height: 30
@@ -5732,7 +5732,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 60
-        y: 870
+        y: 871.20386
         width: 160
         height: 30
     - id: 28
@@ -5869,7 +5869,10 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: 'AugmentPitchLuaSpecific("PianoMusic", -1, 20)
+
+        FadeOutLuaSpecific("PianoMusic",
+        .5, 20)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6012,14 +6015,17 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: 'AugmentPitchLuaSpecific("PianoMusic", -1, 20)
+
+        FadeOutLuaSpecific("PianoMusic",
+        .5, 20)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 60
-        y: 920
+        x: 61.203857
+        y: 922.4077
         width: 160
         height: 30
     - id: 32
@@ -6089,8 +6095,8 @@ MonoBehaviour:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 60
-        y: 970
+        x: 57.59227
+        y: 971.20386
         width: 160
         height: 30
     - id: 33
@@ -6232,7 +6238,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 300
-        y: 1071.7332
+        y: 1072.937
         width: 160
         height: 30
     - id: 36
@@ -6296,7 +6302,7 @@ MonoBehaviour:
         Variable["notificationAlertMom"] = Variable["notificationAlertMom"]
         + 1
 
-        AugmentPitchLuaSpecific("PianoMusic", 1, 20)'
+        AugmentPitchLuaSpecific("PianoMusic", 1, 2)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6367,7 +6373,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: AugmentPitchLuaSpecific("PianoMusic", -2, 2)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6512,7 +6518,10 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: 'AugmentPitchLuaSpecific("PianoMusic", -1, 20)
+
+        FadeOutLuaSpecific("PianoMusic",
+        .5, 20)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6735,8 +6744,8 @@ MonoBehaviour:
         y: 120
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 611.79834}
-    canvasZoom: 0.77399516
+    canvasScrollPosition: {x: 0, y: 597.115}
+    canvasZoom: 0.8306609
   - id: 3
     fields:
     - title: Title
@@ -10885,13 +10894,13 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: 
+      userScript: FadeInLuaSpecific("PianoMusic", 1, 20)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
       canvasRect:
         serializedVersion: 2
-        x: 210
+        x: 208.04114
         y: 770
         width: 160
         height: 30
@@ -11955,8 +11964,8 @@ MonoBehaviour:
         y: 320
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 0}
-    canvasZoom: 1.3240037
+    canvasScrollPosition: {x: 0, y: 11.860382}
+    canvasZoom: 1.0210042
   - id: 5
     fields:
     - title: Title
