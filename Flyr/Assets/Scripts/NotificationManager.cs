@@ -17,6 +17,7 @@ public class NotificationManager : MonoBehaviour
             GameObjectsList.gameObjectsList.r_preview.fontStyle = TMPro.FontStyles.Bold;
 
             PlayNotification();
+            AudioManager.audioManager.ReducePitch("PianoMusic", -1f, 20f);
             PixelCrushers.DialogueSystem.DialogueLua.SetVariable("notificationAlertR", false); 
         }
 

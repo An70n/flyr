@@ -313,6 +313,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 273966793, guid: 33a01d83fcd464023bd4b126dfb2fee6, type: 3}
+      propertyPath: m_Volume
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 716831443, guid: 33a01d83fcd464023bd4b126dfb2fee6, type: 3}
       propertyPath: Loop
       value: 0
@@ -357,6 +361,14 @@ PrefabInstance:
       propertyPath: secondResponseHighlight
       value: 
       objectReference: {fileID: 1075286392}
+    - target: {fileID: 1884838688, guid: 33a01d83fcd464023bd4b126dfb2fee6, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983784740, guid: 33a01d83fcd464023bd4b126dfb2fee6, type: 3}
+      propertyPath: m_Volume
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 6278688222721840324, guid: 33a01d83fcd464023bd4b126dfb2fee6,
         type: 3}
       propertyPath: m_RootOrder
@@ -516,24 +528,69 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1031373581, guid: 2c0ab13f04b3ae24fbb5c13594276ea6, type: 3}
-      propertyPath: m_Text
-      value: "Romain Dannin - Game design // Narrative design // Programming\nAnthony
-        de Rueda - 3D artist // UX Design \n\n\n"
-      objectReference: {fileID: 0}
     - target: {fileID: 1305155345, guid: 2c0ab13f04b3ae24fbb5c13594276ea6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1334983451}
-    - target: {fileID: 1399878009, guid: 2c0ab13f04b3ae24fbb5c13594276ea6, type: 3}
-      propertyPath: m_PresetInfoIsWorld
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2326134759022310494, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
+    - target: {fileID: 799150055348236875, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
         type: 3}
-      propertyPath: m_Text
-      value: "Special thanks to PixelCrushers for the Dialogue System \nfor Unity
-        plug-in and to Tony Li for all his help with it "
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 799150055348236875, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 799150055348236875, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 799150055348236875, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1287399741304064233, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1287399741304064233, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1287399741304064233, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1287399741304064233, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1566635645436185219, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1566635645436185219, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1566635645436185219, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1566635645436185219, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3314324212189877688, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
         type: 3}
@@ -595,6 +652,56 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndScene
       objectReference: {fileID: 0}
+    - target: {fileID: 7043530508790587624, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1039516509251373633}
+    - target: {fileID: 7916667920248296564, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916667920248296564, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916667920248296564, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916667920248296564, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8160023438096448373, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1039516509251373633}
+    - target: {fileID: 8666070441592617127, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666070441592617127, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666070441592617127, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666070441592617127, guid: 2c0ab13f04b3ae24fbb5c13594276ea6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c0ab13f04b3ae24fbb5c13594276ea6, type: 3}
 --- !u!1001 &4411984370638699735
@@ -649,13 +756,29 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 895937815, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
+      propertyPath: m_text
+      value: "sending a text: \nGASP_UI_Notification_4 - bay_area_bob \n(freesound.org)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 895937815, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
       propertyPath: m_fontSize
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 895937815, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
+      propertyPath: m_margin.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 895937815, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
       propertyPath: m_fontSizeBase
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 922980519, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
+      propertyPath: m_Spacing
+      value: -281.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 922980519, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
+      propertyPath: m_Padding.m_Top
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1026793064, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -673,8 +796,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1026793065, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
+      propertyPath: m_text
+      value: "piano music: \nLet is Last - Crowander (freemusicarchive.org)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1026793065, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
       propertyPath: m_fontSize
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1026793065, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
+      propertyPath: m_margin.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1026793065, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
       propertyPath: m_fontSizeBase
@@ -697,12 +828,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1051400734, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
+      propertyPath: m_text
+      value: 'buzz:
+
+        phone short buzz - richwise
+
+        (freesound.org)'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051400734, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
       propertyPath: m_fontSize
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1051400734, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
+      propertyPath: m_margin.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051400734, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
       propertyPath: m_fontSizeBase
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051400734, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
+      propertyPath: m_isRightToLeft
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1121317291, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
       propertyPath: m_LocalRotation.w
@@ -741,8 +888,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1310229659, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
+      propertyPath: m_text
+      value: "receiving a text: \nNotificaiton 01 - rhodesmas (freesound.org)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310229659, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
       propertyPath: m_fontSize
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310229659, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
+      propertyPath: m_margin.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1310229659, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
       propertyPath: m_fontSizeBase
@@ -765,8 +920,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1777314047, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
+      propertyPath: m_text
+      value: "notification: \nNotification Up 1 - FoolBoyMedia\n(freesound.org)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777314047, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
       propertyPath: m_fontSize
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1777314047, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
+      propertyPath: m_margin.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1777314047, guid: 81632f84106ffe743ab4541dd093e656, type: 3}
       propertyPath: m_fontSizeBase
@@ -1565,7 +1728,7 @@ PrefabInstance:
     - target: {fileID: 4411984371219930172, guid: 81632f84106ffe743ab4541dd093e656,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0021362305
+      value: 0.00030517578
       objectReference: {fileID: 0}
     - target: {fileID: 4411984371350912580, guid: 81632f84106ffe743ab4541dd093e656,
         type: 3}

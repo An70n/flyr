@@ -57,6 +57,9 @@ public class UiManager : MonoBehaviour
         creditsPage_2 = GameObjectsList.gameObjectsList.creditsPage_2;
         creditsPage_2.SetActive(false);
         GameObjectsList.gameObjectsList.previousCreditsPageButton.SetActive(false);
+
+        GameObjectsList.gameObjectsList.endSceneCreditsPage_2.SetActive(false);
+        GameObjectsList.gameObjectsList.endScenePreviousCreditsPageButton.SetActive(false);
     }
 
     public void PreviousScreen()
@@ -71,6 +74,11 @@ public class UiManager : MonoBehaviour
             if (flyrScreen.activeInHierarchy)
             {
                 OpenHomeScreen();
+            }
+
+            if(creditsScreen.activeInHierarchy)
+            {
+                CloseCreditsScreen();
             }
         }
 
@@ -134,6 +142,8 @@ public class UiManager : MonoBehaviour
     {
         creditsScreen.SetActive(true);
         GameObjectsList.gameObjectsList.startScreen.SetActive(false);
+        headingText.text = "Credits";
+        returnButton.SetActive(true);
     }
 
     public void CloseCreditsScreen()
@@ -154,5 +164,19 @@ public class UiManager : MonoBehaviour
         creditsPage_2.SetActive(false);
         GameObjectsList.gameObjectsList.previousCreditsPageButton.SetActive(false);
         GameObjectsList.gameObjectsList.nextCreditsPageButton.SetActive(true);
+    }
+
+    public void NextCreditsPageEndScene()
+    {
+        GameObjectsList.gameObjectsList.endSceneCreditsPage_2.SetActive(true);
+        GameObjectsList.gameObjectsList.endScenePreviousCreditsPageButton.SetActive(true);
+        GameObjectsList.gameObjectsList.endSceneNextCreditsPageButton.SetActive(false);
+    }
+
+    public void PreviousCreditsPageEndScene()
+    {
+        GameObjectsList.gameObjectsList.endSceneCreditsPage_2.SetActive(false);
+        GameObjectsList.gameObjectsList.endScenePreviousCreditsPageButton.SetActive(false);
+        GameObjectsList.gameObjectsList.endSceneNextCreditsPageButton.SetActive(true);
     }
 }

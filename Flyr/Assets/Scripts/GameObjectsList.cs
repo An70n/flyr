@@ -37,6 +37,10 @@ public class GameObjectsList : MonoBehaviour
     public GameObject creditsPage_2;
     public GameObject nextCreditsPageButton;
     public GameObject previousCreditsPageButton;
+    public GameObject endSceneCreditsPage_1;
+    public GameObject endSceneCreditsPage_2;
+    public GameObject endSceneNextCreditsPageButton;
+    public GameObject endScenePreviousCreditsPageButton;
 
     void Awake()
     {
@@ -88,5 +92,10 @@ public class GameObjectsList : MonoBehaviour
         creditsPage_2 = creditsScreen.transform.Find("Wallpaper_2").gameObject;
         nextCreditsPageButton = creditsScreen.transform.Find("NextCreditsPage").gameObject;
         previousCreditsPageButton = creditsScreen.transform.Find("PreviousCreditsPage").gameObject;
+
+        endSceneCreditsPage_1 = GameObject.Find("Panel_1");
+        endSceneCreditsPage_2 = GameObject.Find("Panel_2");
+        endSceneNextCreditsPageButton = GameObject.Find("EndSceneNextCreditsPage");
+        endScenePreviousCreditsPageButton = GameObject.Find("EndScenePreviousCreditsPage");
     }
 }

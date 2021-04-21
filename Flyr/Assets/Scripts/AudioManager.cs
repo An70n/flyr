@@ -30,6 +30,8 @@ public class AudioManager : MonoBehaviour
         Lua.RegisterFunction("AugmentPitchLuaSpecific", this, SymbolExtensions.GetMethodInfo(() => AugmentPitchLuaSpecific(string.Empty, double.NaN, double.NaN)));
         Lua.RegisterFunction("FadeInLuaSpecific", this, SymbolExtensions.GetMethodInfo(() => FadeInLuaSpecific(string.Empty, double.NaN, double.NaN)));
         Lua.RegisterFunction("FadeOutLuaSpecific", this, SymbolExtensions.GetMethodInfo(() => FadeOutLuaSpecific(string.Empty, double.NaN, double.NaN)));
+
+        Play("PianoMusic");
     }
 
     public void Play(string name) 

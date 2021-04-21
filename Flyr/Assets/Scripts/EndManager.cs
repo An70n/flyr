@@ -53,15 +53,6 @@ public class EndManager : MonoBehaviour
         {
             PixelCrushers.DialogueSystem.DialogueLua.SetVariable("endOfGame", true);
         }
-
-        if(Input.GetKeyDown(KeyCode.F1))
-        {
-            skipToEnd = true; 
-        }
-        if(Input.GetKeyDown(KeyCode.F2))
-        {
-            skipMom = true; 
-        }
     }
 
     private IEnumerator EndingScene ()
