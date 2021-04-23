@@ -3805,8 +3805,8 @@ MonoBehaviour:
         y: 712.34485
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 643.45703}
-    canvasZoom: 0.8041205
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.6
   - id: 2
     fields:
     - title: Title
@@ -5732,7 +5732,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 60
-        y: 871.20386
+        y: 869.5372
         width: 160
         height: 30
     - id: 28
@@ -5872,7 +5872,7 @@ MonoBehaviour:
       userScript: 'AugmentPitchLuaSpecific("PianoMusic", -1, 20)
 
         FadeOutLuaSpecific("PianoMusic",
-        .3, 20)'
+        0.3, 20)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6018,7 +6018,7 @@ MonoBehaviour:
       userScript: 'AugmentPitchLuaSpecific("PianoMusic", -1, 20)
 
         FadeOutLuaSpecific("PianoMusic",
-        .3, 20)'
+        0.3, 20)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6238,7 +6238,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 300
-        y: 1072.937
+        y: 1074.6036
         width: 160
         height: 30
     - id: 36
@@ -6380,7 +6380,7 @@ MonoBehaviour:
       canvasRect:
         serializedVersion: 2
         x: 480
-        y: 820
+        y: 818.3333
         width: 160
         height: 30
     - id: 38
@@ -6521,7 +6521,7 @@ MonoBehaviour:
       userScript: 'AugmentPitchLuaSpecific("PianoMusic", -1, 20)
 
         FadeOutLuaSpecific("PianoMusic",
-        .3, 20)'
+        0.3, 20)'
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -6744,8 +6744,8 @@ MonoBehaviour:
         y: 120
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 748.82074}
-    canvasZoom: 0.8974113
+    canvasScrollPosition: {x: 0, y: 411.6667}
+    canvasZoom: 0.6
   - id: 3
     fields:
     - title: Title
@@ -7685,9 +7685,8 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: "I'm sorry, it's not that I don't want to talk to you. I\u2019ve been
-          staring at our conversation for days, but, you know, it\u2019s not just
-          a conversation anymore, is it?"
+        value: "I\u2019ve been staring at our conversation for days, but, you know,
+          it\u2019s not just a conversation anymore, is it?"
         type: 0
         typeString: 
       - title: Parenthetical
@@ -10126,8 +10125,8 @@ MonoBehaviour:
         y: 120
         width: 160
         height: 30
-    canvasScrollPosition: {x: 3.0324402, y: 154.64957}
-    canvasZoom: 0.6595557
+    canvasScrollPosition: {x: 0, y: 0}
+    canvasZoom: 0.6
   - id: 4
     fields:
     - title: Title
@@ -10894,7 +10893,7 @@ MonoBehaviour:
         isConnector: 0
         priority: 2
       conditionsString: 
-      userScript: FadeInLuaSpecific("PianoMusic", .5, 20)
+      userScript: FadeInLuaSpecific("PianoMusic", 0.5, 20)
       onExecute:
         m_PersistentCalls:
           m_Calls: []
@@ -11964,8 +11963,8 @@ MonoBehaviour:
         y: 320
         width: 160
         height: 30
-    canvasScrollPosition: {x: 0, y: 426.25763}
-    canvasZoom: 1.0190041
+    canvasScrollPosition: {x: 0, y: 386.66666}
+    canvasZoom: 0.6
   - id: 5
     fields:
     - title: Title
